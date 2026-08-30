@@ -26,6 +26,17 @@ export const MY_SUPPLEMENTS = [
     url: 'https://vitamoment.de/products/vitamin-d3-k2'
   },
   {
+    id: 'vitamoment-vitamin-c',
+    name: 'Vitamin C (gepuffert)',
+    brand: 'VitaMoment',
+    dosage: '1 Kapsel täglich',
+    timing: 'Morgens / Mittags',
+    icon: '🍊',
+    badge: '500 mg Vitamin C',
+    image: 'assets/images/vitamoment-vitamin-c.png',
+    url: 'https://vitamoment.de/products/vitamin-c'
+  },
+  {
     id: 'true-nature-cholin',
     name: 'Cholin Bitartrat',
     brand: 'True Nature',
@@ -87,6 +98,19 @@ export const NUTRIENTS_SUMMARY = [
     percent: 386,
     source: 'VitaMoment + Watson',
     sourceBrand: 'VitaMoment + Watson'
+  },
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin C',
+    extra: '500 mg gepuffertes Calcium-L-Ascorbat + Hagebuttenextrakt',
+    amount: '500 mg',
+    rawAmount: 500,
+    unit: 'mg',
+    ref: '110 mg (D-A-CH)',
+    percent: 455,
+    source: 'VitaMoment Vitamin C',
+    sourceBrand: 'VitaMoment'
   },
   {
     category: 'vitamins',
