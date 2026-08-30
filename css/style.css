@@ -497,6 +497,27 @@ body {
   border-radius: var(--radius-sm);
 }
 
+.nut-percent-pill.is-missing {
+  color: #b45309;
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.nut-card.is-missing {
+  border: 1px dashed #cbd5e1;
+  background: #fdfdfd;
+}
+
+.nut-card.is-missing:hover {
+  border-color: #f59e0b;
+}
+
+.nut-source-tag.is-missing {
+  background: #f1f5f9;
+  color: #94a3b8;
+  font-style: italic;
+}
+
 .nut-progress-track {
   width: 100%;
   height: 6px;

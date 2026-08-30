@@ -1,4 +1,4 @@
-import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=1.5.0';
+import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=1.6.0';
 
 document.addEventListener('DOMContentLoaded', () => {
   const suppContainer = document.getElementById('supplements-list');
@@ -40,8 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const filtered = NUTRIENTS_SUMMARY.filter(item => {
       // Category filter
-      if (currentCategory !== 'all' && item.category !== currentCategory) {
-        return false;
+      if (currentCategory !== 'all') {
+        if (currentCategory === 'vegan-critical') {
+          if (!item.isVeganCritical) return false;
+        } else if (item.category !== currentCategory) {
+          return false;
+        }
       }
       // Search filter
       if (currentSearch) {
@@ -62,23 +66,29 @@ document.addEventListener('DOMContentLoaded', () => {
     nutContainer.innerHTML = filtered.map(item => {
       const barWidth = Math.min(item.percent, 100);
       const isEfsa = item.ref.includes('EFSA');
+      const isMissing = item.percent === 0;
+      const percentBadgeText = isMissing ? '0% • Fehlt im Stack' : `${item.percent}% ${isEfsa ? 'EFSA' : 'D-A-CH'}`;
+      const pillClass = isMissing ? 'nut-percent-pill is-missing' : 'nut-percent-pill';
+      const sourceClass = isMissing ? 'nut-source-tag is-missing' : 'nut-source-tag';
+      const cardClass = isMissing ? 'nut-card is-missing' : 'nut-card';
+
       return `
-        <div class="nut-card">
+        <div class="${cardClass}">
           <div class="nut-top-row">
             <div class="nut-title-box">
               <span class="nut-name">${item.name}</span>
               <span class="nut-extra">${item.extra}</span>
             </div>
-            <span class="nut-source-tag">${item.sourceBrand || item.source}</span>
+            <span class="${sourceClass}">${item.sourceBrand || item.source}</span>
           </div>
 
           <div class="nut-amount-row">
             <span class="nut-amount-val">${item.amount}</span>
-            <span class="nut-percent-pill">${item.percent}% ${isEfsa ? 'EFSA' : 'D-A-CH'}</span>
+            <span class="${pillClass}">${percentBadgeText}</span>
           </div>
 
           <div class="nut-progress-track" title="Referenzwert: ${item.ref}">
-            <div class="nut-progress-fill" style="width: ${barWidth}%;"></div>
+            <div class="nut-progress-fill" style="width: ${barWidth}%; ${isMissing ? 'background: #cbd5e1;' : ''}"></div>
           </div>
 
           <div class="nut-ref-sub">
