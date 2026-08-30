@@ -37,6 +37,17 @@ export const MY_SUPPLEMENTS = [
     url: 'https://vitamoment.de/products/vitamin-c'
   },
   {
+    id: 'zinzino-balanceoil',
+    name: 'BalanceOil+ (Omega-3)',
+    brand: 'Zinzino',
+    dosage: '10 ml täglich (flüssig)',
+    timing: 'Morgens / Mittags zum Essen',
+    icon: '🐟',
+    badge: '2.065 mg Omega-3',
+    image: 'assets/images/zinzino-balanceoil.png',
+    url: 'https://www.zinzino.com/shop/site/at/de-de/products/shop/omega-supplements/300000'
+  },
+  {
     id: 'true-nature-cholin',
     name: 'Cholin Bitartrat',
     brand: 'True Nature',
@@ -77,14 +88,14 @@ export const NUTRIENTS_SUMMARY = [
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin D3',
-    extra: '7.000 IE (125 µg VitaMoment + 50 µg Watson)',
-    amount: '175 µg',
-    rawAmount: 175,
+    extra: '7.667 IE (125 µg VitaMoment + 50 µg Watson + 16,7 µg Zinzino)',
+    amount: '191.7 µg',
+    rawAmount: 191.7,
     unit: 'µg',
     ref: '20 µg (D-A-CH)',
-    percent: 875,
-    source: 'VitaMoment + Watson',
-    sourceBrand: 'VitaMoment + Watson'
+    percent: 958,
+    source: 'VitaMoment + Watson + Zinzino',
+    sourceBrand: 'VitaMoment + Watson + Zinzino'
   },
   {
     category: 'vitamins',
@@ -375,10 +386,23 @@ export const NUTRIENTS_SUMMARY = [
     sourceBrand: 'Watson Nutrition'
   },
 
-  // --- SPEZIAL, GEHIRN & PERFORMANCE ---
+  // --- SPEZIAL, OMEGA-3 & PERFORMANCE ---
   {
     category: 'special',
-    categoryName: 'Spezial & Performance',
+    categoryName: 'Omega-3 & Performance',
+    name: 'Omega-3 (EPA & DHA)',
+    extra: '1.069 mg EPA + 569 mg DHA + 427 mg DPA (Wildfischöl)',
+    amount: '2.065 mg',
+    rawAmount: 2065,
+    unit: 'mg',
+    ref: '250 mg (EFSA Mindestbedarf)',
+    percent: 826,
+    source: 'Zinzino BalanceOil+',
+    sourceBrand: 'Zinzino'
+  },
+  {
+    category: 'special',
+    categoryName: 'Omega-3 & Performance',
     name: 'Kreatin (Creapure®)',
     extra: '100% mikronisiertes Creapure® (Alzchem Deutschland)',
     amount: '3.000 mg',
@@ -391,7 +415,7 @@ export const NUTRIENTS_SUMMARY = [
   },
   {
     category: 'special',
-    categoryName: 'Spezial & Performance',
+    categoryName: 'Omega-3 & Performance',
     name: 'Cholin',
     extra: 'Reines Cholin (aus 1.125 mg Cholinbitartrat)',
     amount: '450 mg',
@@ -401,5 +425,18 @@ export const NUTRIENTS_SUMMARY = [
     percent: 113,
     source: 'True Nature Cholin',
     sourceBrand: 'True Nature'
+  },
+  {
+    category: 'special',
+    categoryName: 'Omega-3 & Performance',
+    name: 'Oliven-Polyphenole',
+    extra: 'Aus vorzeitig geerntetem nativem Olivenöl extra (Antioxidans)',
+    amount: '2.9 mg',
+    rawAmount: 2.9,
+    unit: 'mg',
+    ref: '5.0 mg (EFSA Health Claim)',
+    percent: 58,
+    source: 'Zinzino BalanceOil+',
+    sourceBrand: 'Zinzino'
   }
 ];

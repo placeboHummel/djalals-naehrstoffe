@@ -1,4 +1,4 @@
-import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=1.3.0';
+import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=1.4.0';
 
 document.addEventListener('DOMContentLoaded', () => {
   const suppContainer = document.getElementById('supplements-list');
