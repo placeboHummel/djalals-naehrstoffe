@@ -1,0 +1,357 @@
+/**
+ * Deine tägliche Nährstoff- & Supplement-Übersicht
+ */
+
+export const MY_SUPPLEMENTS = [
+  {
+    id: 'watson-male-essentials',
+    name: 'Male Essentials',
+    brand: 'Watson Nutrition',
+    dosage: '1 Kapsel täglich',
+    timing: 'Morgens zum Frühstück',
+    icon: '☀️',
+    badge: '21 Nährstoffe',
+    image: 'assets/images/watson-male-essentials.png',
+    url: 'https://watsonnutrition.de/products/male-essentials'
+  },
+  {
+    id: 'vitamoment-d3-k2',
+    name: 'Vitamin D3 + K2',
+    brand: 'VitaMoment',
+    dosage: '1 Kapsel täglich',
+    timing: 'Morgens mit Fettquelle',
+    icon: '☀️',
+    badge: '5.000 IE D3 + 200 µg K2',
+    image: 'assets/images/vitamoment-d3-k2.png',
+    url: 'https://vitamoment.de/products/vitamin-d3-k2'
+  },
+  {
+    id: 'true-nature-cholin',
+    name: 'Cholin Bitartrat',
+    brand: 'True Nature',
+    dosage: '3 Kapseln täglich (1.125 mg)',
+    timing: 'Morgens / Mittags',
+    icon: '🧠',
+    badge: '450 mg Cholin',
+    image: 'assets/images/true-nature-cholin.png',
+    url: ''
+  },
+  {
+    id: 'sports-health-magnesium',
+    name: 'Magnesium Bisglycinat',
+    brand: 'Sports & Health',
+    dosage: '3 Kapseln täglich',
+    timing: 'Abends vor dem Schlafen',
+    icon: '🌙',
+    badge: '400 mg Magnesium',
+    image: 'assets/images/sports-health-magnesium.png',
+    url: ''
+  }
+];
+
+export const NUTRIENTS_SUMMARY = [
+  // --- VITAMINE ---
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin D3',
+    extra: '7.000 IE (125 µg VitaMoment + 50 µg Watson)',
+    amount: '175 µg',
+    rawAmount: 175,
+    unit: 'µg',
+    ref: '20 µg (D-A-CH)',
+    percent: 875,
+    source: 'VitaMoment + Watson',
+    sourceBrand: 'VitaMoment + Watson'
+  },
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin K2',
+    extra: '200 µg VitaMoment + 70 µg Watson (MK-7 all-trans)',
+    amount: '270 µg',
+    rawAmount: 270,
+    unit: 'µg',
+    ref: '70 µg (D-A-CH)',
+    percent: 386,
+    source: 'VitaMoment + Watson',
+    sourceBrand: 'VitaMoment + Watson'
+  },
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin B12',
+    extra: 'Methyl- & Adenosylcobalamin',
+    amount: '50 µg',
+    rawAmount: 50,
+    unit: 'µg',
+    ref: '4.0 µg (D-A-CH)',
+    percent: 1250,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin A',
+    extra: 'Retinylacetat',
+    amount: '600 µg',
+    rawAmount: 600,
+    unit: 'µg',
+    ref: '850 µg (D-A-CH)',
+    percent: 71,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin E',
+    extra: 'D-alpha-Tocopherol',
+    amount: '14 mg',
+    rawAmount: 14,
+    unit: 'mg',
+    ref: '14 mg (D-A-CH)',
+    percent: 100,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin B1',
+    extra: 'Thiamin HCL',
+    amount: '1.6 mg',
+    rawAmount: 1.6,
+    unit: 'mg',
+    ref: '1.2 mg (D-A-CH)',
+    percent: 133,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin B2',
+    extra: 'Riboflavin-5-Phosphat (aktiv)',
+    amount: '1.6 mg',
+    rawAmount: 1.6,
+    unit: 'mg',
+    ref: '1.4 mg (D-A-CH)',
+    percent: 114,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin B3 (Niacin)',
+    extra: 'Nicotinamid',
+    amount: '15 mg',
+    rawAmount: 15,
+    unit: 'mg',
+    ref: '16 mg (D-A-CH)',
+    percent: 94,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin B5 (Pantothensäure)',
+    extra: 'Calcium-D-Pantothenat',
+    amount: '5.0 mg',
+    rawAmount: 5.0,
+    unit: 'mg',
+    ref: '6.0 mg (D-A-CH)',
+    percent: 83,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin B6',
+    extra: 'Pyridoxal-5-Phosphat (aktiv)',
+    amount: '1.6 mg',
+    rawAmount: 1.6,
+    unit: 'mg',
+    ref: '1.6 mg (D-A-CH)',
+    percent: 100,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin B7 (Biotin)',
+    extra: 'D-Biotin',
+    amount: '40 µg',
+    rawAmount: 40,
+    unit: 'µg',
+    ref: '40 µg (D-A-CH)',
+    percent: 100,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'vitamins',
+    categoryName: 'Vitamine',
+    name: 'Vitamin B9 (Folat)',
+    extra: 'Quatrefolic® (5-MTHF)',
+    amount: '200 µg',
+    rawAmount: 200,
+    unit: 'µg',
+    ref: '300 µg (D-A-CH)',
+    percent: 67,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+
+  // --- MINERALSTOFFE & SPURENELEMENTE ---
+  {
+    category: 'minerals',
+    categoryName: 'Mineralstoffe & Spurenelemente',
+    name: 'Magnesium',
+    extra: 'Magnesium-Bisglycinat (Chelat)',
+    amount: '400 mg',
+    rawAmount: 400,
+    unit: 'mg',
+    ref: '350 mg (D-A-CH)',
+    percent: 114,
+    source: 'Sports & Health Magnesium',
+    sourceBrand: 'Sports & Health'
+  },
+  {
+    category: 'minerals',
+    categoryName: 'Mineralstoffe & Spurenelemente',
+    name: 'Zink',
+    extra: 'Zink-Bisglycinat',
+    amount: '10 mg',
+    rawAmount: 10,
+    unit: 'mg',
+    ref: '14 mg (D-A-CH)',
+    percent: 71,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'minerals',
+    categoryName: 'Mineralstoffe & Spurenelemente',
+    name: 'Eisen',
+    extra: 'Ferrochel® Eisen-Bisglycinat',
+    amount: '6.0 mg',
+    rawAmount: 6.0,
+    unit: 'mg',
+    ref: '10 mg (D-A-CH)',
+    percent: 60,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'minerals',
+    categoryName: 'Mineralstoffe & Spurenelemente',
+    name: 'Selen',
+    extra: 'Selenmethionin & Natriumselenit',
+    amount: '70 µg',
+    rawAmount: 70,
+    unit: 'µg',
+    ref: '70 µg (D-A-CH)',
+    percent: 100,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'minerals',
+    categoryName: 'Mineralstoffe & Spurenelemente',
+    name: 'Jod',
+    extra: 'Kaliumjodid',
+    amount: '150 µg',
+    rawAmount: 150,
+    unit: 'µg',
+    ref: '200 µg (D-A-CH)',
+    percent: 75,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'minerals',
+    categoryName: 'Mineralstoffe & Spurenelemente',
+    name: 'Calcium',
+    extra: 'Calcium-Bisglycinat',
+    amount: '120 mg',
+    rawAmount: 120,
+    unit: 'mg',
+    ref: '1.000 mg (D-A-CH)',
+    percent: 12,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'minerals',
+    categoryName: 'Mineralstoffe & Spurenelemente',
+    name: 'Kupfer',
+    extra: 'Kupfer-Bisglycinat',
+    amount: '0.5 mg',
+    rawAmount: 0.5,
+    unit: 'mg',
+    ref: '1.0 mg (D-A-CH)',
+    percent: 50,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'minerals',
+    categoryName: 'Mineralstoffe & Spurenelemente',
+    name: 'Mangan',
+    extra: 'Mangan-Bisglycinat',
+    amount: '1.0 mg',
+    rawAmount: 1.0,
+    unit: 'mg',
+    ref: '2.0 mg (D-A-CH)',
+    percent: 50,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'minerals',
+    categoryName: 'Mineralstoffe & Spurenelemente',
+    name: 'Chrom',
+    extra: 'Chrompicolinat',
+    amount: '20 µg',
+    rawAmount: 20,
+    unit: 'µg',
+    ref: '30 µg (D-A-CH)',
+    percent: 67,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'minerals',
+    categoryName: 'Mineralstoffe & Spurenelemente',
+    name: 'Molybdän',
+    extra: 'Natriummolybdat',
+    amount: '25 µg',
+    rawAmount: 25,
+    unit: 'µg',
+    ref: '50 µg (D-A-CH)',
+    percent: 50,
+    source: 'Watson Male Essentials',
+    sourceBrand: 'Watson Nutrition'
+  },
+
+  // --- GEHIRN & LEBER ---
+  {
+    category: 'special',
+    categoryName: 'Spezial- & Gehirnnährstoffe',
+    name: 'Cholin',
+    extra: 'Reines Cholin (aus 1.125 mg Cholinbitartrat)',
+    amount: '450 mg',
+    rawAmount: 450,
+    unit: 'mg',
+    ref: '400 mg (EFSA AI)',
+    percent: 113,
+    source: 'True Nature Cholin',
+    sourceBrand: 'True Nature'
+  }
+];

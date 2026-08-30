@@ -1,0 +1,15 @@
+{
+  "name": "djalals-naehrstoffe",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Djalals persönliche Nährstoff- und Supplement-Übersicht",
+  "scripts": {
+    "dev": "python3 -m http.server 8088",
+    "serve": "npx -y serve .",
+    "deploy": "npx -y wrangler pages deploy . --project-name=djalals-naehrstoffe",
+    "preview": "npx -y wrangler pages dev ."
+  },
+  "keywords": ["supplements", "nutrition", "vitamins", "cloudflare-pages"],
+  "author": "",
+  "license": "MIT"
+}
