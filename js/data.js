@@ -15,6 +15,17 @@ export const MY_SUPPLEMENTS = [
     url: 'https://watsonnutrition.de/products/male-essentials'
   },
   {
+    id: 'watson-collasyn',
+    name: 'CollaSyn®',
+    brand: 'Watson Nutrition',
+    dosage: '1 Stick täglich (4,3 g Pulver)',
+    timing: 'Morgens / Im Shake',
+    icon: '✨',
+    badge: '4.000 mg Glycin + Hyaluron',
+    image: 'assets/images/watson-collasyn.png',
+    url: 'https://watsonnutrition.de/products/collasyn'
+  },
+  {
     id: 'vitamoment-d3-k2',
     name: 'Vitamin D3 + K2',
     brand: 'VitaMoment',
@@ -114,14 +125,14 @@ export const NUTRIENTS_SUMMARY = [
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin C',
-    extra: '500 mg gepuffertes Calcium-L-Ascorbat + Hagebuttenextrakt',
-    amount: '500 mg',
-    rawAmount: 500,
+    extra: '580 mg (500 mg VitaMoment + 80 mg Watson CollaSyn)',
+    amount: '580 mg',
+    rawAmount: 580,
     unit: 'mg',
     ref: '110 mg (D-A-CH)',
-    percent: 455,
-    source: 'VitaMoment Vitamin C',
-    sourceBrand: 'VitaMoment'
+    percent: 527,
+    source: 'VitaMoment + Watson CollaSyn',
+    sourceBrand: 'VitaMoment + Watson'
   },
   {
     category: 'vitamins',
@@ -402,7 +413,33 @@ export const NUTRIENTS_SUMMARY = [
   },
   {
     category: 'special',
-    categoryName: 'Omega-3 & Performance',
+    categoryName: 'Performance & Kollagen',
+    name: 'Glycin (Kollagen-Aminosäure)',
+    extra: '4.000 mg Diamond® Markenrohstoff – Primäre Aminosäure für Kollagenaufbau',
+    amount: '4.000 mg',
+    rawAmount: 4000,
+    unit: 'mg',
+    ref: '3.000 mg (Optimale Tagesdosis)',
+    percent: 133,
+    source: 'Watson CollaSyn®',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'special',
+    categoryName: 'Performance & Kollagen',
+    name: 'Hyaluronsäure',
+    extra: '200 mg HAPLEX®Plus Natriumhyaluronat für Hautelastizität & Gelenke',
+    amount: '200 mg',
+    rawAmount: 200,
+    unit: 'mg',
+    ref: '100 mg (Studien-Referenzwert)',
+    percent: 200,
+    source: 'Watson CollaSyn®',
+    sourceBrand: 'Watson Nutrition'
+  },
+  {
+    category: 'special',
+    categoryName: 'Performance & Kollagen',
     name: 'Kreatin (Creapure®)',
     extra: '100% mikronisiertes Creapure® (Alzchem Deutschland)',
     amount: '3.000 mg',
@@ -415,7 +452,7 @@ export const NUTRIENTS_SUMMARY = [
   },
   {
     category: 'special',
-    categoryName: 'Omega-3 & Performance',
+    categoryName: 'Performance & Kollagen',
     name: 'Cholin',
     extra: 'Reines Cholin (aus 1.125 mg Cholinbitartrat)',
     amount: '450 mg',
@@ -428,7 +465,7 @@ export const NUTRIENTS_SUMMARY = [
   },
   {
     category: 'special',
-    categoryName: 'Omega-3 & Performance',
+    categoryName: 'Performance & Kollagen',
     name: 'Oliven-Polyphenole',
     extra: 'Aus vorzeitig geerntetem nativem Olivenöl extra (Antioxidans)',
     amount: '2.9 mg',
