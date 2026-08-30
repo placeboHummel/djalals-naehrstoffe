@@ -46,6 +46,17 @@ export const MY_SUPPLEMENTS = [
     badge: '400 mg Magnesium',
     image: 'assets/images/sports-health-magnesium.png',
     url: ''
+  },
+  {
+    id: 'gloryfeel-creatine',
+    name: 'Kreatin Creapure®',
+    brand: 'Gloryfeel',
+    dosage: '1 Messlöffel täglich (3,4 g)',
+    timing: 'Morgens / Nach dem Training',
+    icon: '⚡',
+    badge: '3.000 mg Creapure®',
+    image: 'assets/images/gloryfeel-creatine.png',
+    url: 'https://www.amazon.de/dp/B0CX9FJNMM'
   }
 ];
 
@@ -340,10 +351,23 @@ export const NUTRIENTS_SUMMARY = [
     sourceBrand: 'Watson Nutrition'
   },
 
-  // --- GEHIRN & LEBER ---
+  // --- SPEZIAL, GEHIRN & PERFORMANCE ---
   {
     category: 'special',
-    categoryName: 'Spezial- & Gehirnnährstoffe',
+    categoryName: 'Spezial & Performance',
+    name: 'Kreatin (Creapure®)',
+    extra: '100% mikronisiertes Creapure® (Alzchem Deutschland)',
+    amount: '3.000 mg',
+    rawAmount: 3000,
+    unit: 'mg',
+    ref: '3.000 mg (EFSA Wirksamkeit)',
+    percent: 100,
+    source: 'Gloryfeel Creapure®',
+    sourceBrand: 'Gloryfeel'
+  },
+  {
+    category: 'special',
+    categoryName: 'Spezial & Performance',
     name: 'Cholin',
     extra: 'Reines Cholin (aus 1.125 mg Cholinbitartrat)',
     amount: '450 mg',
