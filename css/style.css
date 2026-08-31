@@ -1189,102 +1189,52 @@ body.modal-open {
   font-weight: 700;
 }
 
-/* Plain German Everyday Card (Praxisnutzen) */
-.modal-plain-card {
-  background: #ffffff;
+/* Practical Everyday Benefit Section in Modal (Praktischer Alltagsnutzen) */
+.modal-sec-plain {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   border: 1px solid #cbd5e1;
+  padding: 16px 18px;
   border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
-  margin-top: -4px;
-  margin-bottom: 4px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+  gap: 10px;
 }
 
-.modal-plain-toggle-btn {
-  width: 100%;
+.modal-sec-plain-heading {
+  color: #1e293b;
+  font-size: 0.98rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  background: #f8fafc;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 0.90rem;
-  color: #1e293b;
-  text-align: left;
-  transition: all 0.15s ease;
+  width: 100%;
 }
 
-.modal-plain-toggle-btn:hover {
-  background: #f1f5f9;
-}
-
-.modal-plain-toggle-left {
+.modal-sec-plain-title {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
 }
 
-.modal-plain-toggle-left svg {
-  color: #475569;
-  flex-shrink: 0;
+.modal-sec-plain-title svg {
+  color: #0284c7;
 }
 
-.modal-plain-badge {
+.modal-sec-plain-badge {
   font-size: 0.72rem;
   font-weight: 600;
-  background: #e2e8f0;
-  color: #334155;
+  background: #e0f2fe;
+  color: #0369a1;
   padding: 2px 8px;
   border-radius: 999px;
+  border: 1px solid #bae6fd;
   letter-spacing: 0.02em;
 }
 
-.modal-plain-toggle-right {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #64748b;
-  font-size: 0.80rem;
-  font-weight: 500;
-}
-
-.modal-plain-chevron {
-  color: #64748b;
-  transition: transform 0.25s ease;
-  flex-shrink: 0;
-}
-
-.modal-plain-drawer {
-  display: none;
-  padding: 14px 18px;
-  background: #ffffff;
-  border-top: 1px solid #e2e8f0;
-}
-
-.modal-plain-drawer.is-open {
-  display: block;
-  animation: modalDrawerFade 0.2s ease-out;
-}
-
-.modal-plain-drawer p {
+.modal-plain-text {
   font-size: 0.90rem;
   color: #334155;
   line-height: 1.65;
-  margin: 0;
   font-weight: 450;
-}
-
-@keyframes modalDrawerFade {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  margin: 0;
 }
 
 .modal-text {

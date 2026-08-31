@@ -1,5 +1,5 @@
-import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=2.8.0';
-import { NUTRIENT_DETAILS } from './nutrient-details.js?v=2.8.0';
+import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=3.1.0';
+import { NUTRIENT_DETAILS } from './nutrient-details.js?v=3.1.0';
 
 document.addEventListener('DOMContentLoaded', () => {
   const suppContainer = document.getElementById('supplements-list');
@@ -429,40 +429,20 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
             ` : ''}
 
-            <!-- Plain German Everyday Explanation Card -->
+            <!-- Practical Everyday Benefit Section (Praktischer Alltagsnutzen) -->
             ${details.plainGermanExplanation ? `
-              <div class="modal-plain-card">
-                <button type="button" class="modal-plain-toggle-btn" onclick="
-                  const target = document.getElementById('plain-drawer-${details.id}');
-                  const icon = this.querySelector('.modal-plain-chevron');
-                  const isOpen = target.classList.toggle('is-open');
-                  this.setAttribute('aria-expanded', isOpen);
-                  if (icon) icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
-                " aria-expanded="false">
-                  <div class="modal-plain-toggle-left">
+              <div class="modal-section modal-sec-plain">
+                <div class="modal-sec-heading modal-sec-plain-heading">
+                  <div class="modal-sec-plain-title">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-                    <span><strong>Praktischer Alltagsnutzen</strong></span>
-                    <span class="modal-plain-badge">Einfach erklärt</span>
+                    <strong>Praktischer Alltagsnutzen</strong>
                   </div>
-                  <div class="modal-plain-toggle-right">
-                    <span class="modal-plain-hint">Anzeigen</span>
-                    <svg class="modal-plain-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                  </div>
-                </button>
-                <div id="plain-drawer-${details.id}" class="modal-plain-drawer">
-                  <p>${details.plainGermanExplanation}</p>
+                  <span class="modal-sec-plain-badge">Verständlich erklärt</span>
                 </div>
+                <p class="modal-plain-text">${details.plainGermanExplanation}</p>
               </div>
             ` : ''}
 
-            <!-- Physiological Function Section -->
-            <div class="modal-section">
-              <h3 class="modal-sec-heading">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                Biochemische & Physiologische Funktion
-              </h3>
-              <p class="modal-text">${details.biochemistry}</p>
-            </div>
 
             <!-- Plant-Based / Meat-Free Relevance -->
             <div class="modal-section modal-sec-highlight">
