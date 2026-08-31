@@ -6,6 +6,7 @@ export const MY_SUPPLEMENTS = [
   {
     id: 'watson-male-essentials',
     name: 'Male Essentials',
+    shortName: 'Watson',
     brand: 'Watson Nutrition',
     dosage: '1 Kapsel täglich',
     timing: 'Morgens zum Frühstück',
@@ -16,6 +17,7 @@ export const MY_SUPPLEMENTS = [
   {
     id: 'watson-collasyn',
     name: 'CollaSyn®',
+    shortName: 'CollaSyn',
     brand: 'Watson Nutrition',
     dosage: '1 Stick täglich (4,3 g Pulver)',
     timing: 'Morgens / Im Shake',
@@ -26,6 +28,7 @@ export const MY_SUPPLEMENTS = [
   {
     id: 'vitamoment-d3-k2',
     name: 'Vitamin D3 + K2',
+    shortName: 'VitaMoment',
     brand: 'VitaMoment',
     dosage: '1 Kapsel täglich',
     timing: 'Morgens mit Fettquelle',
@@ -36,6 +39,7 @@ export const MY_SUPPLEMENTS = [
   {
     id: 'vitamoment-vitamin-c',
     name: 'Vitamin C (gepuffert)',
+    shortName: 'VitaMoment',
     brand: 'VitaMoment',
     dosage: '1 Kapsel täglich',
     timing: 'Morgens / Mittags',
@@ -46,6 +50,7 @@ export const MY_SUPPLEMENTS = [
   {
     id: 'zinzino-balanceoil',
     name: 'BalanceOil+ (Omega-3)',
+    shortName: 'Zinzino',
     brand: 'Zinzino',
     dosage: '10 ml täglich (flüssig)',
     timing: 'Morgens / Mittags zum Essen',
@@ -56,6 +61,7 @@ export const MY_SUPPLEMENTS = [
   {
     id: 'true-nature-cholin',
     name: 'Cholin Bitartrat',
+    shortName: 'True Nature',
     brand: 'True Nature',
     dosage: '3 Kapseln täglich (1.125 mg)',
     timing: 'Morgens / Mittags',
@@ -66,6 +72,7 @@ export const MY_SUPPLEMENTS = [
   {
     id: 'sports-health-magnesium',
     name: 'Magnesium Bisglycinat',
+    shortName: 'Sports & Health',
     brand: 'Sports & Health',
     dosage: '3 Kapseln täglich',
     timing: 'Abends vor dem Schlafen',
@@ -76,6 +83,7 @@ export const MY_SUPPLEMENTS = [
   {
     id: 'gloryfeel-creatine',
     name: 'Kreatin Creapure®',
+    shortName: 'Gloryfeel',
     brand: 'Gloryfeel',
     dosage: '1 Messlöffel täglich (3,4 g)',
     timing: 'Morgens / Nach dem Training',
