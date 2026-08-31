@@ -1,5 +1,5 @@
-import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=2.6.0';
-import { NUTRIENT_DETAILS } from './nutrient-details.js?v=2.6.0';
+import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=2.8.0';
+import { NUTRIENT_DETAILS } from './nutrient-details.js?v=2.8.0';
 
 document.addEventListener('DOMContentLoaded', () => {
   const suppContainer = document.getElementById('supplements-list');
