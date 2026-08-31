@@ -672,9 +672,9 @@ body.modal-open {
   padding: 18px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
   box-shadow: var(--shadow-sm);
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  min-height: 154px;
 }
 
 .nut-card:hover {
@@ -688,6 +688,7 @@ body.modal-open {
   justify-content: space-between;
   align-items: flex-start;
   gap: 10px;
+  min-height: 46px;
 }
 
 .nut-title-box {
@@ -768,7 +769,9 @@ body.modal-open {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 2px;
+  margin-top: auto;
+  padding-top: 10px;
+  margin-bottom: 8px;
 }
 
 .nut-amount-val {
@@ -817,6 +820,7 @@ body.modal-open {
   background: var(--bg-muted);
   border-radius: var(--radius-pill);
   overflow: hidden;
+  margin-bottom: 6px;
 }
 
 .nut-progress-fill {
@@ -830,6 +834,7 @@ body.modal-open {
   font-size: 0.74rem;
   color: var(--text-muted);
   text-align: right;
+  line-height: 1.2;
 }
 
 /* Swipe Hint & Section Badges */
