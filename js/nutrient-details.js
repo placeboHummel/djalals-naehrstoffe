@@ -1,6 +1,6 @@
 /**
- * Wissenschaftliche Detail-Datenbank für alle 39 Nährstoffe
- * Fundierte biochemische Wirkmechanismen, D-A-CH / EFSA Referenzwerte,
+ * Wissenschaftliche Detail-Datenbank für alle 50 Nährstoffe
+ * Fundierte biochemische Wirkmechanismen, D-A-CH / DGE / EFSA Referenzwerte,
  * spezifische Einordnung für fleisch- und fischfreie Ernährung sowie Einnahme-Synergien.
  */
 
@@ -18,7 +18,7 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Vitamin A dient als Retinal im Sehpigment Rhodopsin der Netzhaut für das Hell-Dunkel-Sehen. In Form von Retinsäure bindet es an nukleäre RAR/RXR-Rezeptoren und moduliert die Transkription von über 500 Genen, die Zellproliferation, Epithelregeneration und T-Zell-Differenzierung steuern.',
     plantBasedRelevance: 'Pflanzliche Nahrung liefert nur Provitamin A (Beta-Carotin), dessen enzymatische Spaltung durch BCMO1 genetisch stark variiert (bis zu 45% der Bevölkerung sind schlechte Konvertierer). Vorgeformtes Retinol im Stack sichert die zelluläre Versorgung unabhängig von genetischen Konversions-Engpässen direkt ab.',
     intakeAdvice: 'Fettlöslich: Immer zu einer Mahlzeit mit Fettquelle einnehmen. Zink ist als Kofaktor für das Transportprotein (Retinol-bindendes Protein, RBP) zwingend erforderlich.',
-    safetyAndUL: 'EFSA Tolerable Upper Limit (UL): 3.000 µg/Tag. Die Zufuhr von 600 µg (75% D-A-CH) ist ideal balanciert und vermeidet jegliche Akkumulation in der Leber.',
+    safetyAndUL: 'EFSA Tolerable Upper Limit (UL): 3.000 µg/Tag. Die Zufuhr von 600 µg (71% DGE / D-A-CH für Männer) ist ideal balanciert und vermeidet jegliche Akkumulation in der Leber.',
     scientificReference: 'EFSA Journal 2015;13(3):4028 | D-A-CH Referenzwerte 2020'
   },
   'vit-d3': {
@@ -41,10 +41,10 @@ export const NUTRIENT_DETAILS = {
     categoryName: 'Vitamine',
     badge: '🛡️ Fettlösliches Antioxidans',
     summary: 'Primäres fettlösliches Antioxidans zum Schutz von Zellmembranen und mehrfach ungesättigten Fettsäuren vor Lipidperoxidation.',
-    biochemistry: 'Alpha-Tocopherol fängt freie Radikale (Peroxylradikale) in Lipiddoppelschichten ab, bevor diese ungesättigte Fettsäuren in Membranen oxidieren können. Das dabei entstehende Tocopheroxyl-Radikal wird durch Vitamin C und Alpha-Liponsäure wieder in seine aktive Form regeneriert.',
+    biochemistry: 'Alpha-Tocopherol fängt freie Radikale (Peroxylradikale) in Lipiddoppelschichten ab, bevor diese ungesättigte Fettsäuren in Membranen oxidieren können. Das dabei entstehende Tocopheroxyl-Radikal wird im zellulären Redoxnetzwerk primär durch Vitamin C wieder in seine aktive Form regeneriert.',
     plantBasedRelevance: 'Bei hoher Zufuhr mehrfach ungesättigter Fettsäuren (z.B. 2.065 mg Omega-3 EPA/DHA) steigt der physiologische Vitamin-E-Bedarf der Zellmembranen signifikant an. Das im Stack enthaltene Vitamin E schützt die Omega-3-Fettsäuren direkt vor Oxidation.',
     intakeAdvice: 'Zu einer Mahlzeit einnehmen. Wirkt im antioxidativen Netzwerk optimal zusammen mit Vitamin C, Selen und Coenzym Q10.',
-    safetyAndUL: 'EFSA Upper Limit: 300 mg/Tag. Mit 14 mg (117% D-A-CH) liegt die Einnahme im absolut sicheren physiologischen Optimalbereich.',
+    safetyAndUL: 'EFSA Upper Limit: 300 mg/Tag. Mit 14 mg (100% DGE / D-A-CH für Männer) liegt die Einnahme im absolut sicheren physiologischen Optimalbereich.',
     scientificReference: 'EFSA Journal 2010;8(10):1816 | D-A-CH Referenzwerte'
   },
   'vit-k2': {
@@ -174,8 +174,8 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Ascorbat hält das Eisen in Prolyl- und Lysylhydroxylasen im reduzierten Fe2+-Zustand, was für die Vernetzung der Kollagen-Dreifachhelix zwingend nötig ist. Zudem reduziert es dreiwertiges pflanzliches Nicht-Häm-Eisen (Fe3+) im Magen-Darm-Trakt zu bioverfügbarem Fe2+.',
     plantBasedRelevance: 'Da pflanzliches Eisen schlechter resorbiert wird als tierisches Häm-Eisen, ist Vitamin C der potenteste physiologische Hebel zur Maximierung der Eisenaufnahme aus Nahrung und Multinährstoffen.',
     intakeAdvice: 'Gepuffertes Calciumascorbat ist magenfreundlich. Ideal zusammen mit Mahlzeiten oder Eisen eintragen.',
-    safetyAndUL: 'EFSA Upper Limit: 2.000 mg/Tag. Mit 580 mg Gesamtzufuhr optimal im wirksamen Bereich.',
-    scientificReference: 'EFSA Journal 2013;11(11):3418 | American Journal of Clinical Nutrition'
+    safetyAndUL: 'EFSA hat mangels Toxizität keinen numerischen Upper Limit (UL) festgelegt. Der etablierte US IOM (Institute of Medicine) Grenzwert liegt bei 2.000 mg/Tag. Mit 580 mg Gesamtzufuhr (527% DGE) absolut sicher und optimal im wirksamen Bereich.',
+    scientificReference: 'EFSA Journal 2013;11(11):3418 | US IOM Dietary Reference Intakes | D-A-CH Referenzwerte'
   },
 
   // =========================================================================
@@ -189,7 +189,7 @@ export const NUTRIENT_DETAILS = {
     badge: '🦴 720 mg Knochendichte & Muskel',
     summary: 'Hauptmineral für Knochen- und Zahnmatrix, neuromuskuläre Reizübertragung, Blutgerinnung und Muskelkontraktion.',
     biochemistry: '99% des Calciums sind als Hydroxylapatit im Skelett gespeichert. Das ionisierte Calcium (Ca2+) im Zytosol steuert Muskelkontraktionen, Neurotransmitterausschüttung an Synapsen und Enzymaktivierungen.',
-    plantBasedRelevance: 'Mit 2 Tabletten Warnke Calciumcitrat (600 mg) und Watson Male Essentials (120 mg) erreichst du 720 mg (72% des D-A-CH Tagesbedarfs). Organisches Calciumcitrat besitzt eine magensäureunabhängige, herausragende Resorption.',
+    plantBasedRelevance: 'Mit 2 Tabletten Warnke Calciumcitrat (600 mg) und Watson Male Essentials (120 mg) erreichst du 720 mg (72% des DGE / D-A-CH Tagesbedarfs von 1.000 mg). Organisches Calciumcitrat besitzt eine magensäureunabhängige, herausragende Resorption.',
     intakeAdvice: 'Über den Tag verteilen (z.B. 1 Tablette mittags, 1 Tablette abends zu den Mahlzeiten) und im Verbund mit Vitamin D3 & K2 für optimalen Knocheneinbau.',
     safetyAndUL: 'EFSA Upper Limit: 2.500 mg/Tag. Mit 720 mg liegst du im perfekten physiologischen Wohlfühlbereich.',
     scientificReference: 'EFSA Journal 2015;13(5):4101 | D-A-CH Referenzwerte 2020'
@@ -204,7 +204,7 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Magnesium ist zwingend an ATP gebunden (Mg-ATP-Komplex) und ermöglicht jede zelluläre Energieübertragung. Es wirkt als natürlicher NMDA-Rezeptor-Blocker im Gehirn beruhigend auf das Nervensystem und ist Kofaktor für alle Vitamin-D-aktivierenden Enzyme.',
     plantBasedRelevance: 'Die organische Chelat-Form Magnesiumbisglycinat besitzt eine exzellente Bioverfügbarkeit, passiert die Darmwand über Aminosäure-Transporter und schont die Verdauung (keine laxative Wirkung wie Magnesiumoxid).',
     intakeAdvice: 'Optimal abends vor dem Schlafen einnehmen (unterstützt parasympathische Aktivität und Schlafqualität).',
-    safetyAndUL: 'BfR empfiehlt 250 mg aus isolierten Nahrungsergänzungsmitteln; bei hoch bioverfügbarem Bisglycinat sind 400 mg für aktive Erwachsene hervorragend verträglich.',
+    safetyAndUL: 'BfR empfiehlt 250 mg aus isolierten Nahrungsergänzungsmitteln; bei hoch bioverfügbarem Bisglycinat sind 400 mg (114% DGE) für aktive Erwachsene hervorragend verträglich.',
     scientificReference: 'EFSA Journal 2015;13(7):4186 | Magnesium Research Journal'
   },
   'eisen': {
@@ -217,8 +217,8 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Eisen ist essenzieller Bestandteil von Eisen-Schwefel-Clustern in den Komplexen I, II und III der mitochondrialen Atmungskette und des Häm-Rings zur Sauerstoffbindung in Erythrozyten.',
     plantBasedRelevance: 'Nicht-Fleischesser nehmen nur 3-wertiges Nicht-Häm-Eisen auf. Eisenbisglycinat ist cheliert, wird 3- bis 4-mal besser resorbiert als anorganische Eisensalze und verursacht keine Magen-Darm-Irritationen.',
     intakeAdvice: 'Gleichzeitige Zufuhr von Vitamin C maximiert die Aufnahme. Kaffee und schwarzer Tee sollten im Abstand von 1-2 Stunden getrunken werden.',
-    safetyAndUL: 'EFSA empfiehlt Zurückhaltung bei unreflektierter Hochdosis-Eisengabe bei Männern (kein monatlicher Blutverlust). 6.0 mg ist die perfekte physiologische Sicherheitsdosis.',
-    scientificReference: 'EFSA Journal 2015;13(10):4254 | Blood Journal'
+    safetyAndUL: 'EFSA hat keinen numerischen Upper Limit für Eisen festgelegt (Bewertung über Verträglichkeit). Der US IOM Grenzwert liegt bei 45 mg/Tag. 6.0 mg Eisenbisglycinat (60% DGE für Männer) ist die ideale physiologische Sicherheitsdosis ohne Überladungsrisiko.',
+    scientificReference: 'EFSA Journal 2015;13(10):4254 | US IOM Iron Safety | Blood Journal'
   },
   'zink': {
     id: 'zink',
@@ -230,7 +230,7 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Zink stabilisiert die Tertiärstruktur von Zinkfinger-Transkriptionsfaktoren, ist Bestandteil der Superoxiddismutase (SOD1, Radikalschutz) und hemmt die Aromatase, was den Erhalt physiologischer Testosteronspiegel unterstützt.',
     plantBasedRelevance: 'Pflanzliche Ernährung enthält Phytate (in Getreide/Hülsenfrüchten), die Zink im Darm unlöslich binden. Cheliertes Zinkbisglycinat umgeht diese Phytat-Blockade weitgehend.',
     intakeAdvice: 'Nicht auf komplett nüchternen Magen einnehmen. Kupfer im Multinährstoff (0.5 mg) hält das Zink/Kupfer-Gleichgewicht intakt.',
-    safetyAndUL: 'EFSA Tolerable Upper Limit: 25 mg/Tag. Mit 10 mg (100% D-A-CH) exakt auf den männlichen Tagesbedarf abgestimmt.',
+    safetyAndUL: 'EFSA Tolerable Upper Limit: 25 mg/Tag. Mit 10 mg (71% DGE / D-A-CH für Männer) exakt auf eine sichere tägliche Zinkbasis abgestimmt.',
     scientificReference: 'EFSA Journal 2014;12(10):3844 | D-A-CH Referenzwerte'
   },
   'jod': {
@@ -243,7 +243,7 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Jodid wird in den Thyreozyten über den Natrium-Jodid-Symporter (NIS) aufgenommen und durch Thyreoperoxidase (TPO) an Tyrosinreste im Thyreoglobulin gebunden, um T3 und T4 zu synthetisieren.',
     plantBasedRelevance: 'Ohne den Konsum von Meeresfisch oder jodiertem Speisesalz ist Mitteleuropa ein klassisches Jodmangelgebiet. Pflanzliche Böden sind jodarm. 150 µg sichert die euthyreote Schilddrüsenfunktion optimal ab.',
     intakeAdvice: 'Wirkt eng mit Selen zusammen (Selen wird für Dejodasen zur T4->T3 Aktivierung benötigt).',
-    safetyAndUL: 'EFSA Upper Limit: 600 µg/Tag. 150 µg entspricht exakt 100% der D-A-CH Empfehlung.',
+    safetyAndUL: 'EFSA Upper Limit: 600 µg/Tag. 150 µg entspricht 75% der DGE / D-A-CH Empfehlung für Erwachsene (200 µg) und ist absolut sicher.',
     scientificReference: 'EFSA Journal 2014;12(7):3760 | D-A-CH Referenzwerte'
   },
   'selen': {
@@ -256,7 +256,7 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Selenocystein im katalytischen Zentrum der Glutathionperoxidase neutralisiert toxisches Wasserstoffperoxid und Lipidhydroperoxide. Iodthyronin-Dejodinasen aktivieren das Schilddrüsenhormon T4 in die stoffwechselaktive T3-Form.',
     plantBasedRelevance: 'Mitteleuropäische Böden sind eiszeitbedingt extrem selenarm, weshalb heimisches pflanzliches Getreide und Gemüse kaum Selen enthalten. Selenmethionin gleicht dieses Defizit verlässlich aus.',
     intakeAdvice: 'Organisches Selenmethionin wird mit hoher Quote in den Proteinpool inkorporiert.',
-    safetyAndUL: 'EFSA Upper Limit: 255 µg/Tag. Mit 70 µg (100% D-A-CH) im optimalen Bereich.',
+    safetyAndUL: 'EFSA Upper Limit: 255 µg/Tag. Mit 70 µg (100% DGE / D-A-CH) im optimalen Bereich.',
     scientificReference: 'EFSA Journal 2023;21(1):7704 | D-A-CH Referenzwerte'
   },
   'kupfer': {
@@ -269,7 +269,7 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Kupfer ermöglicht über Ceruloplasmin die Bindung von Eisen an Transferrin und ist Bestandteil von Komplex IV der Atmungskette sowie der Superoxiddismutase (Cu/Zn-SOD).',
     plantBasedRelevance: 'Hohe Zinkgaben können die Kupferaufnahme hemmen (über intestinale Metallothionein-Induktion). Die Zufuhr von 0.5 mg Kupferbisglycinat sichert das physiologische 10:1 Zink-Kupfer-Verhältnis.',
     intakeAdvice: 'Organisches Bisglycinat verhindert Resorptionskonflikte.',
-    safetyAndUL: 'EFSA Upper Limit: 5.0 mg/Tag. 0.5 mg ist absolut sicher.',
+    safetyAndUL: 'EFSA Upper Limit: 5.0 mg/Tag. 0.5 mg (50% DGE) ist absolut sicher.',
     scientificReference: 'EFSA Journal 2015;13(4):4089 | D-A-CH Referenzwerte'
   },
   'mangan': {
@@ -282,8 +282,8 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Aktiviert Enzyme zur Proteoglykan- und Chondroitinsulfat-Synthese im Gelenkknorpel und bildet das Herzstück der mitochondrialen Mangan-Superoxiddismutase (Mn-SOD) zum Schutz vor Sauerstoffradikalen.',
     plantBasedRelevance: 'Unterstützt zusammen mit Glycin, Hyaluronsäure und Vitamin C die Gelenk- und Sehnenregeneration.',
     intakeAdvice: 'Zu einer Mahlzeit einnehmen.',
-    safetyAndUL: 'EFSA Upper Limit: 11 mg/Tag. 1.0 mg (50% D-A-CH) liefert eine sanfte Basisabsicherung.',
-    scientificReference: 'EFSA Journal 2013;11(5):3419 | D-A-CH Referenzwerte'
+    safetyAndUL: 'EFSA hat mangels ausreichender Dosis-Wirkungs-Daten keinen numerischen UL festgelegt. Der etablierte US IOM Grenzwert liegt bei 11 mg/Tag. 1.0 mg (50% DGE / D-A-CH) liefert eine sichere Basisabsicherung.',
+    scientificReference: 'EFSA Journal 2013;11(5):3419 | US IOM DRI Manganese | D-A-CH Referenzwerte'
   },
   'chrom': {
     id: 'chrom',
@@ -295,8 +295,8 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Das Peptid Chromodulin bindet an die zytosolische Tyrosinkinase-Domäne des aktivierten Insulinrezeptors und vervielfacht dessen Signalübertragung, was die GLUT-4-Translokation zur Glukoseaufnahme in Muskelzellen fördert.',
     plantBasedRelevance: 'Chrompicolinat weist die höchste Bioverfügbarkeit aller Chromverbindungen auf und unterstützt den Kohlenhydratstoffwechsel bei pflanzlicher Ernährung.',
     intakeAdvice: 'Zu einer Mahlzeit einnehmen.',
-    safetyAndUL: 'EFSA Upper Limit: 250 µg/Tag. 20 µg (67% D-A-CH) ist ideal dosiert.',
-    scientificReference: 'EFSA Journal 2014;12(10):3845 | Diabetes Care Journal'
+    safetyAndUL: 'EFSA hat keinen numerischen UL für trivalentes Chrom aus Nahrung/NEM festgelegt (TDI: 300 µg/kg KG). Internationale Orientierungs- und Sicherheitswerte (WHO / BfR / UK EVM) liegen bei 250 µg/Tag. 20 µg (67% DGE / D-A-CH) ist optimal und absolut sicher.',
+    scientificReference: 'EFSA Journal 2014;12(10):3845 | WHO / BfR Referenzwerte | Diabetes Care Journal'
   },
   'molybdaen': {
     id: 'molybdaen',
@@ -308,7 +308,7 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Molybdän ist Bestandteil des Molybdän-Kofaktors (Moco), der in der Sulfitoxidase toxisches Sulfit in Sulfat überführt und in der Xanthinoxidase den Purinabbau reguliert.',
     plantBasedRelevance: 'Sichert die Entgiftung schwefelhaltiger Stoffwechselprodukte bei proteinreicher Kost ab.',
     intakeAdvice: 'Wasserlöslich, zu jeder Tageszeit.',
-    safetyAndUL: 'EFSA Upper Limit: 600 µg/Tag. 25 µg (50% D-A-CH) ist völlig unbedenklich.',
+    safetyAndUL: 'EFSA Upper Limit: 600 µg/Tag. 25 µg (50% DGE / D-A-CH) ist völlig unbedenklich.',
     scientificReference: 'EFSA Journal 2013;11(10):3420 | D-A-CH Referenzwerte'
   },
   'bor': {
@@ -384,20 +384,20 @@ export const NUTRIENT_DETAILS = {
     id: 'cholin',
     name: 'Cholin',
     scientificName: 'Cholinbitartrat (450 mg reines Cholin)',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
+    categoryName: 'Omega-3 & Vitalstoffe',
     badge: '🧠 Acetylcholin & Leber-Fettstoffwechsel',
     summary: 'Vorstufe des Gedächtnis-Neurotransmitters Acetylcholin und Phosphatidylcholin für Leber und Zellmembranen.',
     biochemistry: 'Cholin wird für die Synthese von Acetylcholin (Fokus, Lernen, neuromuskuläre Übertragung) und Phosphatidylcholin (Hauptphospholipid aller Membranen) benötigt. Über Betain dient es zudem als Methylgruppendonor zur Senkung von Homocystein.',
     plantBasedRelevance: 'Die reichhaltigsten Cholinquellen sind Eigelb und Rinderleber. Pflanzliche Lebensmittel liefern deutlich geringere Konzentrationen. 450 mg deckt die EFSA-Zufuhrempfehlung (400 mg) für Erwachsene optimal ab.',
     intakeAdvice: 'Morgens oder mittags zu einer Mahlzeit einnehmen.',
-    safetyAndUL: 'EFSA Adequate Intake: 400 mg/Tag; US IOM Upper Limit: 3.500 mg/Tag. 450 mg ist die perfekte Zieldosis.',
-    scientificReference: 'EFSA Journal 2016;14(8):4484 | Nutrients Journal'
+    safetyAndUL: 'EFSA Adequate Intake (AI): 400 mg/Tag. Der US IOM Tolerable Upper Intake Level liegt bei 3.500 mg/Tag. Mit 450 mg (113% EFSA AI) erreichst du die perfekte Zieldosis bei maximalem Sicherheitsabstand.',
+    scientificReference: 'EFSA Journal 2016;14(8):4484 | US IOM Choline Dietary Reference Intakes | Nutrients Journal'
   },
   'polyphenols': {
     id: 'polyphenols',
     name: 'Oliven-Polyphenole',
     scientificName: 'Hydroxytyrosol & Oleuropein (2.9 mg in BalanceOil+)',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
+    categoryName: 'Omega-3 & Vitalstoffe',
     badge: '🌿 LDL-Lipidschutz & Gefäßgesundheit',
     summary: 'Hochpotente Phenolverbindungen aus vorzeitig geerntetem Olivenöl – schützen Blutfette vor oxidativem Stress.',
     biochemistry: 'Hydroxytyrosol bindet an LDL-Partikel und verhindert deren Oxidation zu oxLDL (Schlüsselfaktor in der Entstehung atherosklerotischer Plaques). Zudem aktiviert es den Nrf2-Signalweg zur Hochregulation körpereigener Schutzenzyme.',
@@ -416,8 +416,8 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Acetyl-L-Carnitin liefert Acetylgruppen für die Synthese des zentralen Neurotransmitters Acetylcholin und schleust langkettige Fettsäuren über die Carnitin-Palmitoyl-Transferase (CPT-1) in die Mitochondrienmatrix zur Beta-Oxidation (ATP-Generierung).',
     plantBasedRelevance: '95% des Carnitins stammen in der Standardernährung aus rotem Fleisch. Für Nicht-Fleischesser liefert 1 Kapsel GEN ALCAR täglich 500 mg hoch bioverfügbares Carnitin (bei Bedarf flexibel auf 2 Kapseln = 1.000 mg oder bis zur vollen Tagesdosis von 6 Kapseln = 3.000 mg steigerbar).',
     intakeAdvice: 'Morgens vor dem Frühstück oder ca. 30–45 Minuten vor dem Training mit Wasser einnehmen.',
-    safetyAndUL: 'EFSA Tolerable Upper Limit: 2.000–3.000 mg/Tag. Die Zufuhr ist physiologisch sicher und flexibel dosierbar.',
-    scientificReference: 'American Journal of Clinical Nutrition | Neurochemical Research | EFSA Journal'
+    safetyAndUL: 'Für L-Carnitin existiert kein gesetzlicher EFSA Upper Limit. Das in Humanstudien und toxikologischen Reviews etablierte Observed Safe Level (OSL nach Hathcock & Shao / CRN) liegt bei 2.000–3.000 mg/Tag. 500 mg ALCAR ist physiologisch sicher und flexibel dosierbar.',
+    scientificReference: 'Regulatory Toxicology and Pharmacology (Hathcock & Shao) | American Journal of Clinical Nutrition'
   },
   'taurine': {
     id: 'taurine',
@@ -429,8 +429,8 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'Taurin moduliert zelluläre Calciumströme im Herzmuskel, bindet an GABA-A-Rezeptoren im Gehirn, konjugiert Gallensäuren (Taurocholsäure zur Fettverdauung) und schützt Mitochondrien vor oxidativem Stress.',
     plantBasedRelevance: 'Taurin kommt in pflanzlichen Lebensmitteln nicht vor (Gehalt = 0 mg). Vegetarier und Veganer weisen signifikant niedrigere Plasma- und Urin-Taurinspiegel auf. Aktuelle Studien (Science 2023) identifizieren Taurin als Schlüsselfaktor für gesunde Langlebigkeit.',
     intakeAdvice: '500 bis 1.500 mg täglich, ideal morgens oder tagsüber.',
-    safetyAndUL: 'EFSA stuft Dosen bis zu 3.000 mg (3 g)/Tag als lebenslang absolut sicher ein.',
-    scientificReference: 'Science 2023;380(6649):eabn9257 | EFSA Journal 2012'
+    safetyAndUL: 'EFSA bestätigte in Sicherheitsgutachten einen No-Observed-Adverse-Effect-Level (NOAEL) von 1.000 mg/kg KG/Tag; eine Zufuhr von bis zu 3.000 mg (3 g)/Tag gilt als wissenschaftlich absolut sicher.',
+    scientificReference: 'EFSA Journal 2009;935:1-31 | Science 2023;380(6649):eabn9257'
   },
   'carnosine': {
     id: 'carnosine',
@@ -455,8 +455,8 @@ export const NUTRIENT_DETAILS = {
     biochemistry: 'CoQ10 transferiert Elektronen zur ATP-Synthase und treibt so die zelluläre Energieproduktion in Herz, Muskeln und Gehirn an. Es recycelt oxidiertes Vitamin E und schützt mitochondriale Membranen direkt vor freien Radikalen.',
     plantBasedRelevance: 'Die Hauptnahrungsquellen sind tierische Innereien (Herz, Leber) und fetter Fisch. Durch die 200 mg veganes Fermentations-Q10 schließt du diese Versorgungslücke mit einer klinisch hochwirksamen Dosis.',
     intakeAdvice: 'Fettlöslich: Immer morgens zum Frühstück mit Fettquelle oder zum Omega-3 BalanceOil+ einnehmen.',
-    safetyAndUL: 'EFSA bewertet 100–300 mg täglich als völlig unbedenklich. Mit 200 mg liegt deine Zufuhr im optimalen therapeutischen Bereich.',
-    scientificReference: 'BioFactors Journal 2018 | Journal of Clinical Biochemistry and Nutrition | Circulation'
+    safetyAndUL: 'Für CoQ10 existiert kein gesetzlicher EFSA Upper Limit. Das wissenschaftlich etablierte Observed Safe Level (OSL nach Hathcock & Shao) liegt bei 300 mg/Tag. Mit 200 mg liegt deine Zufuhr im optimalen, klinisch bestens erforschten Bereich.',
+    scientificReference: 'Regulatory Toxicology and Pharmacology 2006;45(3):282-288 (Hathcock & Shao CoQ10 Safety) | BioFactors Journal'
   },
   'nac': {
     id: 'nac',
@@ -483,19 +483,6 @@ export const NUTRIENT_DETAILS = {
     intakeAdvice: 'Fettlöslich: Zu einer Mahlzeit mit Fett oder direkt zusammen mit Zinzino BalanceOil+ einnehmen.',
     safetyAndUL: 'EFSA bewertet bis zu 8–12 mg natürliches Algen-Astaxanthin pro Tag für Erwachsene als sicher und exzellent verträglich.',
     scientificReference: 'EFSA Journal 2020;18(2):5993 | Marine Drugs Journal | Nutrients 2020'
-  },
-  'ala': {
-    id: 'ala',
-    name: 'Alpha-Liponsäure (R-ALA)',
-    scientificName: 'R-Alpha-Liponsäure (0 mg - Offen)',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
-    badge: '🔄 Universelles Antioxidans & Glukose',
-    summary: 'Wasser- und fettlösliches Universal-Antioxidans – recycelt Vitamin C, E und Glutathion; verbessert die Insulinsensitivität.',
-    biochemistry: 'Dihydroliponsäure (DHLA) regeneriert verbrauchtes Vitamin C, Vitamin E, CoQ10 und Glutathion. Sie ist Kofaktor der Pyruvat-Dehydrogenase in den Mitochondrien und fördert die Translokation von Glukosetransportern (GLUT-4) in Muskelzellen.',
-    plantBasedRelevance: 'Nahrungsquellen sind fast ausschließlich tierische Innereien (Herz, Leber, Niere). R-ALA ist die natürliche, biologisch aktive Enantiomer-Form.',
-    intakeAdvice: '200-300 mg täglich, am besten 30 Minuten vor einer Mahlzeit auf nüchternen Magen.',
-    safetyAndUL: 'Hohes Sicherheitsprofil; in der Diabetologie seit Jahrzehnten erfolgreich und sicher eingesetzt.',
-    scientificReference: 'Free Radical Biology and Medicine | Biomolecules 2019'
   },
   'prolin': {
     id: 'prolin',

@@ -996,21 +996,6 @@ export const NUTRIENTS_SUMMARY = [
     ]
   },
   {
-    id: 'ala',
-    category: 'special',
-    categoryName: 'Omega-3 & Vitalstoffe',
-    name: 'Alpha-Liponsäure (R-ALA)',
-    extra: 'R-Alpha-Liponsäure (natürliche R-Form)',
-    amount: '0 mg',
-    rawAmount: 0,
-    unit: 'mg',
-    ref: '200 mg (Antioxidativer Bedarf)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
-  },
-  {
     id: 'ps',
     category: 'special',
     categoryName: 'Omega-3 & Vitalstoffe',

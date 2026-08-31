@@ -181,7 +181,7 @@ export const NUTRIENT_DEFINITIONS = {
     unit: 'mg',
     nrv: 80,
     dach: 110,
-    ul: 2000, // EFSA / US IOM
+    ul: 2000, // US IOM Upper Limit (EFSA hat keinen numerischen UL festgelegt)
     optimalRange: [80, 500],
     description: 'Antioxidans, Kollagensynthese, Immunsystem, verbessert die Eisenaufnahme im Darm.',
     tip: 'Ideal zusammen mit Eisen eintragen.',
@@ -237,7 +237,7 @@ export const NUTRIENT_DEFINITIONS = {
     unit: 'mg',
     nrv: 14,
     dach: 10, // Männer (Frauen 15-16 mg)
-    ul: 45, // EFSA
+    ul: 45, // US IOM Upper Limit (EFSA hat keinen numerischen UL festgelegt)
     optimalRange: [6, 15],
     description: 'Sauerstofftransport im Blut (Hämoglobin), Energiestoffwechsel und kognitive Funktion.',
     tip: 'Eisenaufnahme wird durch Vitamin C gesteigert. Kaffee, schwarzer Tee und Calcium hemmen die Aufnahme.',
@@ -249,7 +249,7 @@ export const NUTRIENT_DEFINITIONS = {
     category: 'trace_elements',
     unit: 'mg',
     nrv: 10,
-    dach: 14, // Männer
+    dach: 14, // Männer (DGE)
     ul: 25, // EFSA Tolerable Upper Limit
     optimalRange: [10, 25],
     description: 'Essenziell für Testosteronstoffwechsel, Immunsystem, Proteinsynthese, Zellteilung und Wundheilung.',
@@ -262,7 +262,7 @@ export const NUTRIENT_DEFINITIONS = {
     category: 'trace_elements',
     unit: 'µg',
     nrv: 150,
-    dach: 200,
+    dach: 200, // DGE / D-A-CH
     ul: 600, // EFSA
     optimalRange: [100, 200],
     description: 'Zentral für Schilddrüsenhormone (T3, T4), Energiestoffwechsel und kognitive Funktion.',
@@ -275,7 +275,7 @@ export const NUTRIENT_DEFINITIONS = {
     category: 'trace_elements',
     unit: 'µg',
     nrv: 55,
-    dach: 70,
+    dach: 70, // DGE
     ul: 255, // EFSA 2023 Update
     optimalRange: [50, 100],
     description: 'Bestandteil antioxidativer Enzyme (Glutathionperoxidase), wichtig für Schilddrüse, Spermienbildung und Immunsystem.',
@@ -289,7 +289,7 @@ export const NUTRIENT_DEFINITIONS = {
     unit: 'mg',
     nrv: 1.0,
     dach: 1.0,
-    ul: 5.0, // EFSA
+    ul: 5.0, // EFSA 2023 Update
     optimalRange: [0.5, 2.0],
     description: 'Eisenstoffwechsel, Bindegewebe, Nervensystem und Schutz vor oxidativem Stress.',
     tip: 'Hält die Balance zu Zink aufrecht (hohe Zinkdosen verdrängen Kupfer).',
@@ -302,7 +302,7 @@ export const NUTRIENT_DEFINITIONS = {
     unit: 'mg',
     nrv: 2.0,
     dach: 2.0,
-    ul: 11.0,
+    ul: 11.0, // US IOM Upper Limit (EFSA hat keinen numerischen UL festgelegt)
     optimalRange: [1.0, 3.0],
     description: 'Knorpel- und Bindegewebsaufbau, Enzymaktivierung.',
     tip: 'Meist schon durch pflanzliche Nahrung gut gedeckt.',
@@ -314,8 +314,8 @@ export const NUTRIENT_DEFINITIONS = {
     category: 'trace_elements',
     unit: 'µg',
     nrv: 40,
-    dach: 30,
-    ul: 250,
+    dach: 30, // DGE
+    ul: 250, // Orientierungs-Sicherheitswert (WHO / BfR / UK EVM; EFSA hat keinen numerischen UL für trivalentes Chrom)
     optimalRange: [20, 100],
     description: 'Stabilisiert Blutzuckerspiegel und unterstützt den Makronährstoff-Stoffwechsel.',
     tip: 'Chrompicolinat weist die höchste Bioverfügbarkeit auf.',
@@ -410,7 +410,7 @@ export const NUTRIENT_DEFINITIONS = {
     unit: 'mg',
     nrv: null,
     dach: null,
-    ul: 2000,
+    ul: 3000, // Observed Safe Level (OSL) aus Humanstudien / CRN (EFSA hat keinen Nährstoff-UL)
     optimalRange: [500, 2000],
     description: 'Transportiert langkettige Fettsäuren in die Mitochondrien zur Energiegewinnung.',
     tip: 'ALCAR passiert die Blut-Hirn-Schranke.',
@@ -423,7 +423,7 @@ export const NUTRIENT_DEFINITIONS = {
     unit: 'mg',
     nrv: null,
     dach: null,
-    ul: 3000,
+    ul: 3000, // EFSA NOAEL / Observed Safe Level (3.000 mg/Tag)
     optimalRange: [500, 2000],
     description: 'Unterstützt Osmoregulation, Gallensäurekonjugation, Herzfunktion und Muskelleistung.',
     tip: 'Gut kombinierbar mit Elektrolyten.',
@@ -462,7 +462,7 @@ export const NUTRIENT_DEFINITIONS = {
     unit: 'mg',
     nrv: null,
     dach: 400, // EFSA Adequate Intake (400 mg für Erwachsene)
-    ul: 3500, // EFSA / US IOM Upper Limit (3.500 mg)
+    ul: 3500, // US IOM Upper Limit (EFSA hat keinen separaten UL festgelegt)
     optimalRange: [400, 1000],
     description: 'Essenzieller Nährstoff für die Bildung des Neurotransmitters Acetylcholin (Gedächtnis & Fokus), den Fettstoffwechsel und den Erhalt einer normalen Leberfunktion.',
     tip: 'Ideal morgens oder mittags zu einer Mahlzeit einnehmen. Wirkt im Verbund mit B12 und Folat im Methylierungszyklus.',
@@ -503,7 +503,7 @@ export const NUTRIENT_DEFINITIONS = {
     unit: 'mg',
     nrv: null,
     dach: null,
-    ul: 300,
+    ul: 300, // Observed Safe Level (OSL nach Hathcock & Shao; kein gesetzlicher EFSA UL)
     optimalRange: [50, 200],
     description: 'Elektronentransporter in den Mitochondrien zur ATP-Gewinnung und starkes Antioxidans.',
     tip: 'Fettlöslich: Zu einer Mahlzeit einnehmen.',

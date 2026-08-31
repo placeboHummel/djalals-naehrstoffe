@@ -232,9 +232,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     nutContainer.innerHTML = filtered.map(item => {
       const barWidth = Math.min(item.percent, 100);
-      const isEfsa = item.ref.includes('EFSA');
+      let refLabel = 'DGE';
+      if (item.ref.includes('EFSA')) refLabel = 'EFSA';
+      else if (item.ref.includes('WHO')) refLabel = 'WHO';
+      else if (item.ref.includes('D-A-CH') || item.ref.includes('DGE')) refLabel = 'DGE';
+      else if (item.ref.includes('Studien') || item.ref.includes('Bedarf') || item.ref.includes('Sport')) refLabel = 'Bedarf';
+
       const isMissing = item.percent === 0;
-      const percentBadgeText = isMissing ? '0% • Fehlt im Stack' : `${item.percent}% ${isEfsa ? 'EFSA' : 'D-A-CH'}`;
+      const percentBadgeText = isMissing ? '0% • Fehlt im Stack' : `${item.percent}% ${refLabel}`;
       const pillClass = isMissing ? 'nut-percent-pill is-missing' : 'nut-percent-pill';
       const sourceClass = isMissing ? 'nut-source-tag is-missing' : 'nut-source-tag';
       const cardClass = isMissing ? 'nut-card is-missing' : 'nut-card';
@@ -322,8 +327,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!nutrient) return;
 
     const isMissing = nutrient.percent === 0;
-    const isEfsa = nutrient.ref.includes('EFSA');
-    const percentText = isMissing ? '0% (Nicht im Stack)' : `${nutrient.percent}% ${isEfsa ? 'EFSA' : 'D-A-CH'}`;
+    let refLabel = 'DGE';
+    if (nutrient.ref.includes('EFSA')) refLabel = 'EFSA';
+    else if (nutrient.ref.includes('WHO')) refLabel = 'WHO';
+    else if (nutrient.ref.includes('D-A-CH') || nutrient.ref.includes('DGE')) refLabel = 'DGE';
+    else if (nutrient.ref.includes('Studien') || nutrient.ref.includes('Bedarf') || nutrient.ref.includes('Sport')) refLabel = 'Bedarf';
+
+    const percentText = isMissing ? '0% (Nicht im Stack)' : `${nutrient.percent}% ${refLabel}`;
 
     modalContainer.innerHTML = `
       <div class="modal-backdrop" id="modal-backdrop">
@@ -390,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
               ` : `
                 <div class="modal-empty-source-box">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                  <span>Aktuell in keinem deiner 8 Supplements enthalten (0 mg Zufuhr).</span>
+                  <span>Aktuell in keinem deiner ${MY_SUPPLEMENTS.length} Supplements enthalten (0 mg Zufuhr).</span>
                 </div>
               `}
             </div>
@@ -499,7 +509,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Initial render
+  // Helper: Update filter pill counts & stats dynamically from data
+  function updateFilterCounts() {
+    const totalCount = NUTRIENTS_SUMMARY.length;
+    const vitCount = NUTRIENTS_SUMMARY.filter(n => n.category === 'vitamins').length;
+    const minCount = NUTRIENTS_SUMMARY.filter(n => n.category === 'minerals').length;
+    const aminoCount = NUTRIENTS_SUMMARY.filter(n => n.category === 'amino').length;
+    const specialCount = NUTRIENTS_SUMMARY.filter(n => n.category === 'special').length;
+    const missingCount = NUTRIENTS_SUMMARY.filter(n => n.rawAmount === 0 && n.percent === 0).length;
+
+    filterPills.forEach(pill => {
+      const cat = pill.dataset.cat;
+      if (cat === 'all') pill.textContent = `Alle (${totalCount})`;
+      else if (cat === 'vitamins') pill.textContent = `Vitamine (${vitCount})`;
+      else if (cat === 'minerals') pill.textContent = `Mineralstoffe (${minCount})`;
+      else if (cat === 'amino') pill.textContent = `Aminosäuren (${aminoCount})`;
+      else if (cat === 'special') pill.textContent = `Omega-3 & Vitalstoffe (${specialCount})`;
+      else if (cat === 'missing') pill.textContent = `Nicht abgedeckt (${missingCount})`;
+    });
+
+    const statNutNum = document.querySelectorAll('.stat-num')[1];
+    if (statNutNum) statNutNum.textContent = totalCount;
+  }
+
+  // Initial render & counts
+  updateFilterCounts();
   renderSupplements();
   renderNutrients();
 });
