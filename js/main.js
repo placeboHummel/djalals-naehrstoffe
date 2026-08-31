@@ -429,20 +429,30 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
             ` : ''}
 
-            <!-- Plain German Everyday Explanation Accordion (Zum Aufklappen) -->
+            <!-- Plain German Everyday Explanation Card -->
             ${details.plainGermanExplanation ? `
-              <details class="modal-plain-accordion">
-                <summary class="modal-plain-summary">
-                  <div class="modal-plain-summary-left">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-                    <span><strong>Praktischer Alltagsnutzen</strong> (Klicken zum Aufklappen)</span>
+              <div class="modal-plain-card">
+                <button type="button" class="modal-plain-toggle-btn" onclick="
+                  const target = document.getElementById('plain-drawer-${details.id}');
+                  const icon = this.querySelector('.modal-plain-chevron');
+                  const isOpen = target.classList.toggle('is-open');
+                  this.setAttribute('aria-expanded', isOpen);
+                  if (icon) icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+                " aria-expanded="false">
+                  <div class="modal-plain-toggle-left">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                    <span><strong>Praktischer Alltagsnutzen</strong></span>
+                    <span class="modal-plain-badge">Einfach erklärt</span>
                   </div>
-                  <svg class="summary-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </summary>
-                <div class="modal-plain-content">
+                  <div class="modal-plain-toggle-right">
+                    <span class="modal-plain-hint">Anzeigen</span>
+                    <svg class="modal-plain-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </div>
+                </button>
+                <div id="plain-drawer-${details.id}" class="modal-plain-drawer">
                   <p>${details.plainGermanExplanation}</p>
                 </div>
-              </details>
+              </div>
             ` : ''}
 
             <!-- Physiological Function Section -->
