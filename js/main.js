@@ -143,12 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Category filter
-      if (currentCategory !== 'all') {
-        if (currentCategory === 'vegan-critical') {
-          if (!item.isVeganCritical) return false;
-        } else if (item.category !== currentCategory) {
-          return false;
-        }
+      if (currentCategory !== 'all' && item.category !== currentCategory) {
+        return false;
       }
 
       // Search filter

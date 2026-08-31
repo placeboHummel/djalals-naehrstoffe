@@ -107,7 +107,6 @@ export const NUTRIENTS_SUMMARY = [
     percent: 958,
     source: 'VitaMoment + Watson + Zinzino',
     sourceBrand: 'VitaMoment + Watson + Zinzino',
-    isVeganCritical: true,
     supplementIds: ['watson-male-essentials', 'vitamoment-d3-k2', 'zinzino-balanceoil']
   },
   {
@@ -150,7 +149,6 @@ export const NUTRIENTS_SUMMARY = [
     percent: 1250,
     source: 'Watson Male Essentials',
     sourceBrand: 'Watson Nutrition',
-    isVeganCritical: true,
     supplementIds: ['watson-male-essentials']
   },
   {
@@ -307,7 +305,6 @@ export const NUTRIENTS_SUMMARY = [
     percent: 71,
     source: 'Watson Male Essentials',
     sourceBrand: 'Watson Nutrition',
-    isVeganCritical: true,
     supplementIds: ['watson-male-essentials']
   },
   {
@@ -322,7 +319,6 @@ export const NUTRIENTS_SUMMARY = [
     percent: 60,
     source: 'Watson Male Essentials',
     sourceBrand: 'Watson Nutrition',
-    isVeganCritical: true,
     supplementIds: ['watson-male-essentials']
   },
   {
@@ -337,7 +333,6 @@ export const NUTRIENTS_SUMMARY = [
     percent: 100,
     source: 'Watson Male Essentials',
     sourceBrand: 'Watson Nutrition',
-    isVeganCritical: true,
     supplementIds: ['watson-male-essentials']
   },
   {
@@ -352,7 +347,6 @@ export const NUTRIENTS_SUMMARY = [
     percent: 75,
     source: 'Watson Male Essentials',
     sourceBrand: 'Watson Nutrition',
-    isVeganCritical: true,
     supplementIds: ['watson-male-essentials']
   },
   {
@@ -426,12 +420,12 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
 
-  // --- SPEZIAL, OMEGA-3 & PERFORMANCE ---
+  // --- AMINOSÄUREN, OMEGA-3 & PERFORMANCE ---
   {
     category: 'special',
-    categoryName: 'Performance & Nicht-Fleischesser',
+    categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Omega-3 (EPA & DHA)',
-    extra: '1.069 mg EPA + 569 mg DHA + 427 mg DPA (Wildfischöl)',
+    extra: '1.069 mg EPA + 569 mg DHA + 427 mg DPA (Wildfischöl) – Herz, Gehirn & Sehkraft',
     amount: '2.065 mg',
     rawAmount: 2065,
     unit: 'mg',
@@ -439,14 +433,13 @@ export const NUTRIENTS_SUMMARY = [
     percent: 826,
     source: 'Zinzino BalanceOil+',
     sourceBrand: 'Zinzino',
-    isVeganCritical: true,
     supplementIds: ['zinzino-balanceoil']
   },
   {
     category: 'special',
-    categoryName: 'Performance & Nicht-Fleischesser',
+    categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Glycin (Kollagen-Aminosäure)',
-    extra: '4.000 mg Diamond® Markenrohstoff – Primäre Aminosäure für Kollagenaufbau',
+    extra: '4.000 mg Diamond® Markenrohstoff – Primäre Aminosäure für Kollagensynthese & Bindegewebe',
     amount: '4.000 mg',
     rawAmount: 4000,
     unit: 'mg',
@@ -454,14 +447,13 @@ export const NUTRIENTS_SUMMARY = [
     percent: 133,
     source: 'Watson CollaSyn®',
     sourceBrand: 'Watson Nutrition',
-    isVeganCritical: true,
     supplementIds: ['watson-collasyn']
   },
   {
     category: 'special',
-    categoryName: 'Performance & Nicht-Fleischesser',
+    categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Hyaluronsäure',
-    extra: '200 mg HAPLEX®Plus Natriumhyaluronat für Hautelastizität & Gelenke',
+    extra: '200 mg HAPLEX®Plus Natriumhyaluronat – Feuchtigkeitsbindung in Haut & Gelenkflüssigkeit',
     amount: '200 mg',
     rawAmount: 200,
     unit: 'mg',
@@ -473,9 +465,9 @@ export const NUTRIENTS_SUMMARY = [
   },
   {
     category: 'special',
-    categoryName: 'Performance & Nicht-Fleischesser',
+    categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Kreatin (Creapure®)',
-    extra: '100% mikronisiertes Creapure® (Alzchem Deutschland)',
+    extra: '100% mikronisiertes Creapure® (Alzchem) – ATP-Resynthese für Muskelkraft & Kognition',
     amount: '3.000 mg',
     rawAmount: 3000,
     unit: 'mg',
@@ -483,14 +475,13 @@ export const NUTRIENTS_SUMMARY = [
     percent: 100,
     source: 'Gloryfeel Creapure®',
     sourceBrand: 'Gloryfeel',
-    isVeganCritical: true,
     supplementIds: ['gloryfeel-creatine']
   },
   {
     category: 'special',
-    categoryName: 'Performance & Nicht-Fleischesser',
+    categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Cholin',
-    extra: 'Reines Cholin (aus 1.125 mg Cholinbitartrat)',
+    extra: 'Reines Cholin (aus 1.125 mg Cholinbitartrat) – Baustein für Phospholipide & Neurotransmitter',
     amount: '450 mg',
     rawAmount: 450,
     unit: 'mg',
@@ -498,14 +489,13 @@ export const NUTRIENTS_SUMMARY = [
     percent: 113,
     source: 'True Nature Cholin',
     sourceBrand: 'True Nature',
-    isVeganCritical: true,
     supplementIds: ['true-nature-cholin']
   },
   {
     category: 'special',
-    categoryName: 'Performance & Nicht-Fleischesser',
+    categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'L-Carnitin',
-    extra: 'Kommt fast nur in Fleisch vor – transportiert langkettige Fettsäuren in Mitochondrien',
+    extra: 'Bedingt essentielle Aminosäure-Verbindung – Transport langkettiger Fettsäuren in Mitochondrien',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
@@ -513,14 +503,13 @@ export const NUTRIENTS_SUMMARY = [
     percent: 0,
     source: 'Nicht im aktuellen Stack',
     sourceBrand: 'Offen / 0 mg',
-    isVeganCritical: true,
     supplementIds: []
   },
   {
     category: 'special',
-    categoryName: 'Performance & Nicht-Fleischesser',
+    categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Taurin',
-    extra: 'Nur in tierischem Gewebe – zelluläre Osmoregulation, Gallensäuren & Herzschutz',
+    extra: 'Bedingt essentielle Aminosulfonsäure – Zelluläre Osmoregulation, Gallensäuren & Kardiometabolismus',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
@@ -528,14 +517,13 @@ export const NUTRIENTS_SUMMARY = [
     percent: 0,
     source: 'Nicht im aktuellen Stack',
     sourceBrand: 'Offen / 0 mg',
-    isVeganCritical: true,
     supplementIds: []
   },
   {
     category: 'special',
-    categoryName: 'Performance & Nicht-Fleischesser',
+    categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Carnosin / Beta-Alanin',
-    extra: 'Carnosin kommt nur in Fleisch vor – intrazellulärer Säurepuffer im Muskel & Gehirn',
+    extra: 'Intrazelluläres Dipeptid (Beta-Alanyl-L-Histidin) – Protonenpuffer im Skelettmuskel & ZNS-Schutz',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
@@ -543,14 +531,13 @@ export const NUTRIENTS_SUMMARY = [
     percent: 0,
     source: 'Nicht im aktuellen Stack',
     sourceBrand: 'Offen / 0 mg',
-    isVeganCritical: true,
     supplementIds: []
   },
   {
     category: 'special',
-    categoryName: 'Performance & Nicht-Fleischesser',
+    categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Oliven-Polyphenole',
-    extra: 'Aus vorzeitig geerntetem nativem Olivenöl extra (Antioxidans)',
+    extra: 'Aus vorzeitig geerntetem nativem Olivenöl extra – Schutz der Blutfette vor oxidativem Stress',
     amount: '2.9 mg',
     rawAmount: 2.9,
     unit: 'mg',
