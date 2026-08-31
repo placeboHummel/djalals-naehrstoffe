@@ -405,6 +405,30 @@ document.addEventListener('DOMContentLoaded', () => {
               `}
             </div>
 
+            <!-- Benefits & Everyday Help Section -->
+            ${details.simpleBenefitDesc || (details.benefitPoints && details.benefitPoints.length > 0) ? `
+              <div class="modal-section modal-sec-benefits">
+                <div class="modal-sec-heading modal-sec-benefits-heading">
+                  <div class="modal-sec-benefits-title">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <strong>Wirkungsprofil & Evidenzbasierter Nutzen</strong>
+                  </div>
+                  <span class="modal-sec-benefits-badge">Wissenschaftlich differenziert</span>
+                </div>
+                ${details.simpleBenefitDesc ? `<p class="modal-benefits-desc">${details.simpleBenefitDesc}</p>` : ''}
+                ${details.benefitPoints && details.benefitPoints.length > 0 ? `
+                  <ul class="modal-benefits-list">
+                    ${details.benefitPoints.map(point => `
+                      <li>
+                        <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>${point}</span>
+                      </li>
+                    `).join('')}
+                  </ul>
+                ` : ''}
+              </div>
+            ` : ''}
+
             <!-- Physiological Function Section -->
             <div class="modal-section">
               <h3 class="modal-sec-heading">

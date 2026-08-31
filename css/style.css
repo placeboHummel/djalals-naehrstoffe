@@ -1109,6 +1109,86 @@ body.modal-open {
   color: #166534;
 }
 
+/* Benefits & Evidenz Section in Modal */
+.modal-sec-benefits {
+  background: linear-gradient(135deg, #f0fdf4 0%, #f7fee7 50%, #ecfdf5 100%);
+  border: 1px solid #a7f3d0;
+  padding: 16px 18px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 4px rgba(16, 185, 129, 0.07);
+  gap: 12px;
+}
+
+.modal-sec-benefits-heading {
+  color: #065f46;
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modal-sec-benefits-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-sec-benefits-title svg {
+  color: #059669;
+}
+
+.modal-sec-benefits-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.15);
+  color: #047857;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  letter-spacing: 0.02em;
+}
+
+.modal-benefits-desc {
+  font-size: 0.89rem;
+  color: #064e3b;
+  line-height: 1.6;
+  font-weight: 450;
+}
+
+.modal-benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 0.86rem;
+  color: #065f46;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(167, 243, 208, 0.7);
+}
+
+.modal-benefits-list li .check-icon {
+  color: #059669;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.modal-benefits-list li strong {
+  color: #064e3b;
+  font-weight: 700;
+}
+
 .modal-text {
   font-size: 0.88rem;
   color: var(--text-secondary);
