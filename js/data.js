@@ -140,10 +140,10 @@ export const MY_SUPPLEMENTS = [
     name: 'Acetyl-L-Carnitin (ALCAR)',
     shortName: 'GEN ALCAR',
     brand: 'German Elite Nutrition',
-    dosage: '1 Kapsel täglich',
+    dosage: '1 Kapsel täglich (500 mg)',
     timing: 'Morgens vor dem Frühstück / Training',
     icon: '⚡',
-    badge: '750 mg Acetyl-L-Carnitin',
+    badge: '500 mg ALCAR',
     image: 'assets/images/gen-acetyl-l-carnitin.png'
   }
 ];
@@ -798,16 +798,16 @@ export const NUTRIENTS_SUMMARY = [
     category: 'amino',
     categoryName: 'Aminosäuren & Protein',
     name: 'Acetyl-L-Carnitin (ALCAR)',
-    extra: 'Hoch bioverfügbares ALCAR – Fettsäuretransport & ZNS',
-    amount: '750 mg',
-    rawAmount: 750,
+    extra: '500 mg pro Kapsel (3.000 mg pro 6 Kapseln Tagesdosis)',
+    amount: '500 mg',
+    rawAmount: 500,
     unit: 'mg',
     ref: '500 mg (Bedarfsempfehlung)',
-    percent: 150,
+    percent: 100,
     sourceBrand: 'GEN Nutrition',
     supplementIds: ['gen-acetyl-l-carnitin'],
     sources: [
-      { supplementId: 'gen-acetyl-l-carnitin', amount: '750 mg ALCAR', note: '1 Kapsel täglich' }
+      { supplementId: 'gen-acetyl-l-carnitin', amount: '500 mg ALCAR', note: '1 Kapsel täglich (3.000 mg / 6 Kapseln)' }
     ]
   },
   {

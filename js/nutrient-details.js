@@ -409,14 +409,14 @@ export const NUTRIENT_DETAILS = {
   'carnitine': {
     id: 'carnitine',
     name: 'Acetyl-L-Carnitin (ALCAR)',
-    scientificName: 'Acetyl-L-Carnitin (750 mg aus GEN)',
+    scientificName: 'Acetyl-L-Carnitin (500 mg aus GEN / 3.000 mg pro 6 Kapseln)',
     categoryName: 'Aminosäuren & Protein',
     badge: '🔥 Mitochondriale Fettverbrennung & ZNS',
     summary: 'Bedingt essentielle Aminosäurenverbindung in acetylierter Form – überwindet die Blut-Hirn-Schranke und transportiert Fettsäuren in die Mitochondrien.',
     biochemistry: 'Acetyl-L-Carnitin liefert Acetylgruppen für die Synthese des zentralen Neurotransmitters Acetylcholin und schleust langkettige Fettsäuren über die Carnitin-Palmitoyl-Transferase (CPT-1) in die Mitochondrienmatrix zur Beta-Oxidation (ATP-Generierung).',
-    plantBasedRelevance: '95% des Carnitins stammen in der Standardernährung aus rotem Fleisch. Für Nicht-Fleischesser schließt die tägliche Zufuhr von 750 mg ALCAR diese Lücke vollständig und optimiert sowohl geistigen Fokus als auch zelluläre Fettverbrennung.',
-    intakeAdvice: 'Morgens vor dem Frühstück oder ca. 30–45 Minuten vor dem Training einnehmen.',
-    safetyAndUL: 'EFSA Tolerable Upper Limit: 2.000 mg/Tag. Mit 750 mg ALCAR liegst du im idealen physiologischen Wirkungsfenster.',
+    plantBasedRelevance: '95% des Carnitins stammen in der Standardernährung aus rotem Fleisch. Für Nicht-Fleischesser liefert 1 Kapsel GEN ALCAR täglich 500 mg hoch bioverfügbares Carnitin (bei Bedarf flexibel auf 2 Kapseln = 1.000 mg oder bis zur vollen Tagesdosis von 6 Kapseln = 3.000 mg steigerbar).',
+    intakeAdvice: 'Morgens vor dem Frühstück oder ca. 30–45 Minuten vor dem Training mit Wasser einnehmen.',
+    safetyAndUL: 'EFSA Tolerable Upper Limit: 2.000–3.000 mg/Tag. Die Zufuhr ist physiologisch sicher und flexibel dosierbar.',
     scientificReference: 'American Journal of Clinical Nutrition | Neurochemical Research | EFSA Journal'
   },
   'taurine': {
