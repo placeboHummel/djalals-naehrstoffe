@@ -1,5 +1,5 @@
-import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=2.0.0';
-import { NUTRIENT_DETAILS } from './nutrient-details.js?v=2.0.0';
+import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=2.2.0';
+import { NUTRIENT_DETAILS } from './nutrient-details.js?v=2.2.0';
 
 document.addEventListener('DOMContentLoaded', () => {
   const suppContainer = document.getElementById('supplements-list');
@@ -187,9 +187,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (currentSearch) {
         const q = currentSearch.toLowerCase();
         const matchName = item.name.toLowerCase().includes(q);
-        const matchExtra = item.extra.toLowerCase().includes(q);
-        const matchSource = item.source.toLowerCase().includes(q);
-        if (!matchName && !matchExtra && !matchSource) return false;
+        const matchExtra = (item.extra || '').toLowerCase().includes(q);
+        const matchSources = (item.sources || []).some(s => {
+          const supp = MY_SUPPLEMENTS.find(x => x.id === s.supplementId);
+          return (supp?.name || '').toLowerCase().includes(q) || (supp?.brand || '').toLowerCase().includes(q);
+        });
+        if (!matchName && !matchExtra && !matchSources) return false;
       }
 
       return true;
@@ -232,7 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const isMissing = item.percent === 0;
       const percentBadgeText = isMissing ? '0% • Fehlt im Stack' : `${item.percent}% ${isEfsa ? 'EFSA' : 'D-A-CH'}`;
       const pillClass = isMissing ? 'nut-percent-pill is-missing' : 'nut-percent-pill';
-      const sourceClass = isMissing ? 'nut-source-tag is-missing' : 'nut-source-tag';
       const cardClass = isMissing ? 'nut-card is-missing' : 'nut-card';
 
       return `
@@ -252,7 +254,6 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
               <span class="nut-extra">${item.extra}</span>
             </div>
-            <span class="${sourceClass}">${item.sourceBrand || item.source}</span>
           </div>
 
           <div class="nut-amount-row">
@@ -308,9 +309,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const isEfsa = nutrient.ref.includes('EFSA');
     const percentText = isMissing ? '0% (Nicht im Stack)' : `${nutrient.percent}% ${isEfsa ? 'EFSA' : 'D-A-CH'}`;
 
-    // Get sources in current stack
-    const stackSources = MY_SUPPLEMENTS.filter(s => nutrient.supplementIds && nutrient.supplementIds.includes(s.id));
-
     modalContainer.innerHTML = `
       <div class="modal-backdrop" id="modal-backdrop">
         <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-nutrient-title">
@@ -352,24 +350,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                 Quellen in deiner täglichen Routine
               </h3>
-              ${stackSources.length > 0 ? `
+              ${nutrient.sources && nutrient.sources.length > 0 ? `
                 <div class="modal-sources-grid">
-                  ${stackSources.map(s => `
-                    <div class="modal-source-item">
-                      <div class="modal-source-img">
-                        <img src="${s.image}" alt="${s.name}">
+                  ${nutrient.sources.map(s => {
+                    const supp = MY_SUPPLEMENTS.find(x => x.id === s.supplementId);
+                    if (!supp) return '';
+                    return `
+                      <div class="modal-source-item">
+                        <div class="modal-source-img">
+                          <img src="${supp.image}" alt="${supp.name}">
+                        </div>
+                        <div class="modal-source-info">
+                          <div class="modal-source-head">
+                            <strong>${supp.name}</strong>
+                            <span class="modal-source-amount">+ ${s.amount}</span>
+                          </div>
+                          <span class="modal-source-brand">${supp.brand} &bull; ${s.note || supp.dosage}</span>
+                        </div>
                       </div>
-                      <div class="modal-source-info">
-                        <strong>${s.name}</strong>
-                        <span>${s.brand} • ${s.dosage}</span>
-                      </div>
-                    </div>
-                  `).join('')}
+                    `;
+                  }).join('')}
                 </div>
               ` : `
                 <div class="modal-empty-source-box">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                  <span>Aktuell in keinem deiner Supplements enthalten (0 mg Zufuhr).</span>
+                  <span>Aktuell in keinem deiner 8 Supplements enthalten (0 mg Zufuhr).</span>
                 </div>
               `}
             </div>

@@ -92,45 +92,52 @@ export const NUTRIENTS_SUMMARY = [
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin D3',
-    extra: '5.000 IE VitaMoment + 2.000 IE Watson + 667 IE Zinzino (~191,7 µg Cholecalciferol)',
+    extra: 'Cholecalciferol',
     amount: '7.667 IE',
     rawAmount: 7667,
     unit: 'IE',
     ref: '800 IE (D-A-CH)',
     percent: 958,
-    source: 'VitaMoment + Watson + Zinzino',
-    sourceBrand: 'VitaMoment + Watson + Zinzino',
-    supplementIds: ['watson-male-essentials', 'vitamoment-d3-k2', 'zinzino-balanceoil']
+    supplementIds: ['watson-male-essentials', 'vitamoment-d3-k2', 'zinzino-balanceoil'],
+    sources: [
+      { supplementId: 'vitamoment-d3-k2', amount: '5.000 IE', note: '1 Kapsel täglich' },
+      { supplementId: 'watson-male-essentials', amount: '2.000 IE', note: '1 Kapsel täglich' },
+      { supplementId: 'zinzino-balanceoil', amount: '667 IE', note: '10 ml flüssig' }
+    ]
   },
   {
     id: 'vit-k2',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin K2',
-    extra: '200 µg VitaMoment + 70 µg Watson (MK-7 all-trans)',
+    extra: 'Menachinon-7 (MK-7 all-trans)',
     amount: '270 µg',
     rawAmount: 270,
     unit: 'µg',
     ref: '70 µg (D-A-CH)',
     percent: 386,
-    source: 'VitaMoment + Watson',
-    sourceBrand: 'VitaMoment + Watson',
-    supplementIds: ['watson-male-essentials', 'vitamoment-d3-k2']
+    supplementIds: ['watson-male-essentials', 'vitamoment-d3-k2'],
+    sources: [
+      { supplementId: 'vitamoment-d3-k2', amount: '200 µg', note: 'MK-7 all-trans (1 Kapsel)' },
+      { supplementId: 'watson-male-essentials', amount: '70 µg', note: 'MK-7 all-trans (1 Kapsel)' }
+    ]
   },
   {
     id: 'vit-c',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin C',
-    extra: '580 mg (500 mg VitaMoment + 80 mg Watson CollaSyn)',
+    extra: 'L-Ascorbinsäure & Calciumascorbat',
     amount: '580 mg',
     rawAmount: 580,
     unit: 'mg',
     ref: '110 mg (D-A-CH)',
     percent: 527,
-    source: 'VitaMoment + Watson CollaSyn',
-    sourceBrand: 'VitaMoment + Watson',
-    supplementIds: ['vitamoment-vitamin-c', 'watson-collasyn']
+    supplementIds: ['vitamoment-vitamin-c', 'watson-collasyn'],
+    sources: [
+      { supplementId: 'vitamoment-vitamin-c', amount: '500 mg', note: 'Gepuffertes Vitamin C (1 Kapsel)' },
+      { supplementId: 'watson-collasyn', amount: '80 mg', note: 'Calcium-L-Ascorbat (1 Stick)' }
+    ]
   },
   {
     id: 'vit-b12',
@@ -143,9 +150,10 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '4.0 µg (D-A-CH)',
     percent: 1250,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '50 µg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'vit-a',
@@ -158,39 +166,42 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '850 µg (D-A-CH)',
     percent: 71,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '600 µg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'vit-e',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin E',
-    extra: 'D-alpha-Tocopherol',
+    extra: 'D-Alpha-Tocopherol',
     amount: '14 mg',
     rawAmount: 14,
     unit: 'mg',
     ref: '14 mg (D-A-CH)',
     percent: 100,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '14 mg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'vit-b1',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin B1',
-    extra: 'Thiamin HCL',
+    extra: 'Thiaminhydrochlorid',
     amount: '1.6 mg',
     rawAmount: 1.6,
     unit: 'mg',
     ref: '1.2 mg (D-A-CH)',
     percent: 133,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '1.6 mg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'vit-b2',
@@ -203,24 +214,26 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '1.4 mg (D-A-CH)',
     percent: 114,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '1.6 mg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'vit-b3',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin B3 (Niacin)',
-    extra: 'Nicotinamid',
+    extra: 'Nicotinamid (Flush-frei)',
     amount: '15 mg',
     rawAmount: 15,
     unit: 'mg',
     ref: '16 mg (D-A-CH)',
     percent: 94,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '15 mg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'vit-b5',
@@ -233,24 +246,26 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '6.0 mg (D-A-CH)',
     percent: 83,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '5.0 mg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'vit-b6',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin B6',
-    extra: 'Pyridoxal-5-Phosphat (aktiv)',
+    extra: 'Pyridoxal-5-Phosphat (P-5-P aktiv)',
     amount: '1.6 mg',
     rawAmount: 1.6,
     unit: 'mg',
     ref: '1.6 mg (D-A-CH)',
     percent: 100,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '1.6 mg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'vit-b7',
@@ -263,24 +278,26 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '40 µg (D-A-CH)',
     percent: 100,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '40 µg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'vit-b9',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin B9 (Folat)',
-    extra: 'Quatrefolic® (5-MTHF)',
+    extra: 'Quatrefolic® (5-MTHF aktiv)',
     amount: '200 µg',
     rawAmount: 200,
     unit: 'µg',
     ref: '300 µg (D-A-CH)',
     percent: 67,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '200 µg', note: '1 Kapsel täglich' }
+    ]
   },
 
   // --- MINERALSTOFFE & SPURENELEMENTE ---
@@ -295,9 +312,10 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '350 mg (D-A-CH)',
     percent: 114,
-    source: 'Sports & Health Magnesium',
-    sourceBrand: 'Sports & Health',
-    supplementIds: ['sports-health-magnesium']
+    supplementIds: ['sports-health-magnesium'],
+    sources: [
+      { supplementId: 'sports-health-magnesium', amount: '400 mg', note: '3 Kapseln täglich' }
+    ]
   },
   {
     id: 'zink',
@@ -310,9 +328,10 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '14 mg (D-A-CH)',
     percent: 71,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '10 mg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'eisen',
@@ -325,9 +344,10 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '10 mg (D-A-CH)',
     percent: 60,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '6.0 mg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'selen',
@@ -340,9 +360,10 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '70 µg (D-A-CH)',
     percent: 100,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '70 µg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'jod',
@@ -355,9 +376,10 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '200 µg (D-A-CH)',
     percent: 75,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '150 µg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'calcium',
@@ -370,9 +392,10 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '1.000 mg (D-A-CH)',
     percent: 12,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '120 mg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'kupfer',
@@ -385,9 +408,10 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '1.0 mg (D-A-CH)',
     percent: 50,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '0.5 mg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'mangan',
@@ -400,9 +424,10 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '2.0 mg (D-A-CH)',
     percent: 50,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '1.0 mg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'chrom',
@@ -415,9 +440,10 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '30 µg (D-A-CH)',
     percent: 67,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '20 µg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'molybdaen',
@@ -430,24 +456,24 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '50 µg (D-A-CH)',
     percent: 50,
-    source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials']
+    supplementIds: ['watson-male-essentials'],
+    sources: [
+      { supplementId: 'watson-male-essentials', amount: '25 µg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'bor',
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Bor',
-    extra: 'Essentieller Kofaktor für Steroidhormone (senkt SHBG für mehr freies Testosteron) & Knochenstoffwechsel',
+    extra: 'Natriumborat / Bor-Fruchtchelat',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
     ref: '3.0 mg (Hormon- & Knochenstoffwechsel)',
     percent: 0,
-    source: 'Nicht im aktuellen Stack',
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: []
+    supplementIds: [],
+    sources: []
   },
 
   // --- AMINOSÄUREN, OMEGA-3 & PERFORMANCE ---
@@ -456,224 +482,221 @@ export const NUTRIENTS_SUMMARY = [
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Omega-3 (EPA & DHA)',
-    extra: '1.069 mg EPA + 569 mg DHA + 427 mg DPA (Wildfischöl) – Herz, Gehirn & Sehkraft',
+    extra: '1.069 mg EPA + 569 mg DHA + 427 mg DPA',
     amount: '2.065 mg',
     rawAmount: 2065,
     unit: 'mg',
     ref: '250 mg (EFSA Mindestbedarf)',
     percent: 826,
-    source: 'Zinzino BalanceOil+',
-    sourceBrand: 'Zinzino',
-    supplementIds: ['zinzino-balanceoil']
+    supplementIds: ['zinzino-balanceoil'],
+    sources: [
+      { supplementId: 'zinzino-balanceoil', amount: '2.065 mg', note: 'Wildfischöl (10 ml flüssig)' }
+    ]
   },
   {
     id: 'glycin',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
-    name: 'Glycin (Kollagen-Aminosäure)',
-    extra: '4.000 mg Diamond® Markenrohstoff – Primäre Aminosäure für Kollagensynthese & Bindegewebe',
+    name: 'Glycin',
+    extra: 'Diamond® reines L-Glycin',
     amount: '4.000 mg',
     rawAmount: 4000,
     unit: 'mg',
     ref: '3.000 mg (Optimale Tagesdosis)',
     percent: 133,
-    source: 'Watson CollaSyn®',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-collasyn']
+    supplementIds: ['watson-collasyn'],
+    sources: [
+      { supplementId: 'watson-collasyn', amount: '4.000 mg', note: 'Kollagen-Aminosäure (1 Stick)' }
+    ]
   },
   {
     id: 'hyaluron',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Hyaluronsäure',
-    extra: '200 mg HAPLEX®Plus Natriumhyaluronat – Feuchtigkeitsbindung in Haut & Gelenkflüssigkeit',
+    extra: 'HAPLEX®Plus Natriumhyaluronat',
     amount: '200 mg',
     rawAmount: 200,
     unit: 'mg',
     ref: '100 mg (Studien-Referenzwert)',
     percent: 200,
-    source: 'Watson CollaSyn®',
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-collasyn']
+    supplementIds: ['watson-collasyn'],
+    sources: [
+      { supplementId: 'watson-collasyn', amount: '200 mg', note: '1 Stick täglich' }
+    ]
   },
   {
     id: 'creatine',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Kreatin (Creapure®)',
-    extra: '100% mikronisiertes Creapure® (Alzchem) – ATP-Resynthese für Muskelkraft & Kognition',
+    extra: '100% Creapure® (Alzchem)',
     amount: '3.000 mg',
     rawAmount: 3000,
     unit: 'mg',
     ref: '3.000 mg (EFSA Wirksamkeit)',
     percent: 100,
-    source: 'Gloryfeel Creapure®',
-    sourceBrand: 'Gloryfeel',
-    supplementIds: ['gloryfeel-creatine']
+    supplementIds: ['gloryfeel-creatine'],
+    sources: [
+      { supplementId: 'gloryfeel-creatine', amount: '3.000 mg', note: '1 Messlöffel täglich (3,4 g)' }
+    ]
   },
   {
     id: 'cholin',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Cholin',
-    extra: 'Reines Cholin (aus 1.125 mg Cholinbitartrat) – Baustein für Phospholipide & Neurotransmitter',
+    extra: 'Cholinbitartrat (reines Cholin)',
     amount: '450 mg',
     rawAmount: 450,
     unit: 'mg',
     ref: '400 mg (EFSA AI)',
     percent: 113,
-    source: 'True Nature Cholin',
-    sourceBrand: 'True Nature',
-    supplementIds: ['true-nature-cholin']
+    supplementIds: ['true-nature-cholin'],
+    sources: [
+      { supplementId: 'true-nature-cholin', amount: '450 mg', note: 'Aus 1.125 mg Cholinbitartrat (3 Kapseln)' }
+    ]
   },
   {
     id: 'polyphenols',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Oliven-Polyphenole',
-    extra: 'Aus vorzeitig geerntetem nativem Olivenöl extra – Schutz der Blutfette vor oxidativem Stress',
+    extra: 'Oleocanthal & Hydroxytyrosol',
     amount: '2.9 mg',
     rawAmount: 2.9,
     unit: 'mg',
     ref: '5.0 mg (EFSA Health Claim)',
     percent: 58,
-    source: 'Zinzino BalanceOil+',
-    sourceBrand: 'Zinzino',
-    supplementIds: ['zinzino-balanceoil']
+    supplementIds: ['zinzino-balanceoil'],
+    sources: [
+      { supplementId: 'zinzino-balanceoil', amount: '2.9 mg', note: 'Vorzeitig geerntetes Olivenöl (10 ml)' }
+    ]
   },
   {
     id: 'carnitine',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'L-Carnitin',
-    extra: '95% des körpereigenen Pools stammen aus Fleisch – transportiert Fettsäuren in Mitochondrien (Beta-Oxidation)',
+    extra: 'L-Carnitin-Tartrat / Acetyl-L-Carnitin',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
     ref: '500 mg (Bedarfsempfehlung)',
     percent: 0,
-    source: 'Nicht im aktuellen Stack',
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: []
+    supplementIds: [],
+    sources: []
   },
   {
     id: 'taurine',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Taurin',
-    extra: 'Kommt nur in tierischem Gewebe vor – zelluläre Osmoregulation, Gallensäuren-Konjugation & Kardiometabolismus',
+    extra: '2-Aminoethansulfonsäure',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
     ref: '500 mg (Bedarfsempfehlung)',
     percent: 0,
-    source: 'Nicht im aktuellen Stack',
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: []
+    supplementIds: [],
+    sources: []
   },
   {
     id: 'carnosine',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Carnosin / Beta-Alanin',
-    extra: 'Ausschließlich in tierischem Muskelgewebe – intrazellulärer Protonenpuffer gegen Übersäuerung & ZNS-Schutz',
+    extra: 'L-Carnosin / Beta-Alanin',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
     ref: '1.500 mg (Bedarfsempfehlung)',
     percent: 0,
-    source: 'Nicht im aktuellen Stack',
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: []
+    supplementIds: [],
+    sources: []
   },
   {
     id: 'coq10',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Coenzym Q10 (Ubiquinol)',
-    extra: 'In Nahrung vor allem in Fleisch & Fisch – unentbehrlich für Elektronentransport der ATP-Synthese & Lipidschutz',
+    extra: 'Ubiquinol (aktive reduzierte Form)',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
     ref: '100 mg (Mitochondrien-Bedarf)',
     percent: 0,
-    source: 'Nicht im aktuellen Stack',
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: []
+    supplementIds: [],
+    sources: []
   },
   {
     id: 'nac',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'N-Acetylcystein (NAC)',
-    extra: 'Schwefelhaltiger Baustein für Glutathion – körpereigenes Master-Antioxidans & Phase-II-Entgiftung der Leber',
+    extra: 'N-Acetyl-L-Cystein',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
     ref: '600 mg (Glutathion-Synthese)',
     percent: 0,
-    source: 'Nicht im aktuellen Stack',
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: []
+    supplementIds: [],
+    sources: []
   },
   {
     id: 'astaxanthin',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Astaxanthin',
-    extra: 'In Nahrung nur in Wildlachs & Krustentieren – stärkstes Carotinoid für Augengesundheit, Gehirn & UV-Zellschutz',
+    extra: 'AstaPure® (Haematococcus pluvialis)',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
     ref: '4.0 mg (Studien-Tagesdosis)',
     percent: 0,
-    source: 'Nicht im aktuellen Stack',
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: []
+    supplementIds: [],
+    sources: []
   },
   {
     id: 'ala',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Alpha-Liponsäure (R-ALA)',
-    extra: 'Konzentriert in tierischen Organen – universelles Antioxidans, recycelt Vitamin C & Glutathion, fördert Insulinsensitivität',
+    extra: 'R-Alpha-Liponsäure (natürliche R-Form)',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
     ref: '200 mg (Antioxidativer Bedarf)',
     percent: 0,
-    source: 'Nicht im aktuellen Stack',
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: []
+    supplementIds: [],
+    sources: []
   },
   {
     id: 'prolin',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'L-Prolin (Kollagen-Baustein)',
-    extra: 'Primäre Aminosäure neben Glycin zur Bildung der stabilen Kollagen-Dreifachhelix im Knorpel & Bindegewebe',
+    extra: 'L-Prolin (Kollagen-Aminosäure)',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
     ref: '500 mg (Kollagen-Synthese)',
     percent: 0,
-    source: 'Nicht im aktuellen Stack',
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: []
+    supplementIds: [],
+    sources: []
   },
   {
     id: 'ps',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Phosphatidylserin',
-    extra: 'Wichtiges Phospholipid für neuronale Zellmembranen, Signalübertragung im Gehirn & Cortisol-Regulation bei Stress',
+    extra: 'Phosphatidylserin (Sonnenblumenlecithin)',
     amount: '0 mg',
     rawAmount: 0,
     unit: 'mg',
     ref: '100 mg (Kognition & Membranen)',
     percent: 0,
-    source: 'Nicht im aktuellen Stack',
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: []
+    supplementIds: [],
+    sources: []
   }
 ];
