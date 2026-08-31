@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="missing-info-text">
             <strong>Aktuell noch nicht im Stack abgedeckt (${filteredCount} Stoffe):</strong>
-            <p>Diese Stoffe (L-Carnitin, Taurin, Carnosin) werden aktuell nicht über deine tägliche Einnahme abgedeckt.</p>
+            <p>Carninährstoffe, mitochondriale Antioxidantien & Vitalstoffe, die bei fleisch- und fischfreier Ernährung nicht oder nur in geringen Spuren über die Nahrung aufgenommen werden.</p>
           </div>
         </div>
       `;
