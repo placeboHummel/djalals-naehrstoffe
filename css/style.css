@@ -47,6 +47,11 @@
   --font-heading: 'Plus Jakarta Sans', var(--font-body);
 }
 
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -740,6 +745,55 @@ body {
   text-align: right;
 }
 
+/* Swipe Hint & Section Badges */
+.swipe-hint {
+  display: none;
+}
+
+.section-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Floating Back to Top Button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  background: var(--text-main);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease, background-color 0.15s ease;
+}
+
+.back-to-top-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+  background: var(--emerald-main);
+  transform: translateY(-2px);
+}
+
+.back-to-top-btn:active {
+  transform: scale(0.92);
+}
+
 /* Empty State */
 .empty-msg {
   grid-column: 1 / -1;
@@ -773,38 +827,230 @@ body {
 /* ==========================================================================
    RESPONSIVE QUERIES
    ========================================================================== */
+
+/* Tablet & Medium Screens (<= 1024px) */
 @media (max-width: 1024px) {
+  body {
+    padding: 24px 20px 48px 20px;
+  }
+
   .app-layout {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
+
   .sidebar-col {
     position: static;
     max-height: none;
     overflow-y: visible;
     padding-right: 0;
     padding-bottom: 0;
+    gap: 16px;
+  }
+
+  .nutrients-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
 
-@media (max-width: 640px) {
+/* Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
   body {
-    padding: 20px 14px 48px 14px;
+    padding: 16px 14px max(24px, env(safe-area-inset-bottom)) 14px;
   }
+
   .title {
-    font-size: 1.7rem;
+    font-size: 1.65rem;
+    line-height: 1.15;
   }
-  .nutrients-grid {
-    grid-template-columns: 1fr;
+
+  .subtitle {
+    font-size: 0.86rem;
   }
-  .search-box {
-    min-width: 100%;
-  }
+
+  /* Stats Card on Mobile: Crisp 3-Column Bar */
   .stats-card {
-    flex-wrap: wrap;
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    justify-content: space-around;
+  }
+
+  .stat-item {
+    align-items: center;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-size: 1.15rem;
+  }
+
+  .stat-lbl {
+    font-size: 0.68rem;
+  }
+
+  .stat-divider {
+    display: block;
+    height: 22px;
+  }
+
+  /* Supplements Section: Touch-Swipeable Horizontal Strip */
+  .supplements-section {
+    gap: 10px;
+  }
+
+  .swipe-hint {
+    display: inline-flex;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--emerald-main);
+    background: var(--emerald-bg);
+    border: 1px solid var(--emerald-border);
+    padding: 2px 8px;
+    border-radius: var(--radius-pill);
+    animation: pulseSubtle 2.5s infinite ease-in-out;
+  }
+
+  .supplements-stack {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0 -14px;
+    padding: 4px 14px 12px 14px;
     gap: 12px;
   }
-  .stat-divider {
+
+  .supplements-stack::-webkit-scrollbar {
     display: none;
   }
+
+  .supp-card {
+    flex: 0 0 280px;
+    min-width: 280px;
+    max-width: 280px;
+    scroll-snap-align: start;
+    padding: 14px;
+  }
+
+  .supp-card:hover {
+    transform: none; /* No hover jump on touch */
+  }
+
+  .supp-card:active {
+    transform: scale(0.98);
+  }
+
+  .supp-img-box {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .supp-title {
+    font-size: 0.98rem;
+  }
+
+  /* Main Column & Search */
+  .main-content-col {
+    gap: 16px;
+  }
+
+  .main-header-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .search-box {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .search-box input {
+    font-size: 16px; /* Prevents auto zoom on iOS Safari */
+    padding: 11px 16px 11px 38px;
+  }
+
+  /* Full-bleed Touch Scrollable Filter Pills */
+  .filter-pills-wrap {
+    margin: 0 -14px;
+    padding: 2px 14px 6px 14px;
+    -webkit-overflow-scrolling: touch;
+    gap: 6px;
+  }
+
+  .filter-pill {
+    padding: 7px 14px;
+    font-size: 0.8rem;
+  }
+
+  .filter-pill:active {
+    transform: scale(0.97);
+  }
+
+  /* Active Filter Banner on Mobile */
+  .active-filter-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px 14px;
+  }
+
+  .clear-filter-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 8px 14px;
+  }
+
+  /* Single Column Nutrient Cards */
+  .nutrients-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .nut-card {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .nut-amount-val {
+    font-size: 1.35rem;
+  }
+
+  .footer-note {
+    margin-top: 14px;
+    font-size: 0.78rem;
+  }
+
+  .back-to-top-btn {
+    bottom: max(16px, env(safe-area-inset-bottom));
+    right: 14px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Very Small Mobile Screens (<= 380px) */
+@media (max-width: 380px) {
+  .supp-card {
+    flex: 0 0 250px;
+    min-width: 250px;
+    max-width: 250px;
+  }
+
+  .title {
+    font-size: 1.45rem;
+  }
+
+  .stat-num {
+    font-size: 1.05rem;
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
 }

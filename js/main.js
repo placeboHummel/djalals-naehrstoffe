@@ -1,4 +1,4 @@
-import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=1.7.0';
+import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=1.8.0';
 
 document.addEventListener('DOMContentLoaded', () => {
   const suppContainer = document.getElementById('supplements-list');
@@ -6,10 +6,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const activeFilterContainer = document.getElementById('active-filter-container');
   const searchInput = document.getElementById('search-input');
   const filterPills = document.querySelectorAll('.filter-pill');
+  const backToTopBtn = document.getElementById('back-to-top-btn');
 
   let selectedSupplementId = null;
   let currentCategory = 'all';
   let currentSearch = '';
+
+  // Back to top floating button listener
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 320) {
+        backToTopBtn.classList.add('is-visible');
+      } else {
+        backToTopBtn.classList.remove('is-visible');
+      }
+    }, { passive: true });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // 1. Render Supplements Cards
   function renderSupplements() {
