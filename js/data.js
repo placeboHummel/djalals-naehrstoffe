@@ -107,7 +107,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 958,
     source: 'VitaMoment + Watson + Zinzino',
     sourceBrand: 'VitaMoment + Watson + Zinzino',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: ['watson-male-essentials', 'vitamoment-d3-k2', 'zinzino-balanceoil']
   },
   {
     category: 'vitamins',
@@ -120,7 +121,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '70 µg (D-A-CH)',
     percent: 386,
     source: 'VitaMoment + Watson',
-    sourceBrand: 'VitaMoment + Watson'
+    sourceBrand: 'VitaMoment + Watson',
+    supplementIds: ['watson-male-essentials', 'vitamoment-d3-k2']
   },
   {
     category: 'vitamins',
@@ -133,7 +135,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '110 mg (D-A-CH)',
     percent: 527,
     source: 'VitaMoment + Watson CollaSyn',
-    sourceBrand: 'VitaMoment + Watson'
+    sourceBrand: 'VitaMoment + Watson',
+    supplementIds: ['vitamoment-vitamin-c', 'watson-collasyn']
   },
   {
     category: 'vitamins',
@@ -147,7 +150,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 1250,
     source: 'Watson Male Essentials',
     sourceBrand: 'Watson Nutrition',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'vitamins',
@@ -160,7 +164,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '850 µg (D-A-CH)',
     percent: 71,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'vitamins',
@@ -173,7 +178,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '14 mg (D-A-CH)',
     percent: 100,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'vitamins',
@@ -186,7 +192,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '1.2 mg (D-A-CH)',
     percent: 133,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'vitamins',
@@ -199,7 +206,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '1.4 mg (D-A-CH)',
     percent: 114,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'vitamins',
@@ -212,7 +220,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '16 mg (D-A-CH)',
     percent: 94,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'vitamins',
@@ -225,7 +234,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '6.0 mg (D-A-CH)',
     percent: 83,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'vitamins',
@@ -238,7 +248,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '1.6 mg (D-A-CH)',
     percent: 100,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'vitamins',
@@ -251,7 +262,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '40 µg (D-A-CH)',
     percent: 100,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'vitamins',
@@ -264,7 +276,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '300 µg (D-A-CH)',
     percent: 67,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
 
   // --- MINERALSTOFFE & SPURENELEMENTE ---
@@ -279,7 +292,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '350 mg (D-A-CH)',
     percent: 114,
     source: 'Sports & Health Magnesium',
-    sourceBrand: 'Sports & Health'
+    sourceBrand: 'Sports & Health',
+    supplementIds: ['sports-health-magnesium']
   },
   {
     category: 'minerals',
@@ -293,7 +307,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 71,
     source: 'Watson Male Essentials',
     sourceBrand: 'Watson Nutrition',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'minerals',
@@ -307,7 +322,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 60,
     source: 'Watson Male Essentials',
     sourceBrand: 'Watson Nutrition',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'minerals',
@@ -321,7 +337,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 100,
     source: 'Watson Male Essentials',
     sourceBrand: 'Watson Nutrition',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'minerals',
@@ -335,7 +352,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 75,
     source: 'Watson Male Essentials',
     sourceBrand: 'Watson Nutrition',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'minerals',
@@ -348,7 +366,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '1.000 mg (D-A-CH)',
     percent: 12,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'minerals',
@@ -361,7 +380,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '1.0 mg (D-A-CH)',
     percent: 50,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'minerals',
@@ -374,7 +394,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '2.0 mg (D-A-CH)',
     percent: 50,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'minerals',
@@ -387,7 +408,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '30 µg (D-A-CH)',
     percent: 67,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
   {
     category: 'minerals',
@@ -400,7 +422,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '50 µg (D-A-CH)',
     percent: 50,
     source: 'Watson Male Essentials',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-male-essentials']
   },
 
   // --- SPEZIAL, OMEGA-3 & PERFORMANCE ---
@@ -416,7 +439,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 826,
     source: 'Zinzino BalanceOil+',
     sourceBrand: 'Zinzino',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: ['zinzino-balanceoil']
   },
   {
     category: 'special',
@@ -430,7 +454,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 133,
     source: 'Watson CollaSyn®',
     sourceBrand: 'Watson Nutrition',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: ['watson-collasyn']
   },
   {
     category: 'special',
@@ -443,7 +468,8 @@ export const NUTRIENTS_SUMMARY = [
     ref: '100 mg (Studien-Referenzwert)',
     percent: 200,
     source: 'Watson CollaSyn®',
-    sourceBrand: 'Watson Nutrition'
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-collasyn']
   },
   {
     category: 'special',
@@ -457,7 +483,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 100,
     source: 'Gloryfeel Creapure®',
     sourceBrand: 'Gloryfeel',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: ['gloryfeel-creatine']
   },
   {
     category: 'special',
@@ -471,7 +498,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 113,
     source: 'True Nature Cholin',
     sourceBrand: 'True Nature',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: ['true-nature-cholin']
   },
   {
     category: 'special',
@@ -485,7 +513,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 0,
     source: 'Nicht im aktuellen Stack',
     sourceBrand: 'Offen / 0 mg',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: []
   },
   {
     category: 'special',
@@ -499,7 +528,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 0,
     source: 'Nicht im aktuellen Stack',
     sourceBrand: 'Offen / 0 mg',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: []
   },
   {
     category: 'special',
@@ -513,7 +543,8 @@ export const NUTRIENTS_SUMMARY = [
     percent: 0,
     source: 'Nicht im aktuellen Stack',
     sourceBrand: 'Offen / 0 mg',
-    isVeganCritical: true
+    isVeganCritical: true,
+    supplementIds: []
   },
   {
     category: 'special',
@@ -526,6 +557,7 @@ export const NUTRIENTS_SUMMARY = [
     ref: '5.0 mg (EFSA Health Claim)',
     percent: 58,
     source: 'Zinzino BalanceOil+',
-    sourceBrand: 'Zinzino'
+    sourceBrand: 'Zinzino',
+    supplementIds: ['zinzino-balanceoil']
   }
 ];
