@@ -101,6 +101,50 @@ export const MY_SUPPLEMENTS = [
     icon: '🍋',
     badge: '23 g Protein + 18 Aminosäuren',
     image: 'assets/images/vit4ever-yummy-whey.png'
+  },
+  {
+    id: 'vitabay-astaxanthin',
+    name: 'Astaxanthin 12 mg hochdosiert',
+    shortName: 'Vitabay',
+    brand: 'Vitabay',
+    dosage: '1 Softgel-Kapsel täglich',
+    timing: 'Morgens / Mittags zum Essen',
+    icon: '🔴',
+    badge: '12 mg AstaPure®',
+    image: 'assets/images/vitabay-astaxanthin.png'
+  },
+  {
+    id: 'q10-200mg',
+    name: 'Coenzym Q10 (200 mg)',
+    shortName: 'CoQ10 200mg',
+    brand: 'ProFuel / GEN',
+    dosage: '1 Kapsel täglich',
+    timing: 'Morgens zum Frühstück',
+    icon: '🔋',
+    badge: '200 mg Coenzym Q10',
+    image: 'assets/images/q10-200mg.png'
+  },
+  {
+    id: 'warnke-calciumcitrat',
+    name: 'Calciumcitrat (600 mg)',
+    shortName: 'Warnke',
+    brand: 'Warnke Vitalstoffe',
+    dosage: '2 Tabletten täglich (je 300 mg)',
+    timing: 'Mittags & Abends zu den Mahlzeiten',
+    icon: '🦴',
+    badge: '600 mg Calcium',
+    image: 'assets/images/warnke-calciumcitrat.png'
+  },
+  {
+    id: 'gen-acetyl-l-carnitin',
+    name: 'Acetyl-L-Carnitin (ALCAR)',
+    shortName: 'GEN ALCAR',
+    brand: 'German Elite Nutrition',
+    dosage: '1 Kapsel täglich',
+    timing: 'Morgens vor dem Frühstück / Training',
+    icon: '⚡',
+    badge: '750 mg Acetyl-L-Carnitin',
+    image: 'assets/images/gen-acetyl-l-carnitin.png'
   }
 ];
 
@@ -427,16 +471,17 @@ export const NUTRIENTS_SUMMARY = [
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Calcium',
-    extra: 'Calcium-Bisglycinat',
-    amount: '120 mg',
-    rawAmount: 120,
+    extra: '120 mg Watson + 600 mg Warnke Calciumcitrat',
+    amount: '720 mg',
+    rawAmount: 720,
     unit: 'mg',
     ref: '1.000 mg (D-A-CH)',
-    percent: 12,
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-male-essentials'],
+    percent: 72,
+    sourceBrand: 'Watson + Warnke',
+    supplementIds: ['watson-male-essentials', 'warnke-calciumcitrat'],
     sources: [
-      { supplementId: 'watson-male-essentials', amount: '120 mg', note: '1 Kapsel täglich' }
+      { supplementId: 'watson-male-essentials', amount: '120 mg', note: 'Calcium-Bisglycinat (1 Kapsel)' },
+      { supplementId: 'warnke-calciumcitrat', amount: '600 mg', note: 'Organisches Calciumcitrat (2 Tabletten)' }
     ]
   },
   {
@@ -524,7 +569,7 @@ export const NUTRIENTS_SUMMARY = [
   },
 
   // ==========================================
-  // 3. AMINOSÄUREN & PROTEIN (NEUE RUBRIK)
+  // 3. AMINOSÄUREN & PROTEIN
   // ==========================================
   {
     id: 'whey-protein',
@@ -752,16 +797,18 @@ export const NUTRIENTS_SUMMARY = [
     id: 'carnitine',
     category: 'amino',
     categoryName: 'Aminosäuren & Protein',
-    name: 'L-Carnitin',
-    extra: 'L-Carnitin-Tartrat / Acetyl-L-Carnitin',
-    amount: '0 mg',
-    rawAmount: 0,
+    name: 'Acetyl-L-Carnitin (ALCAR)',
+    extra: 'Hoch bioverfügbares ALCAR – Fettsäuretransport & ZNS',
+    amount: '750 mg',
+    rawAmount: 750,
     unit: 'mg',
     ref: '500 mg (Bedarfsempfehlung)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
+    percent: 150,
+    sourceBrand: 'GEN Nutrition',
+    supplementIds: ['gen-acetyl-l-carnitin'],
+    sources: [
+      { supplementId: 'gen-acetyl-l-carnitin', amount: '750 mg ALCAR', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'taurine',
@@ -918,31 +965,35 @@ export const NUTRIENTS_SUMMARY = [
     id: 'coq10',
     category: 'special',
     categoryName: 'Omega-3 & Vitalstoffe',
-    name: 'Coenzym Q10 (Ubiquinol)',
-    extra: 'Ubiquinol (aktive reduzierte Form)',
-    amount: '0 mg',
-    rawAmount: 0,
+    name: 'Coenzym Q10 (vegan)',
+    extra: '200 mg CoQ10 aus natürlicher Fermentation',
+    amount: '200 mg',
+    rawAmount: 200,
     unit: 'mg',
     ref: '100 mg (Mitochondrien-Bedarf)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
+    percent: 200,
+    sourceBrand: 'CoQ10 200mg',
+    supplementIds: ['q10-200mg'],
+    sources: [
+      { supplementId: 'q10-200mg', amount: '200 mg', note: '1 Kapsel täglich' }
+    ]
   },
   {
     id: 'astaxanthin',
     category: 'special',
     categoryName: 'Omega-3 & Vitalstoffe',
-    name: 'Astaxanthin',
-    extra: 'AstaPure® (Haematococcus pluvialis)',
-    amount: '0 mg',
-    rawAmount: 0,
+    name: 'Astaxanthin (AstaPure®)',
+    extra: '12 mg natürliches Astaxanthin (H. pluvialis)',
+    amount: '12 mg',
+    rawAmount: 12,
     unit: 'mg',
     ref: '4.0 mg (Studien-Tagesdosis)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
+    percent: 300,
+    sourceBrand: 'Vitabay',
+    supplementIds: ['vitabay-astaxanthin'],
+    sources: [
+      { supplementId: 'vitabay-astaxanthin', amount: '12 mg', note: '1 Softgel-Kapsel täglich' }
+    ]
   },
   {
     id: 'ala',
