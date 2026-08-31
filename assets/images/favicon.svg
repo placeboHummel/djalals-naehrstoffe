@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="capsuleLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <linearGradient id="capsuleAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#047857" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Background -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Inner subtle border -->
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.25" />
+
+  <!-- Tilted Pill / Capsule -->
+  <g transform="translate(32,32) rotate(-45) translate(-32,-32)" filter="url(#glow)">
+    <!-- Capsule Top Half (White) -->
+    <path d="M 23 21 C 16.92 21 12 25.92 12 32 C 12 38.08 16.92 43 23 43 L 32 43 L 32 21 Z" fill="url(#capsuleLight)" />
+    
+    <!-- Capsule Bottom Half (Emerald Vibrant) -->
+    <path d="M 32 21 L 41 21 C 47.08 21 52 25.92 52 32 C 52 38.08 47.08 43 41 43 L 32 43 Z" fill="url(#capsuleAccent)" />
+
+    <!-- Center Divider Line -->
+    <line x1="32" y1="21" x2="32" y2="43" stroke="#0f172a" stroke-opacity="0.12" stroke-width="1.5" />
+
+    <!-- Glass Reflection -->
+    <path d="M 19 26 Q 32 25 45 26" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.75" />
+  </g>
+
+  <!-- Vitality Sparkle Star in Top Right -->
+  <path d="M 48 12 Q 48 17 53 17 Q 48 17 48 22 Q 48 17 43 17 Q 48 17 48 12 Z" fill="#fef08a" />
+</svg>
