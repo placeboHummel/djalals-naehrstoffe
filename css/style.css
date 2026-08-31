@@ -1189,6 +1189,79 @@ body.modal-open {
   font-weight: 700;
 }
 
+/* Plain German Everyday Accordion (Aufklappbare Praxiswirkung) */
+.modal-plain-accordion {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all 0.2s ease;
+  margin-top: 4px;
+}
+
+.modal-plain-accordion[open] {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+}
+
+.modal-plain-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  cursor: pointer;
+  user-select: none;
+  background: #f8fafc;
+  list-style: none;
+  font-size: 0.88rem;
+  color: #334155;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+
+.modal-plain-summary::-webkit-details-marker {
+  display: none;
+}
+
+.modal-plain-summary:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.modal-plain-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-plain-summary-left svg {
+  color: #475569;
+}
+
+.summary-chevron {
+  color: #64748b;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.modal-plain-accordion[open] .summary-chevron {
+  transform: rotate(180deg);
+}
+
+.modal-plain-content {
+  padding: 12px 15px;
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+}
+
+.modal-plain-content p {
+  font-size: 0.88rem;
+  color: #334155;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 450;
+}
+
 .modal-text {
   font-size: 0.88rem;
   color: var(--text-secondary);

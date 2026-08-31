@@ -1,6 +1,7 @@
 /**
  * Wissenschaftliche Detail-Datenbank für alle 50 Nährstoffe
  * Fundierte biochemische Wirkmechanismen, evidenzbasierte Wirkprofile (EFSA-Claims, klinische RCTs, Hypothesen),
+ * aufklappbare Praxisnutzen-Erklärungen in verständlicher, seriöser Sprache,
  * D-A-CH / DGE / EFSA Referenzwerte, spezifische Einordnung für 0% Fleisch & 0% Fisch sowie Einnahme-Synergien.
  */
 
@@ -21,6 +22,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Immunsystem):</strong> Steuert die Differenzierung von regulatorischen T-Zellen und stärkt die Barrierefunktion respiratorischer und gastrointestinaler Epithelien.',
       '<strong>EFSA-bestätigt (Haut & Schleimhäute):</strong> Reguliert die Proliferation der Keratinozyten zur physiologischen Regeneration von Haut und Schleimhäuten.'
     ],
+    plainGermanExplanation: 'Vitamin A ist unverzichtbar für die Sehleistung bei Dämmerung sowie die Barrierefunktion von Haut und Schleimhäuten. Es unterstützt die Regeneration von Epithelgewebe im Atem- und Verdauungstrakt, wodurch das Eindringen von Krankheitserregern erschwert wird. Zudem steuert es die Zelldifferenzierung und stärkt die Immunabwehr.',
     biochemistry: 'Vitamin A dient als Retinal im Sehpigment Rhodopsin der Netzhaut für das Hell-Dunkel-Sehen. In Form von Retinsäure bindet es an nukleäre RAR/RXR-Rezeptoren und moduliert die Transkription von über 500 Genen, die Zellproliferation, Epithelregeneration und T-Zell-Differenzierung steuern.',
     plantBasedRelevance: 'Pflanzliche Nahrung liefert nur Provitamin A (Beta-Carotin), dessen enzymatische Spaltung durch BCMO1 genetisch stark variiert (bis zu 45% der Bevölkerung sind schlechte Konvertierer). Vorgeformtes Retinol im Stack sichert die zelluläre Versorgung unabhängig von genetischen Konversions-Engpässen direkt ab.',
     intakeAdvice: 'Fettlöslich: Immer zu einer Mahlzeit mit Fettquelle einnehmen. Zink ist als Kofaktor für das Transportprotein (Retinol-bindendes Protein, RBP) zwingend erforderlich.',
@@ -41,6 +43,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Muskelfunktion):</strong> Unterstützt Muskelkraft und Faserquerschnitt via genomischer und membranständiger VDR-Signalwege in Myozyten.',
       '<strong>Klinische Evidenz (Stimmung & Neuroprotektion):</strong> Assoziations- und Interventionsstudien belegen eine Korrelation zwischen suffizienten 25(OH)D-Spiegeln (>40–60 ng/ml) und reduzierten saisonalen depressiven Episoden sowie optimierter neurokognitiver Vitalität.'
     ],
+    plainGermanExplanation: 'Vitamin D3 steuert die Aufnahme von Calcium aus dem Darm und sichert die langfristige Stabilität der Knochendichte. Darüber hinaus beeinflusst es die Muskelkraft, unterstützt das Immunsystem bei der Abwehr von Infekten und trägt zur Minderung von saisonaler Abgeschlagenheit in den sonnenarmen Monaten bei.',
     biochemistry: 'Cholecalciferol wird in der Leber zu 25(OH)D und in den Nieren/Zellen zum aktiven Steroidhormon Calcitriol (1,25(OH)2D) hydroxyliert. Calcitriol bindet an den Vitamin-D-Rezeptor (VDR) in fast allen Geweben und reguliert über 1.000 Gene, u.a. antimikrobielle Peptide (Cathelicidin) und Calcium-Transportproteine.',
     plantBasedRelevance: 'Bei Verzicht auf fetten Seefisch (Lachs, Hering, Makrele) existiert in pflanzlichen Lebensmitteln praktisch keine nennenswerte Vitamin-D-Quelle. In mitteleuropäischen Breitengraden reicht die UV-B-Strahlung von Oktober bis April physikalisch nicht für eine Eigensynthese aus – Supplementierung ist obligatorisch.',
     intakeAdvice: 'Morgens oder mittags mit Fettquelle einnehmen. Zwingend synergistisch mit Vitamin K2 (Aktivierung von Osteocalcin & Matrix-Gla-Protein) und Magnesium (Kofaktor für die Hydroxylasen) kombinieren.',
@@ -60,6 +63,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Gefäß- & Membranintegrität:</strong> Verhindert die Lipidperoxidation in arteriellen Gefäßwänden und Erythrozytenmembranen.',
       '<strong>Biochemische Synergie mit Omega-3:</strong> Hohe Zufuhr mehrfach ungesättigter Fettsäuren (EPA/DHA) erhöht den physiologischen Vitamin-E-Bedarf; Tocopherol schützt das zugeführte Öl in-vivo vor Peroxidation.'
     ],
+    plainGermanExplanation: 'Vitamin E fungiert als primäres fettlösliches Antioxidans, das Zellmembranen und ungesättigte Fettsäuren vor oxidativen Schäden schützt. Bei Zufuhr von Omega-3-Fettsäuren bewahrt es diese vor vorzeitiger Oxidation im Blutkreislauf und unterstützt den Erhalt gesunder Gefäßinnenwände.',
     biochemistry: 'Alpha-Tocopherol fängt freie Radikale (Peroxylradikale) in Lipiddoppelschichten ab, bevor diese ungesättigte Fettsäuren in Membranen oxidieren können. Das dabei entstehende Tocopheroxyl-Radikal wird im zellulären Redoxnetzwerk primär durch Vitamin C wieder in seine aktive Form regeneriert.',
     plantBasedRelevance: 'Bei hoher Zufuhr mehrfach ungesättigter Fettsäuren (z.B. 2.065 mg Omega-3 EPA/DHA) steigt der physiologische Vitamin-E-Bedarf der Zellmembranen signifikant an. Das im Stack enthaltene Vitamin E schützt die Omega-3-Fettsäuren direkt vor Oxidation.',
     intakeAdvice: 'Zu einer Mahlzeit einnehmen. Wirkt im antioxidativen Netzwerk optimal zusammen mit Vitamin C, Selen und Coenzym Q10.',
@@ -79,6 +83,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Klinische Evidenz (Gefäßelastizität & MGP):</strong> Große Humanstudien (u.a. Rotterdam-Studie, Knapen et al. 2015) belegen, dass aktives carboxyliertes MGP die Calciumablagerung in arteriellen Gefäßwänden signifikant hemmt und die arterielle Elastizität erhält.',
       '<strong>Pharmakokinetische Exzellenz:</strong> Die all-trans MK-7 Form besitzt eine Plasma-Halbwertszeit von ca. 72 Stunden (im Vergleich zu wenigen Stunden bei K1) und gewährleistet eine stabile extrahepatische Gewebesättigung.'
     ],
+    plainGermanExplanation: 'Vitamin K2 aktiviert Proteine, die Calcium gezielt in die Knochenmatrix einbinden. Gleichzeitig hemmt es die Ablagerung von Calcium in den Gefäßwänden und schützt so vor arterieller Gefäßverkalkung.',
     biochemistry: 'K2 dient als Kofaktor der Gamma-Glutamylcarboxylase zur Carboxylierung von Osteocalcin (Knochenmineralisierung) und Matrix-Gla-Protein (MGP, stärkster endogener Inhibitor vaskulärer und Weichteilverkalkung). MK-7 besitzt im Vergleich zu K1 eine Halbwertszeit von über 72 Stunden im Blut.',
     plantBasedRelevance: 'Vitamin K2 kommt in relevanter Menge fast nur in tierischen Produkten (Geflügel, Eigelb, gereifter Käse) und japanischem Natto vor. Bei fleischfreier Ernährung und hoher Vitamin-D-Zufuhr ist mikrobiell fermentiertes MK-7 essenziell für die Gefäßgesundheit.',
     intakeAdvice: 'Fettlöslich: Immer zusammen mit Vitamin D3 und gesunden Fetten einnehmen. All-trans-Form garantiert höchste Bioverfügbarkeit.',
@@ -98,6 +103,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Nervensystem & Psyche):</strong> Gewährleistet die Reizleitung entlang der Axone und unterstützt die Synthese des Neurotransmitters Acetylcholin.',
       '<strong>EFSA-bestätigt (Herzfunktion):</strong> Sichert die kontinuierliche Energiebereitstellung des Myokards bei aerober Belastung.'
     ],
+    plainGermanExplanation: 'Vitamin B1 ist ein zentraler Kofaktor für den enzymatischen Abbau von Kohlenhydraten zur zellulären Energiegewinnung. Es gewährleistet die kontinuierliche Energieversorgung von Muskeln, Herz und Nervensystem.',
     biochemistry: 'Thiamindiphosphat (TDP/TPP) ist der unentbehrliche Kofaktor der Pyruvat-Dehydrogenase und Alpha-Ketoglutarat-Dehydrogenase im Citratzyklus sowie der Transketolase im Pentosephosphatweg (Synthese von NADPH und Ribose für DNA/RNA).',
     plantBasedRelevance: 'Obwohl in Vollkorn und Hülsenfrüchten vorhanden, hemmen pflanzliche Phytate und Gerbstoffe (Kaffee/Tee) die Bioverfügbarkeit. Die Zufuhr sichert die enzymatische Rate bei kohlenhydratreicher pflanzlicher Kost.',
     intakeAdvice: 'Wasserlöslich. Kann morgens oder zu jeder Mahlzeit eingenommen werden.',
@@ -118,6 +124,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Epithelien & Schleimhäute):</strong> Erhält intakte Hautstrukturen und beugt Cheilosis (Rhagaden an den Mundwinkeln) vor.',
       '<strong>Katalysator im B-Vitamin-Netzwerk:</strong> FAD ist zwingend nötig für die Aktivierung von Pyridoxin (B6) zu P-5-P und Folat (B9) zu aktiven Coenzymen.'
     ],
+    plainGermanExplanation: 'Vitamin B2 ist essenziell für die mitochondriale Energiegewinnung aus Fetten, Kohlenhydraten und Proteinen. Es unterstützt den Erhalt gesunder Schleimhäute, schützt die Augen vor Ermüdung und regeneriert körpereigene Antioxidantien.',
     biochemistry: 'Riboflavin bildet die prosthetischen Gruppen FMN (Komplex I) und FAD (Komplex II der mitochondrialen Atmungskette). Zudem ist FAD notwendig für die Glutathionreduktase (Regeneration von Glutathion) und die Aktivierung von Pyridoxin (B6) und Folsäure.',
     plantBasedRelevance: 'Milchprodukte und Fleisch sind in der westlichen Mischkost die primären Riboflavinquellen. Bei fleischfreier Ernährung ist eine Supplementierung ein bewährter Schutz vor subklinischen Defiziten. Urin verfärbt sich harmlos leuchtend gelb.',
     intakeAdvice: 'Wasserlöslich. Zu jeder Tageszeit einnehmbar.',
@@ -137,6 +144,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Haut & Schleimhäute):</strong> Unterstützt die epidermale Differenzierung und die Synthese von Sphingolipiden zur Barrierefunktion.',
       '<strong>Wissenschaftlicher Fokus (NAD+-Pool & DNA-Schutz):</strong> Sichert die Substratverfügbarkeit für PARP-1 zur genomischen Stabilität ohne gefäßerweiternden "Niacin-Flush".'
     ],
+    plainGermanExplanation: 'Vitamin B3 liefert die Grundlage für das Coenzym NAD+, welches für zelluläre Reparaturprozesse, DNA-Integrität und den Energiestoffwechsel benötigt wird. Es unterstützt die kognitive Leistungsfähigkeit und die epidermale Barrierefunktion der Haut.',
     biochemistry: 'Nicotinamid wird in den zellulären NAD+/NADP+-Pool überführt. NAD+ treibt Hunderte von Redoxreaktionen im Citratzyklus an und dient als Substrat für PARP-Enzyme (Reparatur von DNA-Strangbrüchen) und Sirtuine (epigenetische Langlebigkeitsfaktoren).',
     plantBasedRelevance: 'Die Eigensynthese aus der Aminosäure L-Tryptophan ist mit einem Umwandlungsverhältnis von 60:1 extrem ineffizient. Nicotinamid liefert bioaktives NAD+ ohne gefäßerweiternden "Niacin-Flush".',
     intakeAdvice: 'Als Nicotinamid hervorragend magenverträglich und zu jeder Mahlzeit einsetzbar.',
@@ -156,6 +164,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Steroidhormone & Vitamin D):</strong> Ermöglicht die de-novo Synthese von Nebennierenhormonen (Cortisol, Aldosteron), Sexualsteroiden und Vitamin D.',
       '<strong>EFSA-bestätigt (Energiestoffwechsel & Müdigkeit):</strong> Reduziert Erschöpfung durch Gewährleistung des mitochondrialen Acetyl-CoA-Umsatzes.'
     ],
+    plainGermanExplanation: 'Vitamin B5 ist der Baustein von Coenzym A, das für die Fettverbrennung, den Energiestoffwechsel und die Synthese von Steroidhormonen (wie Cortisol und Testosteron) sowie Neurotransmittern unverzichtbar ist.',
     biochemistry: 'Pantothensäure ist der funktionelle Kern von Coenzym A (CoA) und dem Acyl-Carrier-Protein (ACP). Acetyl-CoA ist die zentrale Drehscheibe des gesamten Intermediärstoffwechsels (Eintritt in den Citratzyklus, Synthese von Cholesterin, Neurotransmittern und Melatonin).',
     plantBasedRelevance: 'Unterstützt die zelluläre Energiegewinnung und die Nebennierenfunktion bei mentalem oder physischem Stress.',
     intakeAdvice: 'Wasserlöslich. Kann morgens oder tagsüber eingenommen werden.',
@@ -176,6 +185,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Proteinstoffwechsel & Immunsystem):</strong> Steuert den Umsatz von Aminosäuren für die muskuläre Proteinsynthese und Antikörperbildung.',
       '<strong>Bioaktiver Vorteil (P-5-P):</strong> Liefert die direkt wirksame Coenzymform ohne Notwendigkeit hepatischer Phosphorylierungsenzyme.'
     ],
+    plainGermanExplanation: 'Vitamin B6 ist unverzichtbar für den Proteinstoffwechsel und die Synthese zentraler Neurotransmitter wie Serotonin, Dopamin und GABA. Zudem unterstützt es den Abbau des gefäßschädigenden Stoffwechselzwischenprodukts Homocystein.',
     biochemistry: 'Pyridoxal-5-Phosphat (P-5-P) ist das aktive Coenzym für über 140 Enzyme. Es steuert Decarboxylierungen zur Bildung von Neurotransmittern (Serotonin, Dopamin, GABA) und die Cystathionin-Beta-Synthase zum enzymatischen Abbau des toxischen Homocysteins.',
     plantBasedRelevance: 'Pflanzliches B6 liegt oft als Pyridoxin-Glucosid vor, dessen Bioverfügbarkeit um bis zu 50% reduziert ist. Die direkte Gabe der aktiven Coenzymform P-5-P umgeht hepatische Aktivierungsschritte.',
     intakeAdvice: 'Aktivierte Form P-5-P ist direkt bioverfügbar. Mit 1.6 mg optimal dosiert.',
@@ -196,6 +206,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Nervensystem & Energiestoffwechsel):</strong> Sichert die neuronale Energiebereitstellung via intakter Gluconeogenese.',
       '<strong>Labordiagnostischer Hinweis:</strong> Physiologische Dosis (40 µg) vermeidet laboranalytische Interferenzen bei Streptavidin-Biotin-Immunoassays (z. B. TSH, Troponin).'
     ],
+    plainGermanExplanation: 'Biotin aktiviert Enzyme des Fett-, Kohlenhydrat- und Eiweißstoffwechsels und fördert die körpereigene Bildung von Keratin, dem strukturellen Grundbaustein für kräftiges Haar, elastische Haut und stabile Nägel.',
     biochemistry: 'Biotin dient als prosthetische Gruppe von vier mitochondrialen Carboxylasen (z.B. Pyruvat-Carboxylase, Acetyl-CoA-Carboxylase). Es ermöglicht Carboxylierungsreaktionen zur Gluconeogenese und Fettsäuresynthese sowie die Keratinsynthese in Haarfollikeln.',
     plantBasedRelevance: 'Sichert den Energiestoffwechsel und die Geweberegeneration ab.',
     intakeAdvice: 'Wasserlöslich. Hohe Megadosen (>5.000 µg) können Laborbluttests (z.B. Schilddrüse) stören – die physiologische Dosis von 40 µg ist absolut laborkonform.',
@@ -216,6 +227,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Psychische Funktion & Immunsystem):</strong> Beteiligt an der Synthese von Neurotransmittern und der klonalen Expansion von Lymphozyten.',
       '<strong>Pharmakogenetischer Vorteil (Quatrefolic®):</strong> Als reduziertes L-Methylfolat direkt zellulär bioverfügbar; umgeht den MTHFR-Polymorphismus (C677T), der synthetische Folsäure ineffizient macht.'
     ],
+    plainGermanExplanation: 'Folat (in bioaktiver 5-MTHF-Form) ist essenziell für die DNA-Synthese, die Zellteilung und die Bildung roter Blutkörperchen. Im Verbund mit Vitamin B12 trägt es maßgeblich zur Senkung erhöhter Homocysteinspiegel bei.',
     biochemistry: '5-Methyltetrahydrofolat (5-MTHF) fungiert als universeller Methylgruppendonor im 1-Kohlenstoff-Stoffwechsel. Zusammen mit Vitamin B12 wandelt es Homocystein in Methionin um, das für die Bildung von S-Adenosylmethionin (SAMe, zellulärer Hauptmethylierer) benötigt wird.',
     plantBasedRelevance: 'Nahrungsfolate sind hitze- und lichtempfindlich. L-Methylfolat (Quatrefolic®) ist im Gegensatz zu synthetischer Folsäure direkt bioaktiv und umgeht den bei bis zu 40% der Bevölkerung vorliegenden MTHFR-Genpolymorphismus (C677T).',
     intakeAdvice: 'Optimal morgens mit Vitamin B12 und Vitamin B6 kombiniert.',
@@ -236,6 +248,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Homocystein-Stoffwechsel & DNA-Synthese):</strong> Arbeitet im Methylierungszyklus untrennbar mit 5-MTHF zusammen.',
       '<strong>Medizinische Notwendigkeit bei 0% Fleisch/Fisch:</strong> Da pflanzliche Nahrungsmittel keine bioaktiven Cobalamine enthalten, ist die Substitution physiologisch obligatorisch.'
     ],
+    plainGermanExplanation: 'Vitamin B12 schützt die Myelinscheiden der Nervenbahnen, verhindert Blutarmut und ist essenziell für die Zellteilung. Da pflanzliche Lebensmittel kein bioverfügbares B12 enthalten, sichert die Supplementierung die geistige Leistungsfähigkeit und die Blutbildung bei fleischfreier Kost zuverlässig ab.',
     biochemistry: 'B12 ist Kofaktor für die Methionin-Synthase (Zytosol, DNA-Methylierung und Homocystein-Clearance) und die Methylmalonyl-CoA-Mutase (Mitochondrien, Abbau ungeradzahliger Fettsäuren und ATP-Gewinnung). Ein Mangel führt zur irreversiblen Demyelinisierung von Nervenfasern.',
     plantBasedRelevance: 'Kommt in bioverfügbarer Form in keinen Pflanzen vor. Für Nicht-Fleischesser und Nicht-Fischesser ist eine zuverlässige B12-Substitution überlebenswichtig. 50 µg täglich sichert auch bei eingeschränkter Intrinsic-Factor-Bindung eine ausreichende passive Diffusion im Darm.',
     intakeAdvice: 'Zu jeder Tageszeit einnehmbar. Bioaktive Methyl- und Adenosyl-Formen belasten den Körper im Gegensatz zu Cyanocobalamin nicht mit Cyanidgruppen.',
@@ -256,6 +269,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Immunabwehr bei Belastung):</strong> Erhält eine normale Immunfunktion während und nach intensiver körperlicher Betätigung.',
       '<strong>Redox-Netzwerk-Recycling:</strong> Regeneriert oxidierte Alpha-Tocopheroxyl-Radikale (Vitamin E) zurück in ihre aktive antioxidative Form.'
     ],
+    plainGermanExplanation: 'Vitamin C fördert die körpereigene Kollagensynthese für Knorpel, Sehnen, Gefäße und Haut. Es unterstützt das Immunsystem unter körperlicher Belastung und vervielfacht die enterale Aufnahme von pflanzlichem Eisen aus der Nahrung.',
     biochemistry: 'Ascorbat hält das Eisen in Prolyl- und Lysylhydroxylasen im reduzierten Fe2+-Zustand, was für die Vernetzung der Kollagen-Dreifachhelix zwingend nötig ist. Zudem reduziert es dreiwertiges pflanzliches Nicht-Häm-Eisen (Fe3+) im Magen-Darm-Trakt zu bioverfügbarem Fe2+.',
     plantBasedRelevance: 'Da pflanzliches Eisen schlechter resorbiert wird als tierisches Häm-Eisen, ist Vitamin C der potenteste physiologische Hebel zur Maximierung der Eisenaufnahme aus Nahrung und Multinährstoffen.',
     intakeAdvice: 'Gepuffertes Calciumascorbat ist magenfreundlich. Ideal zusammen mit Mahlzeiten oder Eisen eintragen.',
@@ -280,6 +294,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Verdauungsenzyme):</strong> Kofaktor zur physiologischen Aktivierung von Pankreasenzymen im Dünndarm.',
       '<strong>Resorptions-Vorteil (Citrat & Bisglycinat):</strong> Organisches Calciumcitrat und -bisglycinat besitzen eine hervorragende, magensäureunabhängige Bioverfügbarkeit ohne Aufblähungen.'
     ],
+    plainGermanExplanation: 'Calcium bildet das mineralische Gerüst für Knochen und Zähne. Im Blutkreislauf und Gewebe steuert es die neuromuskuläre Reizübertragung, jede Muskelkontraktion sowie die physiologische Blutgerinnung.',
     biochemistry: '99% des Calciums sind als Hydroxylapatit im Skelett gespeichert. Das ionisierte Calcium (Ca2+) im Zytosol steuert Muskelkontraktionen, Neurotransmitterausschüttung an Synapsen und Enzymaktivierungen.',
     plantBasedRelevance: 'Mit 2 Tabletten Warnke Calciumcitrat (600 mg) und Watson Male Essentials (120 mg) erreichst du 720 mg (72% des DGE / D-A-CH Tagesbedarfs von 1.000 mg). Organisches Calciumcitrat besitzt eine magensäureunabhängige, herausragende Resorption.',
     intakeAdvice: 'Über den Tag verteilen (z.B. 1 Tablette mittags, 1 Tablette abends zu den Mahlzeiten) und im Verbund mit Vitamin D3 & K2 für optimalen Knocheneinbau.',
@@ -300,6 +315,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Energiestoffwechsel & Eiweißsynthese):</strong> Unverzichtbar für die mitochondriale ATP-Synthese und Translation von Proteinen.',
       '<strong>Biochemischer Kofaktor für Vitamin D3:</strong> Sämtliche Hydroxylierungs-Enzyme (CYP2R1, CYP27B1) sowie das Vitamin-D-Bindeprotein (DBP) sind zwingend magnesiumabhängig.'
     ],
+    plainGermanExplanation: 'Magnesium reguliert die Reizübertragung zwischen Nerven und Muskeln und fördert die muskuläre Entspannung nach körperlicher Belastung. Es beugt Muskelkrämpfen vor, dämpft stressbedingte Übererregbarkeit des Nervensystems und unterstützt die Schlafqualität.',
     biochemistry: 'Magnesium ist zwingend an ATP gebunden (Mg-ATP-Komplex) und ermöglicht jede zelluläre Energieübertragung. Es wirkt als natürlicher NMDA-Rezeptor-Blocker im Gehirn beruhigend auf das Nervensystem und ist Kofaktor für alle Vitamin-D-aktivierenden Enzyme.',
     plantBasedRelevance: 'Die organische Chelat-Form Magnesiumbisglycinat besitzt eine exzellente Bioverfügbarkeit, passiert die Darmwand über Aminosäure-Transporter und schont die Verdauung (keine laxative Wirkung wie Magnesiumoxid).',
     intakeAdvice: 'Optimal abends vor dem Schlafen einnehmen (unterstützt parasympathische Aktivität und Schlafqualität).',
@@ -320,6 +336,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Immunsystem & Zellteilung):</strong> Kofaktor der Ribonukleotid-Reduktase zur DNA-Synthese proliferierender Abwehrzellen.',
       '<strong>Chelat-Resorption (Eisenbisglycinat):</strong> Weist eine 3- bis 4-fach höhere Bioverfügbarkeit als anorganische Eisensalze auf und verhindert oxidative Schleimhautreizungen im Darm.'
     ],
+    plainGermanExplanation: 'Eisen bildet das funktionelle Zentrum des Hämoglobins für den Sauerstofftransport aus der Lunge in Muskel- und Organgewebe. Eine ausreichende Versorgung beugt Erschöpfung, Blässe und Konzentrationsstörungen vor.',
     biochemistry: 'Eisen ist essenzieller Bestandteil von Eisen-Schwefel-Clustern in den Komplexen I, II und III der mitochondrialen Atmungskette und des Häm-Rings zur Sauerstoffbindung in Erythrozyten.',
     plantBasedRelevance: 'Nicht-Fleischesser nehmen nur 3-wertiges Nicht-Häm-Eisen auf. Eisenbisglycinat ist cheliert, wird 3- bis 4-mal besser resorbiert als anorganische Eisensalze und verursacht keine Magen-Darm-Irritationen.',
     intakeAdvice: 'Gleichzeitige Zufuhr von Vitamin C maximiert die Aufnahme. Kaffee und schwarzer Tee sollten im Abstand von 1-2 Stunden getrunken werden.',
@@ -340,6 +357,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Haut, Haare & Wundheilung):</strong> Steuert die Zellerneuerung der Keratinozyten und fördert die Wundkontraktion.',
       '<strong>Phytat-Resistenz:</strong> Cheliertes Zinkbisglycinat umgeht die intestinale Unlöslichkeit durch pflanzliche Phytate in Hülsenfrüchten und Vollkorn.'
     ],
+    plainGermanExplanation: 'Zink ist an über 300 enzymatischen Prozessen beteiligt, unterstützt die Aufrechterhaltung normaler Testosteronspiegel, stärkt die Immunabwehr und beschleunigt die Geweberegeneration und Wundheilung.',
     biochemistry: 'Zink stabilisiert die Tertiärstruktur von Zinkfinger-Transkriptionsfaktoren, ist Bestandteil der Superoxiddismutase (SOD1, Radikalschutz) und hemmt die Aromatase, was den Erhalt physiologischer Testosteronspiegel unterstützt.',
     plantBasedRelevance: 'Pflanzliche Ernährung enthält Phytate (in Getreide/Hülsenfrüchten), die Zink im Darm unlöslich binden. Cheliertes Zinkbisglycinat umgeht diese Phytat-Blockade weitgehend.',
     intakeAdvice: 'Nicht auf komplett nüchternen Magen einnehmen. Kupfer im Multinährstoff (0.5 mg) hält das Zink/Kupfer-Gleichgewicht intakt.',
@@ -360,6 +378,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Energiestoffwechsel & Haut):</strong> Reguliert den basalen Energieumsatz und die physiologische Hydratation der Haut.',
       '<strong>Geografischer Ausgleich:</strong> Kompensiert die eiszeitbedingte Jodverarmung mitteleuropäischer Böden bei meeresfischfreier Kost.'
     ],
+    plainGermanExplanation: 'Jod ist der unersetzliche Baustein der Schilddrüsenhormone T3 und T4, die den Grundumsatz, die Thermogenese und die Stoffwechselaktivität steuern. Es verhindert eine Unterfunktion der Schilddrüse und Antriebslosigkeit.',
     biochemistry: 'Jodid wird in den Thyreozyten über den Natrium-Jodid-Symporter (NIS) aufgenommen und durch Thyreoperoxidase (TPO) an Tyrosinreste im Thyreoglobulin gebunden, um T3 und T4 zu synthetisieren.',
     plantBasedRelevance: 'Ohne den Konsum von Meeresfisch oder jodiertem Speisesalz ist Mitteleuropa ein klassisches Jodmangelgebiet. Pflanzliche Böden sind jodarm. 150 µg sichert die euthyreote Schilddrüsenfunktion optimal ab.',
     intakeAdvice: 'Wirkt eng mit Selen zusammen (Selen wird für Dejodasen zur T4->T3 Aktivierung benötigt).',
@@ -380,6 +399,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Spermatogenese & Immunsystem):</strong> Strukturelles Element im Mitochondrienmantel der Spermatozoen zur Erhaltung der Motilität.',
       '<strong>Organische Form:</strong> L-Selenmethionin wird mit hoher Bioverfügbarkeit in den körpereigenen Proteinpool inkorporiert.'
     ],
+    plainGermanExplanation: 'Selen ist das aktive Zentrum von Schutzproteinen wie der Glutathionperoxidase zur Neutralisation freier Radikale. Zudem ermöglicht es die enzymatische Umwandlung des Schilddrüsenhormons T4 in das aktive Hormon T3.',
     biochemistry: 'Selenocystein im katalytischen Zentrum der Glutathionperoxidase neutralisiert toxisches Wasserstoffperoxid und Lipidhydroperoxide. Iodthyronin-Dejodinasen aktivieren das Schilddrüsenhormon T4 in die stoffwechselaktive T3-Form.',
     plantBasedRelevance: 'Mitteleuropäische Böden sind eiszeitbedingt extrem selenarm, weshalb heimisches pflanzliches Getreide und Gemüse kaum Selen enthalten. Selenmethionin gleicht dieses Defizit verlässlich aus.',
     intakeAdvice: 'Organisches Selenmethionin wird mit hoher Quote in den Proteinpool inkorporiert.',
@@ -398,8 +418,9 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Eisentransport im Körper):</strong> Notwendig für die Mobilisierung von zellulärem Speichereisen und dessen Bindung an Transferrin.',
       '<strong>EFSA-bestätigt (Bindegewebe & Gefäße):</strong> Katalysiert über Lysyloxidase die reißfeste Quervernetzung von Kollagen- und Elastinfibrillen.',
       '<strong>EFSA-bestätigt (Nervensystem & Energiestoffwechsel):</strong> Beteiligt an Komplex IV der Atmungskette und der Dopamin-Beta-Hydroxylase (Noradrenalinsynthese).',
-      '<strong>Homöostatische Zink-Balance:</strong> 0.5 mg Kupferbisglycinat schützt zuverlässig vor sekundärem Kupfermangel bei chronischer Zinkeinnahme.'
+      '<strong>Homöostatische Balance:</strong> Die Zufuhr von 0.5 mg Kupferbisglycinat schützt vor sekundärem Kupfermangel bei chronischer Zinkeinnahme.'
     ],
+    plainGermanExplanation: 'Kupfer ermöglicht den geordneten Eisentransport im Blut, unterstützt die enzymatische Quervernetzung von Kollagen- und Elastinfasern im Bindegewebe und hält das Gleichgewicht bei regelmäßiger Zinkeinnahme aufrecht.',
     biochemistry: 'Kupfer ermöglicht über Ceruloplasmin die Bindung von Eisen an Transferrin und ist Bestandteil von Komplex IV der Atmungskette sowie der Superoxiddismutase (Cu/Zn-SOD).',
     plantBasedRelevance: 'Hohe Zinkgaben können die Kupferaufnahme hemmen (über intestinale Metallothionein-Induktion). Die Zufuhr von 0.5 mg Kupferbisglycinat sichert das physiologische 10:1 Zink-Kupfer-Verhältnis.',
     intakeAdvice: 'Organisches Bisglycinat verhindert Resorptionskonflikte.',
@@ -418,8 +439,9 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Bindegewebsbildung):</strong> Unterstützt die Synthese von Proteoglykanen im Gelenkknorpel und Bindegewebe.',
       '<strong>EFSA-bestätigt (Knochenerhalt):</strong> Erhält normale Knochenstrukturen durch Beteiligung an der Knochenmineralisierung.',
       '<strong>EFSA-bestätigt (Zellschutz vor Oxidation):</strong> Zentrales Kation der Mn-SOD zur Neutralisation intramitochondrialer Sauerstoffradikale.',
-      '<strong>Synergie mit Knorpelnährstoffen:</strong> Ergänzt Glycin, Prolin, Hyaluronsäure und Vitamin C bei der Gelenkregeneration.'
+      '<strong>Kollaborativer Nutzen:</strong> Ergänzt Glycin, Prolin, Hyaluron und Vitamin C im Gelenk- und Knorpelstoffwechsel.'
     ],
+    plainGermanExplanation: 'Mangan aktiviert Enzyme für den Aufbau von Knorpel- und Bindegewebsstrukturen (Proteoglykane) und schützt als Kern der mitochondrialen Superoxiddismutase (Mn-SOD) die Zellkraftwerke vor oxidativem Stress.',
     biochemistry: 'Aktiviert Enzyme zur Proteoglykan- und Chondroitinsulfat-Synthese im Gelenkknorpel und bildet das Herzstück der mitochondrialen Mangan-Superoxiddismutase (Mn-SOD) zum Schutz vor Sauerstoffradikalen.',
     plantBasedRelevance: 'Unterstützt zusammen mit Glycin, Hyaluronsäure und Vitamin C die Gelenk- und Sehnenregeneration.',
     intakeAdvice: 'Zu einer Mahlzeit einnehmen.',
@@ -440,6 +462,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Klinische Evidenz (Insulinsensitivität & Cravings):</strong> Meta-Analysen zeigen eine signifikante Senkung von Nüchternglukose und HbA1c sowie eine Dämpfung postprandialer Heißhungerphasen bei suboptimaler Glukosetoleranz.',
       '<strong>Höchste Bioverfügbarkeit:</strong> Chrompicolinat weist unter allen Chromverbindungen die beste enterale Absorptionsrate auf.'
     ],
+    plainGermanExplanation: 'Chrom verbessert die Empfindlichkeit der Körperzellen gegenüber Insulin. Dadurch wird Glukose nach Mahlzeiten effizienter in Muskelzellen transportiert, was zu stabileren Blutzuckerwerten führt und ausgeprägte Heißhungerphasen dämpfen kann.',
     biochemistry: 'Das Peptid Chromodulin bindet an die zytosolische Tyrosinkinase-Domäne des aktivierten Insulinrezeptors und vervielfacht dessen Signalübertragung, was die GLUT-4-Translokation zur Glukoseaufnahme in Muskelzellen fördert.',
     plantBasedRelevance: 'Chrompicolinat weist die höchste Bioverfügbarkeit aller Chromverbindungen auf und unterstützt den Kohlenhydratstoffwechsel bei pflanzlicher Ernährung.',
     intakeAdvice: 'Zu einer Mahlzeit einnehmen.',
@@ -459,6 +482,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Zelluläre Entgiftung von Sulfiten:</strong> Schützt vor Sulfit-Akkumulation aus endogenem Stoffwechsel und Nahrungskonservierungsstoffen.',
       '<strong>Sichere Basisabsicherung:</strong> Mit 25 µg (50% DGE) wird die physiologische Enzymauslastung optimal gewährleistet.'
     ],
+    plainGermanExplanation: 'Molybdän ist der Kofaktor für Enzyme, die schwefelhaltige Aminosäuren und endogene Sulfite abbauen sowie die Harnsäureausscheidung im physiologischen Gleichgewicht halten.',
     biochemistry: 'Molybdän ist Bestandteil des Molybdän-Kofaktors (Moco), der in der Sulfitoxidase toxisches Sulfit in Sulfat überführt und in der Xanthinoxidase den Purinabbau reguliert.',
     plantBasedRelevance: 'Sichert die Entgiftung schwefelhaltiger Stoffwechselprodukte bei proteinreicher Kost ab.',
     intakeAdvice: 'Wasserlöslich, zu jeder Tageszeit.',
@@ -478,6 +502,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Knochen- & Mineralstoffretention:</strong> Verringert in Studien die renale Ausscheidung von Calcium und Magnesium über die Nieren und unterstützt die Knochenmatrix.',
       '<strong>Wissenschaftliche Einordnung:</strong> Gilt als hochinteressanter Kofaktor für Sportler und Knochendichte, ist behördlich jedoch als nicht-essenzielles Spurenelement klassifiziert.'
     ],
+    plainGermanExplanation: 'Bor beeinflusst den Steroidhormonstoffwechsel, indem es das bindende Protein SHBG senken kann, wodurch der Anteil an freiem, biologisch aktivem Testosteron begünstigt wird. Zudem reduziert es die renale Ausscheidung von Calcium und Magnesium.',
     biochemistry: 'Bor senkt im Serum das Sexualhormon-bindende Globulin (SHBG), wodurch der Anteil an freiem, biologisch aktivem Testosteron signifikant ansteigt. Zudem reduziert es die renale Ausscheidung von Calcium und Magnesium.',
     plantBasedRelevance: 'Nicht im aktuellen Stack enthalten. Eine gezielte Ergänzung von 3.0 mg Bor kann bei sportlich aktiven Männern zur Hormonoptimierung und Knorpelstabilisierung sinnvoll sein.',
     intakeAdvice: 'Morgens zu einer Mahlzeit einnehmen. Zyklen von 6-8 Wochen mit 1-2 Wochen Pause sind in Studien gängige Praxis.',
@@ -502,6 +527,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Erhaltung normaler Knochen):</strong> Liefert die notwendige Aminosäurematrix für das organische Knochengerüst (Kollagen-Typ-I).',
       '<strong>Klinischer Goldstandard:</strong> Schnelle Plasma-Anflutung und hohe Leucindichte zur maximalen Stimulation von mTORC1.'
     ],
+    plainGermanExplanation: 'Molkeneiweiß liefert ein vollständiges Spektrum aller essenziellen Aminosäuren mit höchster biologischer Wertigkeit. Durch die rasche Aufnahme ins Blut stimuliert es die Muskelproteinsynthese unmittelbar nach dem Training und unterstützt den Substanzerhalt bei sportlicher Belastung.',
     biochemistry: 'Molkenprotein liefert alle 9 essenziellen Aminosäuren in optimalem Verhältnis. Es wird im Magen-Darm-Trakt rasch resorbiert und erzeugt einen schnellen Anstieg der Aminosäurespiegel im Blutplasma (Hyperaminoazidämie), was die muskuläre Proteinsynthese (MPS) via mTORC1 maximal anregt.',
     plantBasedRelevance: 'Bei fleisch- und fischfreier Ernährung sichert das Yummy Whey täglich 23 g hochwertigstes Volleiweiß mit exzellenter Verdaulichkeit und vollständigem Spektrum an essenziellen Aminosäuren ab.',
     intakeAdvice: '30 g Pulver in 200–300 ml Wasser oder Pflanzendrink einrühren, idealerweise direkt nach dem Training oder als proteinreiches Frühstück.',
@@ -521,6 +547,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Anti-kataboler Muskelschutz:</strong> Verhindert die Autophagie von kontraktilem Muskeleiweiß während erschöpfender Ausdauer- oder Kraftbelastungen.',
       '<strong>Wissenschaftliche Differenzierung:</strong> BCAAs entfalten ihr volles anaboles Potenzial optimal im Kontext eines intakten EAA-Gesamtprofils (wie im Molkenprotein).'
     ],
+    plainGermanExplanation: 'Die verzweigtkettigen Aminosäuren (Leucin, Isoleucin, Valin) werden direkt im Muskelgewebe verstoffwechselt. Sie schützen bei intensiver Belastung vor Muskelabbau und mindern das Ausmaß trainingsbedingter Muskelschäden.',
     biochemistry: 'BCAAs machen ca. 35% der essenziellen Aminosäuren im Muskelprotein aus. Sie werden im Skelettmuskel durch die BCAA-Aminotransferase (BCAT) desaminiert und dienen sowohl als direkte Energiesubstrate bei Belastung als auch als molekulare Signale für die Proteinsynthese.',
     plantBasedRelevance: 'Mit 5,3 g BCAA pro Portion liefert das Yummy Whey die exakte physiologische Zieldosis, um Muskelabbau zu verhindern und die Regeneration optimal zu beschleunigen.',
     intakeAdvice: 'Nach dem Training oder am Vormittag zur Unterstützung der täglichen Muskelregeneration.',
@@ -540,6 +567,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Prävention anaboler Resistenz:</strong> Schützt vor alters- und trainingsbedingten Einbußen der Proteinsynthese-Sensitivität.',
       '<strong>Sportwissenschaftlicher Konsens:</strong> Gilt als der primäre Einzelschrittmacher für trainingsinduzierte Hypertrophie.'
     ],
+    plainGermanExplanation: 'Leucin ist der primäre Signalgeber für den mTORC1-Komplex in der Skelettmuskulatur. Das Erreichen der erforderlichen Leucinschwelle (~2,5–3 g pro Portion) ist der entscheidende Impuls zur Initiierung der Muskelproteinsynthese.',
     biochemistry: 'Leucin bindet intrazellulär an Sestrin2, wodurch die GATOR2-Hemmung aufgehoben und der mTORC1-Proteinkomplex an die Lysosomenmembran rekrutiert wird. Dies phosphoryliert p70S6K und 4E-BP1 und startet die Translation neuer Proteine ("Leucin-Trigger"-Hypothese).',
     plantBasedRelevance: 'Pflanzliche Proteinquellen enthalten oft weniger Leucin (6–8%) als Molkenprotein (11–12%). Die 2.600 mg Leucin aus dem Yummy Whey überschreiten die kritische Reizschwelle von ~2,5 g Leucin pro Mahlzeit ideal.',
     intakeAdvice: 'In der 30 g Shake-Portion enthalten. Ideal mit etwas Kohlenhydraten zur Insulin-Synergie.',
@@ -559,6 +587,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Glykogenspeicherung & Ausdauer:</strong> Beschleunigt das Wiederauffüllen intramuskulärer Glykogenspeicher.',
       '<strong>Hämoglobinsynthese:</strong> Dient als essenzielles Substrat für die Erythropoese und Sauerstofftransportkapazität.'
     ],
+    plainGermanExplanation: 'Isoleucin unterstützt die Glukoseaufnahme in die Muskelzellen während und nach körperlicher Belastung. Es fördert das rasche Wiederauffüllen der intramuskulären Glykogenspeicher und die Ausdauerleistung.',
     biochemistry: 'Isoleucin stimuliert über PI3K-unabhängige Wege die Translokation von GLUT4-Glukosetransportern in Skelettmuskelzellen und optimiert so die muskuläre Glykogenspeicherung während und nach Belastungen.',
     plantBasedRelevance: 'Essenzielle Aminosäure (WHO-Bedarf ~20 mg/kg). Die 1.400 mg im Shake decken 100% des Tagesbedarfs eigenständig ab.',
     intakeAdvice: 'Bestandteil des natürlichen Molkeproteins.',
@@ -578,6 +607,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Gewebe- & Muskelreparatur:</strong> Dient als Baustein struktureller Muskelproteine und sichert eine positive Stickstoffbilanz.',
       '<strong>Glucogenes Energiesubstrat:</strong> Kann bei Kohlenhydratmangel über Succinyl-CoA in den Citratzyklus eingeschleust werden.'
     ],
+    plainGermanExplanation: 'Valin konkurriert an der Blut-Hirn-Schranke mit Tryptophan und mindert dadurch vorzeitige zentrale Ermüdungsprozesse bei langen physischen und mentalen Anstrengungen.',
     biochemistry: 'Valin konkurriert am L-Typ-Aminosäuretransporter (LAT1) an der Blut-Hirn-Schranke mit Tryptophan. Dadurch wird ein übermäßiger Tryptophan-Einstrom und vorzeitige Serotonin-vermittelte Ermüdung bei mentaler oder physischer Belastung gedämpft.',
     plantBasedRelevance: 'Essenzielle Aminosäure für Gewebereparatur und kognitive Leistungsfähigkeit.',
     intakeAdvice: 'Bestandteil des täglichen Shakes.',
@@ -598,6 +628,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Muskuläre Regeneration:</strong> Unterstützt den zellulären Flüssigkeitszustand (Zellvoluminisierung) und die Wiederauffüllung des Aminosäurepools nach Training.',
       '<strong>Wissenschaftliche Differenzierung:</strong> Bei gesunden Personen ohne Extremtraumata primär mukoprotektiv und regenerationsfördernd.'
     ],
+    plainGermanExplanation: 'Glutamin dient den Zellen des Dünndarmepithels und des Immunsystems als primäre Energiequelle. Es stärkt die Integrität der intestinalen Barriere (Tight Junctions) und fördert die Erholung nach intensiver Trainingsbelastung.',
     biochemistry: 'Glutamin dient den schnell teilenden Enterozyten des Dünndarms als primäre Energiequelle (Glutaminolyse). Es reguliert die Expression von Claudin-1 und Occludin, wodurch die Tight Junctions der Darmbarriere abgedichtet und mikrobielle Translokationen verhindert werden.',
     plantBasedRelevance: 'Mit 4,1 g Glutamin/Glutaminsäure pro Shake erhält dein Verdauungstrakt maximale Unterstützung für eine intakte Darmmukosa und starke Immunantwort.',
     intakeAdvice: 'Optimal im Protein-Shake nach dem Training oder morgens auf nüchternen Magen.',
@@ -617,6 +648,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Endogene Carnitinsynthese:</strong> Liefert das Stickstoff- und Kohlenstoffgerüst zur körpereigenen Bildung von L-Carnitin.',
       '<strong>Klinische Evidenz (Antivirale Herpes-Inhibition):</strong> Antagonisiert zelluläre Arginin-Transporter und hemmt in Studien die Reaktivierung von Herpes-simplex-Viren.'
     ],
+    plainGermanExplanation: 'Lysin ist für die Quervernetzung von Kollagenfasern in Sehnen, Knorpel und Knochen verantwortlich. Zudem dient es als Ausgangssubstanz für die körpereigene Synthese von L-Carnitin.',
     biochemistry: 'Lysin wird in Kollagensträngen zu Hydroxylysin modifiziert, welches kovalente Quervernetzungen bildet. Zudem ist Trimethyllysin der biochemische Ausgangsstoff für die körpereigene Biosynthese von L-Carnitin in Leber und Nieren.',
     plantBasedRelevance: 'In vielen Getreidesorten ist Lysin die am stärksten limitierende Aminosäure. Die 2.200 mg im Shake gleichen dieses Profil für Nicht-Fleischesser perfekt aus.',
     intakeAdvice: 'Teil des täglichen Yummy Whey Shakes.',
@@ -636,6 +668,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Elastizität von Knorpel & Gefäßen:</strong> Zentraler Baustein elastischer Bindegewebsstrukturen.',
       '<strong>Antikörperbildung:</strong> Unterstützt die Synthese von Immunglobulinen zur Schleimhautimmunität.'
     ],
+    plainGermanExplanation: 'Threonin ist Hauptbestandteil der Mucingebilde, die als Schutzschleim die Magen- und Darmwand auskleiden, und unterstützt die Synthese von Antikörpern sowie elastischem Bindegewebe.',
     biochemistry: 'Bis zu 60% des aufgenommenen Threonins werden im Magen-Darm-Trakt direkt zur Synthese von Mucin-Glykoproteinen genutzt, die die Schleimhaut vor Magensäure, Enzymen und Pathogenen schützen.',
     plantBasedRelevance: 'Essenzielle Aminosäure für gesunde Schleimhäute und Knorpelgewebe.',
     intakeAdvice: 'Bestandteil des täglichen Shakes.',
@@ -655,6 +688,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Klinische Evidenz (Schlafqualität & Latenz):</strong> Interventionsstudien belegen eine signifikante Verkürzung der Einschlaflatenz und Vertiefung des Slow-Wave-Sleep (Tiefschlaf).',
       '<strong>Dämpfung von Stress & Heißhunger:</strong> Unterstützt die serotonerge Sättigungsregulation und emotionale Belastbarkeit.'
     ],
+    plainGermanExplanation: 'Tryptophan ist die Vorstufe des Neurotransmitters Serotonin (Stimmungsregulation und emotionale Balance) und des Schlafhormons Melatonin, das das Einschlafen und die Schlafqualität steuert.',
     biochemistry: 'Tryptophan wird durch die Tryptophan-Hydroxylase (TPH) zu 5-HTP und anschließend zu Serotonin umgewandelt. In der Zirbeldrüse (Epiphyse) entsteht daraus nachts Melatonin zur Steuerung des zirkadianen Rhythmus.',
     plantBasedRelevance: 'Wichtige Aminosäure für Stimmung, Stresstoleranz und Schlafqualität.',
     intakeAdvice: 'Molkenprotein ist von Natur aus besonders reich an bioverfügbarem L-Tryptophan.',
@@ -674,6 +708,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Harnstoffzyklus & Ammoniak-Clearance:</strong> Schützt vor toxischer Ammoniak-Akkumulation aus intensivem Proteinstoffwechsel.',
       '<strong>Wissenschaftliche Einordnung:</strong> Dient im Proteinkontext der physiologischen Gefäßgrundversorgung; isolierte Megadosen unterliegen hepatischer Arginase.'
     ],
+    plainGermanExplanation: 'Arginin ist das alleinige Substrat für die Bildung von Stickstoffmonoxid (NO) in den Gefäßwänden. NO bewirkt eine Entspannung der glatten Gefäßmuskulatur, verbessert die Durchblutung und unterstützt die Sauerstoff- und Nährstoffversorgung der Muskulatur.',
     biochemistry: 'Die endotheliale Stickstoffmonoxid-Synthase (eNOS) wandelt L-Arginin in NO und L-Citrullin um. NO diffundiert in glatte Gefäßmuskelzellen, aktiviert die Guanylatcyclase und führt zur Gefäßerweiterung (Vasodilation), was Blutdruck und Durchblutung verbessert.',
     plantBasedRelevance: 'Unterstützt die Mikrozirkulation und den ammoniakentgiftenden Harnstoffzyklus der Leber.',
     intakeAdvice: 'Teil des täglichen Yummy Whey Shakes.',
@@ -693,6 +728,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Keratinstruktur (Haare & Nägel):</strong> Disulfidbrücken zwischen Cysteinresten verleihen Keratinfasern mechanische Festigkeit und Elastizität.',
       '<strong>Epigenetische Methylierung (SAMe):</strong> Steuert DNA-Methylierungsmuster und die Phosphatidylcholin-Synthese.'
     ],
+    plainGermanExplanation: 'Diese schwefelhaltigen Aminosäuren bilden Disulfidbrücken für die Festigkeit von Keratinstrukturen (Haare, Nägel, Haut) und liefern die notwendigen Bausteine für das intrazelluläre Master-Antioxidans Glutathion.',
     biochemistry: 'Methionin wird zu S-Adenosylmethionin (SAMe), dem wichtigsten Methylgruppen-Donator für DNA-Methylierung, Phospholipide und Neurotransmitter. Cystein liefert die Thiolgruppe (-SH) für das intrazelluläre Antioxidans Glutathion.',
     plantBasedRelevance: 'In rein pflanzlichen Hülsenfrüchten oft limitierend; Molkenprotein liefert ein ideales Verhältnis beider Schwefelaminosäuren.',
     intakeAdvice: 'Bestandteil des Yummy Whey Shakes.',
@@ -712,6 +748,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Klinische Evidenz (Schlafarchitektur):</strong> RCTs (z. B. Yamadera et al., Inagawa et al.) belegen, dass 3 g Glycin vor dem Schlafen die Tiefschlafphasen (N3/Slow-Wave-Sleep) vertieft und die subjektive Schläfrigkeit am Folgetag signifikant senkt.',
       '<strong>Glutathion & Phase-II-Entgiftung:</strong> Essentieller Baustein des Tripeptids Glutathion (Glu-Cys-Gly) und Konjugationspartner für Xenobiotika in der Leber.'
     ],
+    plainGermanExplanation: 'Glycin ist der mengenmäßig dominierende Baustein in Kollagen und Bindegewebe. Vor dem Schlafen eingenommen, wirkt es hemmend auf das zentrale Nervensystem, senkt die Körperkerntemperatur und fördert erholsame Tiefschlafphasen.',
     biochemistry: 'Glycin ist die kleinste Aminosäure und unverzichtbar für die enge Dreifachhelix-Windung von Kollagen (Gly-X-Y-Sequenz). Es bildet zusammen mit Glutamin und Cystein das Master-Antioxidans Glutathion und wirkt an Glycin-Rezeptoren im ZNS hemmend (beruhigend).',
     plantBasedRelevance: 'Kollagenreiches Bindegewebe, Gelatine und Knochenbrühe fehlen bei fleisch- und fischfreier Kost völlig. Der Körper hat ein endogenes Glycin-Defizit von ca. 3-4 g/Tag. CollaSyn® deckt dies mit 4.000 mg vollständig pflanzlich ab.',
     intakeAdvice: 'Morgens im Shake oder abends vor dem Schlafen (senkt die Körperkerntemperatur und fördert den Tiefschlaf).',
@@ -731,6 +768,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Sehnen- & Knorpelregeneration:</strong> Dient als Primärbaustein für die Reparatur mikroskopischer Mikrotraumata nach sportlicher Belastung.',
       '<strong>Synergistisches Kollagennetzwerk:</strong> Ergänzt die 4.000 mg Glycin aus CollaSyn® und Vitamin C zu einer vollständigen biochemischen Kollagenmatrix.'
     ],
+    plainGermanExplanation: 'Prolin wird posttranslational zu Hydroxyprolin umgewandelt, welches die Kollagen-Dreifachhelix thermisch und mechanisch stabilisiert. Es ist essenziell für die Belastbarkeit von Sehnen, Bändern und Gelenkknorpel.',
     biochemistry: 'Prolin wird durch die Vitamin-C-abhängige Prolylhydroxylase zu 4-Hydroxyprolin umgewandelt. Hydroxyprolin-Reste bilden intramolekulare Wasserstoffbrückenbindungen aus, die dem Kollagen in Bändern, Sehnen und Knorpel seine extreme Reißfestigkeit verleihen.',
     plantBasedRelevance: 'Mit 30g Yummy Whey nimmst du täglich 1.400 mg reines L-Prolin auf, was im Verbund mit den 4.000 mg Glycin aus CollaSyn® und Vitamin C die körpereigene Kollagenbiosynthese optimal versorgt.',
     intakeAdvice: 'Gemeinsam mit Glycin (CollaSyn®) und Vitamin C morgens oder nach dem Training einnehmen.',
@@ -750,6 +788,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Klinische Evidenz (Neuroprotektion & Kognition):</strong> Humanstudien zeigen positive Effekte auf mentale Wachheit, Verringerung kognitiver Erschöpfung und axonale Nervenregeneration.',
       '<strong>Carninährstoff-Relevanz:</strong> Da 95% des Carnitins in der Mischkost aus rotem Fleisch stammen, schließt ALCAR bei fleischfreier Kost eine fundamentale Versorgungslücke.'
     ],
+    plainGermanExplanation: 'Acetyl-L-Carnitin (ALCAR) schleust langkettige Fettsäuren in die Mitochondrien zur oxidativen Energiegewinnung ein. In acetylierter Form überwindet es die Blut-Hirn-Schranke und unterstützt neuronale Prozesse sowie geistige Wachheit.',
     biochemistry: 'Acetyl-L-Carnitin liefert Acetylgruppen für die Synthese des zentralen Neurotransmitters Acetylcholin und schleust langkettige Fettsäuren über die Carnitin-Palmitoyl-Transferase (CPT-1) in die Mitochondrienmatrix zur Beta-Oxidation (ATP-Generierung).',
     plantBasedRelevance: '95% des Carnitins stammen in der Standardernährung aus rotem Fleisch. Für Nicht-Fleischesser liefert 1 Kapsel GEN ALCAR täglich 500 mg hoch bioverfügbares Carnitin (bei Bedarf flexibel auf 2 Kapseln = 1.000 mg oder bis zur vollen Tagesdosis von 6 Kapseln = 3.000 mg steigerbar).',
     intakeAdvice: 'Morgens vor dem Frühstück oder ca. 30–45 Minuten vor dem Training mit Wasser einnehmen.',
@@ -769,6 +808,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Muskelleistung & Krampffreiheit:</strong> Verhindert osmotische Dehydratation und schützt Muskelzellen vor elektrolytbedingten Kontraktionsstörungen.',
       '<strong>Präklinische Langlebigkeits-Evidenz:</strong> Bahnbrechende Studien (Science 2023, Singh et al.) identifizieren Taurinmangel als Treiber des Alterns; Supplementierung steigerte Gesundheit und Lebensspanne im Tiermodell signifikant (Human-RCTs laufen).'
     ],
+    plainGermanExplanation: 'Taurin reguliert den osmotischen Druck und den Calciumhaushalt in Herz- und Muskelzellen, stabilisiert Zellmembranen und unterstützt die Konjugation von Gallensäuren. Aktuelle Studien heben seine Rolle im mitochondrialen Funktionserhalt hervor.',
     biochemistry: 'Taurin moduliert zelluläre Calciumströme im Herzmuskel, bindet an GABA-A-Rezeptoren im Gehirn, konjugiert Gallensäuren (Taurocholsäure zur Fettverdauung) und schützt Mitochondrien vor oxidativem Stress.',
     plantBasedRelevance: 'Taurin kommt in pflanzlichen Lebensmitteln nicht vor (Gehalt = 0 mg). Vegetarier und Veganer weisen signifikant niedrigere Plasma- und Urin-Taurinspiegel auf. Aktuelle Studien (Science 2023) identifizieren Taurin als Schlüsselfaktor für gesunde Langlebigkeit.',
     intakeAdvice: '500 bis 1.500 mg täglich, ideal morgens oder tagsüber.',
@@ -788,6 +828,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Anti-Glykation & Neuroprotektion:</strong> Fängt reaktive Aldehyde ab und schützt neuronale Proteine vor AGE-Vernetzung und Karamelisierung.',
       '<strong>Carninährstoff-Status:</strong> Kommt ausschließlich in tierischem Muskelgewebe vor; Nicht-Fleischesser weisen nachweislich ca. 50% niedrigere Muskelkarnosinspeicher auf.'
     ],
+    plainGermanExplanation: 'Carnosin puffert Wasserstoffionen (H+) im Zytosol der Muskelfasern ab und verzögert die muskuläre Übersäuerung bei hochintensiver anaerober Arbeit. Zudem schützt es Proteine im Gehirn vor oxidativer Schädigung und Glykation.',
     biochemistry: 'Carnosin besitzt einen pKa-Wert von 6.83 und ist der stärkste physiologische Säurepuffer im Zytosol von Typ-II-Muskelfasern gegen Laktat-induzierten Leistungsabfall. Zudem cheliert es Übergangsmetalle und hemmt die Glykation von Proteinen im Gehirn.',
     plantBasedRelevance: 'Kommt ausschließlich in tierischem Muskelgewebe vor. Nicht-Fleischesser haben nachweislich ca. 50% weniger Carnosin in den Muskeln. Durch Gabe von Beta-Alanin oder L-Carnosin kann der Speicher wieder aufgefüllt werden.',
     intakeAdvice: 'Beta-Alanin (1.500-3.000 mg/Tag) teilt man am besten auf 2 Dosen auf, um harmloses Kribbeln (Parästhesie) zu vermeiden.',
@@ -807,6 +848,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Hepatische Phase-II-Entgiftung:</strong> Unterstützt die enzymatische Konjugation und renale Elimination von Xenobiotika, Toxinen und Medikamentenmetaboliten.',
       '<strong>Pneumologische Mukolyse:</strong> Spaltet Disulfidbrücken in sauren Mucin-Glykoproteinen der Atemwege und wirkt antientzündlich im Bronchialtrakt.'
     ],
+    plainGermanExplanation: 'N-Acetylcystein liefert bioverfügbares L-Cystein für den geschwindigkeitsbestimmenden Schritt der zellulären Glutathionsynthese. Es unterstützt die hepatische Entgiftung und wirkt mukolytisch auf die Atemwege.',
     biochemistry: 'NAC liefert bioverfügbares L-Cystein für die Glutamat-Cystein-Ligase, den limitierenden Schritt der zellulären Glutathionsynthese (GSH). GSH neutralisiert freie Radikale, entgiftet Xenobiotika in der Leber (Phase II) und schützt Lunge und Nieren.',
     plantBasedRelevance: 'Fleisch liefert hohe Dosen schwefelhaltiger Aminosäuren (Methionin/Cystein). Bei fleischfreier Kost ist Cystein oft der limitierende Faktor für die maximale Glutathionbildung.',
     intakeAdvice: '600 mg täglich, ideal morgens mit Wasser oder Vitamin C.',
@@ -830,6 +872,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Gehirnstruktur & Sehkraft):</strong> DHA ist das dominante Strukturfett der zerebralen Großhirnrinde und der Fovea centralis in der Netzhaut.',
       '<strong>Klinische Evidenz (Entzündungsauflösung):</strong> Optimiert das zelluläre AA/EPA-Verhältnis und senkt systemische vaskuläre Entzündungsmarker (hs-CRP, IL-6).'
     ],
+    plainGermanExplanation: 'Die langkettigen Omega-3-Fettsäuren EPA und DHA werden in Zellmembranen eingebaut, verbessern deren Fließeigenschaften und dienen als Vorstufen entzündungsauflösender Botenstoffe (Resolvine). DHA bildet einen Hauptbestandteil des Gehirns und der Netzhaut, während EPA die kardiovaskuläre Gesundheit und Gefäßelastizität unterstützt.',
     biochemistry: 'EPA und DHA werden in Phospholipide aller Zellmembranen eingebaut, erhöhen deren Fluidität und verdrängen Arachidonsäure. Aus EPA entstehen entzündungshemmende Eicosanoide (Serie-3-Prostaglandine) und spezialisierte pro-resolvierende Mediatoren (SPMs: Resolvine, Protectine).',
     plantBasedRelevance: 'Pflanzliches ALA (aus Leinöl/Walnüssen) wird im Körper nur zu <5% in EPA und <0.5% in DHA umgewandelt. Zinzino BalanceOil+ liefert vorgeformtes EPA/DHA kombiniert mit Oliven-Polyphenolen, die die Fettsäuren vor Oxidation im Blut schützen.',
     intakeAdvice: '10 ml flüssig zu einer Hauptmahlzeit einnehmen. Synergie mit fettlöslichen Vitaminen (D3, E, K2).',
@@ -849,6 +892,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Krafttraining & Muskelaufbau bei Erwachsenen):</strong> Steigert die Effizienz des Krafttrainings auf die Muskelkraft.',
       '<strong>Klinische Evidenz (Neuroenergetik & Kognition):</strong> Systematische Reviews belegen signifikante Verbesserungen des Arbeitsgedächtnisses und der geistigen Ermüdungsresistenz, insbesondere bei Nicht-Fleischessern mit niedrigen Basisspeichern.'
     ],
+    plainGermanExplanation: 'Kreatin erhöht die zellulären Phosphokreatinspeicher zur schnellen Resynthese von ATP bei kurzen, maximalen Kraftleistungen. Es steigert Kraft und Leistungsfähigkeit im Krafttraining und unterstützt bei fleischfreier Ernährung auch das Arbeitsgedächtnis und die geistige Ermüdungsresistenz.',
     biochemistry: 'Kreatin wird durch Kreatinkinase zu Phosphokreatin phosphoryliert. Bei zellulärem Energiemangel überträgt es seine Phosphatgruppe in Millisekunden auf ADP zur Regeneration von ATP (universelle Energiewährung).',
     plantBasedRelevance: 'Da Kreatin natürlicherweise ausschließlich in Fleisch und Fisch vorkommt, haben Nicht-Fleischesser um 20-30% niedrigere Muskel- und Gehirnkreatinspeicher. Nicht-Fleischesser profitieren daher kognitiv und körperlich am stärksten von Creapure®!',
     intakeAdvice: 'Täglich 3.000 mg (1 Messlöffel) mit Wasser oder im Shake einnehmen. Einnahmezeitpunkt ist flexibel.',
@@ -868,6 +912,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>EFSA-bestätigt (Fettstoffwechsel & Homocystein):</strong> Trägt zu einem normalen Lipidstoffwechsel und Homocystein-Clearance bei.',
       '<strong>Klinische Evidenz (Neurotransmitter & Kognition):</strong> Essentieller Vorläufer für Acetylcholin zur Erhaltung synaptischer Plastizität, Aufmerksamkeit und Gedächtniskonsolidierung.'
     ],
+    plainGermanExplanation: 'Cholin ist die Ausgangssubstanz für den Neurotransmitter Acetylcholin (Aufmerksamkeit, Lernprozesse, Muskelansteuerung) und für Phosphatidylcholin, das den Abtransport von Triglyceriden aus der Leber sichert.',
     biochemistry: 'Cholin wird für die Synthese von Acetylcholin (Fokus, Lernen, neuromuskuläre Übertragung) und Phosphatidylcholin (Hauptphospholipid aller Membranen) benötigt. Über Betain dient es zudem als Methylgruppendonor zur Senkung von Homocystein.',
     plantBasedRelevance: 'Die reichhaltigsten Cholinquellen sind Eigelb und Rinderleber. Pflanzliche Lebensmittel liefern deutlich geringere Konzentrationen. 450 mg deckt die EFSA-Zufuhrempfehlung (400 mg) für Erwachsene optimal ab.',
     intakeAdvice: 'Morgens oder mittags zu einer Mahlzeit einnehmen.',
@@ -887,6 +932,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Gelenkviskosität & Knorpelbelastbarkeit:</strong> Unterstützt die rheologischen Eigenschaften der Gelenkschmiere und schützt Knorpelflächen vor mechanischem Verschleiß.',
       '<strong>Biotechnologische Reinheit:</strong> Vegane Fermentationsform mit optimierter Molekulargewichtsverteilung für enterale Resorption.'
     ],
+    plainGermanExplanation: 'Hyaluronsäure besitzt ein hohes Wasserbindungsvermögen und dient in den Gelenken als viskoelastisches Schmiermittel und Stoßdämpfer. In der Haut verbessert sie die Feuchtigkeitsspeicherung der extrazellulären Matrix.',
     biochemistry: 'Hyaluronsäure ist Hauptbestandteil der Synovialflüssigkeit (Gelenkschmiere) und der extrazellulären Matrix der Dermis. Über CD44-Rezeptoren stimuliert oral zugeführtes Hyaluronat Chondrozyten und Fibroblasten zur endogenen Neusynthese.',
     plantBasedRelevance: 'Gewonnen durch biotechnologische Fermentation (vegan). Schützt Gelenkknorpel bei sportlicher Belastung und hydratisiert die Haut von innen.',
     intakeAdvice: 'Mit reichlich Flüssigkeit (mind. 250-300 ml Wasser) einnehmen.',
@@ -906,6 +952,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Vaskuläre Endothelprotektion:</strong> Verhindert die oxidative Aktivierung von Gefäßadhäsionsmolekülen (VCAM-1, ICAM-1) in der arteriellen Intima.',
       '<strong>Oxidationsschutz für Omega-3:</strong> Schützt das flüssige EPA/DHA im BalanceOil+ sowohl in vitro vor Ranzigkeit als auch in vivo nach der Resorption.'
     ],
+    plainGermanExplanation: 'Oliven-Polyphenole (Hydroxytyrosol und Oleuropein) schützen zirkulierende Blutfette (LDL-Cholesterin) vor oxidativer Veränderung. Gleichzeitig bewahren sie ungesättigte Fettsäuren vor vorzeitiger Oxidation.',
     biochemistry: 'Hydroxytyrosol bindet an LDL-Partikel und verhindert deren Oxidation zu oxLDL (Schlüsselfaktor in der Entstehung atherosklerotischer Plaques). Zudem aktiviert es den Nrf2-Signalweg zur Hochregulation körpereigener Schutzenzyme.',
     plantBasedRelevance: 'Verhindert die Oxidation des flüssigen Omega-3-Öls in der Flasche sowie nach der Resorption im Blutkreislauf.',
     intakeAdvice: 'In Zinzino BalanceOil+ direkt im Verbund mit EPA/DHA enthalten.',
@@ -925,6 +972,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Klinische Evidenz (Myokardschutz & Gefäße):</strong> Große placebokontrollierte Humanstudien (z. B. Q-SYMBIO, KiSel-10) belegen eine signifikante Verbesserung der myokardialen Pumpleistung und vaskulären Endothelfunktion bei 100–200 mg Tagesdosis (kein isolierter EFSA-Claim).',
       '<strong>Intramitochondrialer Radikalschutz:</strong> Neutralisiert intramitochondriale Sauerstoffradikale und schützt mitochondriale DNA und Membranlipide direkt vor Ort.'
     ],
+    plainGermanExplanation: 'Coenzym Q10 ist der zentrale Elektronenüberträger in der mitochondrialen Atmungskette zur Bildung von ATP. Es versorgt energieintensive Gewebe wie Herzmuskel und Gehirn und schützt Mitochondrienmembranen vor oxidativen Schäden.',
     biochemistry: 'CoQ10 transferiert Elektronen zur ATP-Synthase und treibt so die zelluläre Energieproduktion in Herz, Muskeln und Gehirn an. Es recycelt oxidiertes Vitamin E und schützt mitochondriale Membranen direkt vor freien Radikalen.',
     plantBasedRelevance: 'Die Hauptnahrungsquellen sind tierische Innereien (Herz, Leber) und fetter Fisch. Durch die 200 mg veganes Fermentations-Q10 schließt du diese Versorgungslücke mit einer klinisch hochwirksamen Dosis.',
     intakeAdvice: 'Fettlöslich: Immer morgens zum Frühstück mit Fettquelle oder zum Omega-3 BalanceOil+ einnehmen.',
@@ -944,6 +992,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Klinische Evidenz (Asthenopie & Augenentlastung):</strong> Randomisierte Studien belegen, dass 6–12 mg Astaxanthin die Akkommodationsfähigkeit der Ziliarmuskeln verbessert und Augenermüdung bei Bildschirmarbeit messbar mindert.',
       '<strong>Haut- & Membran-Photoprotektion:</strong> Dämpft UV-induzierte Matrix-Metalloproteinasen (Kollagenasen) und schützt die Dermis von innen vor Photo-Aging (kein EFSA Health Claim, aber robuste RCT-Literatur).'
     ],
+    plainGermanExplanation: 'Astaxanthin ist ein hochpotentes Xanthophyll-Carotinoid, das Zellmembranen durchspannt und oxidativen Stress im Zellinneren sowie an der Membranoberfläche neutralisiert. Es entlastet die Ziliarmuskeln der Augen bei intensiver Bildschirmarbeit und unterstützt den Schutz vor UV-bedingtem Photo-Aging.',
     biochemistry: 'Aufgrund seiner polaren Endgruppen legt sich Astaxanthin quer durch die Lipiddoppelschicht der Zellmembranen und schützt sowohl den inneren als auch den äußeren Zellraum vor Lipidperoxidation. Es passiert mühelos die Blut-Hirn- und Blut-Netzhaut-Schranke.',
     plantBasedRelevance: 'Kommt in der Natur über die Nahrungskette primär in Wildlachs vor. Die hochdosierten 12 mg veganes Astaxanthin aus der Mikroalge Haematococcus pluvialis übertreffen die Zufuhr eines üblichen Fischkonsums um ein Vielfaches.',
     intakeAdvice: 'Fettlöslich: Zu einer Mahlzeit mit Fett oder direkt zusammen mit Zinzino BalanceOil+ einnehmen.',
@@ -963,6 +1012,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Symptomprävention:</strong> Verhindert postprandiale Blähungen, Meteorismus, abdominale Krämpfe und osmotische Diarrhöen nach Proteinkonsum.',
       '<strong>Maximale Shake-Verträglichkeit:</strong> Ermöglicht den beschwerdefreien Verzehr des Molkenproteins selbst bei subklinischer Laktosesensitivität.'
     ],
+    plainGermanExplanation: 'Das Verdauungsenzym Laktase spaltet das Disaccharid Laktose im Dünndarm in Glukose und Galaktose. Es gewährleistet die beschwerdefreie Verwertung von Molkenprotein bei bestehender oder leichter Laktoseunverträglichkeit.',
     biochemistry: 'Laktase spaltet das Disaccharid Laktose im Dünndarm enzymatisch in die resorbierbaren Monosaccharide D-Glukose und D-Galaktose. Dadurch wird verhindert, dass ungespaltene Laktose in den Dickdarm gelangt und dort bakteriell zu Gasen fermentiert wird.',
     plantBasedRelevance: 'Sorgt für maximale Magen-Darm-Bekömmlichkeit des Molkenproteins selbst bei leichter Laktosesensitivität.',
     intakeAdvice: 'Bereits im Vit4ever Yummy Whey Pulver enthalten und entfaltet seine Wirkung direkt beim Trinken.',
@@ -982,6 +1032,7 @@ export const NUTRIENT_DETAILS = {
       '<strong>Klinische Evidenz (Kognition & synaptische Plastizität):</strong> Humanstudien zeigen Verbesserungen von Aufmerksamkeit, Arbeitsgedächtnis und mentaler Verarbeitungsgeschwindigkeit (FDA Qualified Health Claim für kognitive Funktion vorhanden).',
       '<strong>Sichere pflanzliche Quelle:</strong> Gewonnen durch enzymatische Transphosphatidylierung aus gentechnikfreiem Sonnenblumenlecithin.'
     ],
+    plainGermanExplanation: 'Phosphatidylserin ist ein Schlüsselphospholipid neuronaler Zellmembranen, das die synaptische Signalübertragung unterstützt und nach körperlicher oder mentaler Belastung eine überschießende Cortisolausschüttung dämpfen kann.',
     biochemistry: 'Phosphatidylserin aktiviert die neuronale Proteinkinase C (PKC) und Na+/K+-ATPase, moduliert die Freisetzung von Acetylcholin und Dopamin und senkt bei physischem oder mentalem Stress überschießende ACTH- und Cortisolspiegel.',
     plantBasedRelevance: 'In der Nahrung in höchster Dichte in tierischem Hirn- und Organgewebe vorhanden. Pflanzliches Phosphatidylserin (aus Sonnenblumen- oder Sojalecithin) liefert 100-300 mg reines bioverfügbares PS.',
     intakeAdvice: '100-200 mg morgens für kognitiven Fokus oder nach intensivem Training zur Cortisolsenkung.',

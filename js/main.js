@@ -429,6 +429,22 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
             ` : ''}
 
+            <!-- Plain German Everyday Explanation Accordion (Zum Aufklappen) -->
+            ${details.plainGermanExplanation ? `
+              <details class="modal-plain-accordion">
+                <summary class="modal-plain-summary">
+                  <div class="modal-plain-summary-left">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                    <span><strong>Praktischer Alltagsnutzen</strong> (Klicken zum Aufklappen)</span>
+                  </div>
+                  <svg class="summary-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="modal-plain-content">
+                  <p>${details.plainGermanExplanation}</p>
+                </div>
+              </details>
+            ` : ''}
+
             <!-- Physiological Function Section -->
             <div class="modal-section">
               <h3 class="modal-sec-heading">
