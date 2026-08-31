@@ -90,11 +90,24 @@ export const MY_SUPPLEMENTS = [
     icon: '⚡',
     badge: '3.000 mg Creapure®',
     image: 'assets/images/gloryfeel-creatine.png'
+  },
+  {
+    id: 'vit4ever-yummy-whey',
+    name: 'Yummy Whey Protein (Lemon Cheesecake)',
+    shortName: 'Vit4ever Whey',
+    brand: 'Vit4ever',
+    dosage: '30 g Pulver täglich (1 Shake)',
+    timing: 'Nach dem Training / Vormittags',
+    icon: '🍋',
+    badge: '23 g Protein + 18 Aminosäuren',
+    image: 'assets/images/vit4ever-yummy-whey.png'
   }
 ];
 
 export const NUTRIENTS_SUMMARY = [
-  // --- VITAMINE ---
+  // ==========================================
+  // 1. VITAMINE (13)
+  // ==========================================
   {
     id: 'vit-d3',
     category: 'vitamins',
@@ -321,7 +334,9 @@ export const NUTRIENTS_SUMMARY = [
     ]
   },
 
-  // --- MINERALSTOFFE & SPURENELEMENTE ---
+  // ==========================================
+  // 2. MINERALSTOFFE & SPURENELEMENTE (11)
+  // ==========================================
   {
     id: 'magnesium',
     category: 'minerals',
@@ -508,11 +523,299 @@ export const NUTRIENTS_SUMMARY = [
     sources: []
   },
 
-  // --- AMINOSÄUREN, OMEGA-3 & PERFORMANCE ---
+  // ==========================================
+  // 3. AMINOSÄUREN & PROTEIN (NEUE RUBRIK)
+  // ==========================================
+  {
+    id: 'whey-protein',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'Gesamtprotein (Whey)',
+    extra: 'Ultrafiltriertes Molkenproteinkonzentrat',
+    amount: '23,0 g',
+    rawAmount: 23,
+    unit: 'g',
+    ref: '60 g (D-A-CH Basis für Männer)',
+    percent: 38,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '23,0 g', note: '30 g Pulver (1 Shake)' }
+    ]
+  },
+  {
+    id: 'bcaa-total',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'BCAAs Gesamt (Leucin, Isoleucin, Valin)',
+    extra: 'Verzweigtkettige Aminosäuren (2:1:1 Verhältnis)',
+    amount: '5.300 mg',
+    rawAmount: 5300,
+    unit: 'mg',
+    ref: '5.000 mg (Sport & Muskelerhalt)',
+    percent: 106,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '5.300 mg', note: '30 g Pulver (1 Shake)' }
+    ]
+  },
+  {
+    id: 'leucin',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'L-Leucin (BCAA / EAA)',
+    extra: 'Zentraler Aktivator der mTOR-Proteinsynthese',
+    amount: '2.600 mg',
+    rawAmount: 2600,
+    unit: 'mg',
+    ref: '2.700 mg (WHO / Leucin-Trigger-Schwelle)',
+    percent: 96,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '2.600 mg', note: '30 g Pulver (1 Shake)' }
+    ]
+  },
+  {
+    id: 'isoleucin',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'L-Isoleucin (BCAA / EAA)',
+    extra: 'Glukoseaufnahme in Muskelzellen & Hämoglobinsynthese',
+    amount: '1.400 mg',
+    rawAmount: 1400,
+    unit: 'mg',
+    ref: '1.400 mg (WHO Referenzbedarf)',
+    percent: 100,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '1.400 mg', note: '30 g Pulver (1 Shake)' }
+    ]
+  },
+  {
+    id: 'valin',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'L-Valin (BCAA / EAA)',
+    extra: 'Muskelregeneration & neuronale Stickstoffbalance',
+    amount: '1.300 mg',
+    rawAmount: 1300,
+    unit: 'mg',
+    ref: '1.800 mg (WHO Referenzbedarf)',
+    percent: 72,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '1.300 mg', note: '30 g Pulver (1 Shake)' }
+    ]
+  },
+  {
+    id: 'glutamin',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'L-Glutamin & Glutaminsäure',
+    extra: 'Hauptbrennstoff für Enterozyten & Darmbarriere',
+    amount: '4.100 mg',
+    rawAmount: 4100,
+    unit: 'mg',
+    ref: '3.000 mg (Darm- & Immunzell-Bedarf)',
+    percent: 137,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '4.100 mg', note: '30 g Pulver (1 Shake)' }
+    ]
+  },
+  {
+    id: 'lysin',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'L-Lysin (EAA)',
+    extra: 'Kollagenvernetzung & Carnitin-Präkursor',
+    amount: '2.200 mg',
+    rawAmount: 2200,
+    unit: 'mg',
+    ref: '2.100 mg (WHO Referenzbedarf)',
+    percent: 105,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '2.200 mg', note: '30 g Pulver (1 Shake)' }
+    ]
+  },
+  {
+    id: 'threonin',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'L-Threonin (EAA)',
+    extra: 'Mucin-Synthese für Schleimhäute & Immunglobuline',
+    amount: '1.600 mg',
+    rawAmount: 1600,
+    unit: 'mg',
+    ref: '1.050 mg (WHO Referenzbedarf)',
+    percent: 152,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '1.600 mg', note: '30 g Pulver (1 Shake)' }
+    ]
+  },
+  {
+    id: 'tryptophan',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'L-Tryptophan (EAA)',
+    extra: 'Vorstufe für Serotonin & Melatonin',
+    amount: '400 mg',
+    rawAmount: 400,
+    unit: 'mg',
+    ref: '280 mg (WHO Referenzbedarf)',
+    percent: 143,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '400 mg', note: '30 g Pulver (1 Shake)' }
+    ]
+  },
+  {
+    id: 'arginin',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'L-Arginin',
+    extra: 'Physiologische Vorstufe für Stickstoffmonoxid (NO)',
+    amount: '600 mg',
+    rawAmount: 600,
+    unit: 'mg',
+    ref: '1.000 mg (Gefäß- & NO-Synthese)',
+    percent: 60,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '600 mg', note: '30 g Pulver (1 Shake)' }
+    ]
+  },
+  {
+    id: 'methionin-cystein',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'Methionin & Cystein (Schwefel-Aminosäuren)',
+    extra: 'Glutathion-Synthese & Keratin-Bausteine',
+    amount: '1.000 mg',
+    rawAmount: 1000,
+    unit: 'mg',
+    ref: '1.050 mg (WHO Referenzbedarf)',
+    percent: 95,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '1.000 mg', note: '500 mg Met + 500 mg Cys' }
+    ]
+  },
+  {
+    id: 'glycin',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'Glycin',
+    extra: 'Diamond® reines L-Glycin & Whey-Aminosäure',
+    amount: '4.450 mg',
+    rawAmount: 4450,
+    unit: 'mg',
+    ref: '3.000 mg (Optimale Tagesdosis)',
+    percent: 148,
+    sourceBrand: 'Watson + Vit4ever',
+    supplementIds: ['watson-collasyn', 'vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'watson-collasyn', amount: '4.000 mg', note: 'Kollagen-Aminosäure (1 Stick)' },
+      { supplementId: 'vit4ever-yummy-whey', amount: '450 mg', note: '30 g Pulver (1 Shake)' }
+    ]
+  },
+  {
+    id: 'prolin',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'L-Prolin (Kollagen-Baustein)',
+    extra: 'Primäre Aminosäure für Kollagen-Dreifachhelix',
+    amount: '1.400 mg',
+    rawAmount: 1400,
+    unit: 'mg',
+    ref: '500 mg (Kollagen-Synthese)',
+    percent: 280,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '1.400 mg', note: '30 g Pulver (1 Shake)' }
+    ]
+  },
+  {
+    id: 'carnitine',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'L-Carnitin',
+    extra: 'L-Carnitin-Tartrat / Acetyl-L-Carnitin',
+    amount: '0 mg',
+    rawAmount: 0,
+    unit: 'mg',
+    ref: '500 mg (Bedarfsempfehlung)',
+    percent: 0,
+    sourceBrand: 'Offen / 0 mg',
+    supplementIds: [],
+    sources: []
+  },
+  {
+    id: 'taurine',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'Taurin',
+    extra: '2-Aminoethansulfonsäure',
+    amount: '0 mg',
+    rawAmount: 0,
+    unit: 'mg',
+    ref: '500 mg (Bedarfsempfehlung)',
+    percent: 0,
+    sourceBrand: 'Offen / 0 mg',
+    supplementIds: [],
+    sources: []
+  },
+  {
+    id: 'carnosine',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'Carnosin / Beta-Alanin',
+    extra: 'L-Carnosin / Beta-Alanin',
+    amount: '0 mg',
+    rawAmount: 0,
+    unit: 'mg',
+    ref: '1.500 mg (Bedarfsempfehlung)',
+    percent: 0,
+    sourceBrand: 'Offen / 0 mg',
+    supplementIds: [],
+    sources: []
+  },
+  {
+    id: 'nac',
+    category: 'amino',
+    categoryName: 'Aminosäuren & Protein',
+    name: 'N-Acetylcystein (NAC)',
+    extra: 'N-Acetyl-L-Cystein',
+    amount: '0 mg',
+    rawAmount: 0,
+    unit: 'mg',
+    ref: '600 mg (Glutathion-Synthese)',
+    percent: 0,
+    sourceBrand: 'Offen / 0 mg',
+    supplementIds: [],
+    sources: []
+  },
+
+  // ==========================================
+  // 4. OMEGA-3, VITALSTOFFE & PERFORMANCE (10)
+  // ==========================================
   {
     id: 'omega-3',
     category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
+    categoryName: 'Omega-3 & Vitalstoffe',
     name: 'Omega-3 (EPA & DHA)',
     extra: '1.069 mg EPA + 569 mg DHA + 427 mg DPA',
     amount: '2.065 mg',
@@ -527,43 +830,9 @@ export const NUTRIENTS_SUMMARY = [
     ]
   },
   {
-    id: 'glycin',
-    category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
-    name: 'Glycin',
-    extra: 'Diamond® reines L-Glycin',
-    amount: '4.000 mg',
-    rawAmount: 4000,
-    unit: 'mg',
-    ref: '3.000 mg (Optimale Tagesdosis)',
-    percent: 133,
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-collasyn'],
-    sources: [
-      { supplementId: 'watson-collasyn', amount: '4.000 mg', note: 'Kollagen-Aminosäure (1 Stick)' }
-    ]
-  },
-  {
-    id: 'hyaluron',
-    category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
-    name: 'Hyaluronsäure',
-    extra: 'HAPLEX®Plus Natriumhyaluronat',
-    amount: '200 mg',
-    rawAmount: 200,
-    unit: 'mg',
-    ref: '100 mg (Studien-Referenzwert)',
-    percent: 200,
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-collasyn'],
-    sources: [
-      { supplementId: 'watson-collasyn', amount: '200 mg', note: '1 Stick täglich' }
-    ]
-  },
-  {
     id: 'creatine',
     category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
+    categoryName: 'Omega-3 & Vitalstoffe',
     name: 'Kreatin (Creapure®)',
     extra: '100% Creapure® (Alzchem)',
     amount: '3.000 mg',
@@ -580,7 +849,7 @@ export const NUTRIENTS_SUMMARY = [
   {
     id: 'cholin',
     category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
+    categoryName: 'Omega-3 & Vitalstoffe',
     name: 'Cholin',
     extra: 'Cholinbitartrat (reines Cholin)',
     amount: '450 mg',
@@ -595,9 +864,26 @@ export const NUTRIENTS_SUMMARY = [
     ]
   },
   {
+    id: 'hyaluron',
+    category: 'special',
+    categoryName: 'Omega-3 & Vitalstoffe',
+    name: 'Hyaluronsäure',
+    extra: 'HAPLEX®Plus Natriumhyaluronat',
+    amount: '200 mg',
+    rawAmount: 200,
+    unit: 'mg',
+    ref: '100 mg (Studien-Referenzwert)',
+    percent: 200,
+    sourceBrand: 'Watson Nutrition',
+    supplementIds: ['watson-collasyn'],
+    sources: [
+      { supplementId: 'watson-collasyn', amount: '200 mg', note: '1 Stick täglich' }
+    ]
+  },
+  {
     id: 'polyphenols',
     category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
+    categoryName: 'Omega-3 & Vitalstoffe',
     name: 'Oliven-Polyphenole',
     extra: 'Oleocanthal & Hydroxytyrosol',
     amount: '2.9 mg',
@@ -612,54 +898,26 @@ export const NUTRIENTS_SUMMARY = [
     ]
   },
   {
-    id: 'carnitine',
+    id: 'laktase',
     category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
-    name: 'L-Carnitin',
-    extra: 'L-Carnitin-Tartrat / Acetyl-L-Carnitin',
-    amount: '0 mg',
-    rawAmount: 0,
+    categoryName: 'Omega-3 & Vitalstoffe',
+    name: 'Laktase-Enzym',
+    extra: 'Zusatzenzym im Yummy Whey zur Laktosespaltung',
+    amount: '30 mg',
+    rawAmount: 30,
     unit: 'mg',
-    ref: '500 mg (Bedarfsempfehlung)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
-  },
-  {
-    id: 'taurine',
-    category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
-    name: 'Taurin',
-    extra: '2-Aminoethansulfonsäure',
-    amount: '0 mg',
-    rawAmount: 0,
-    unit: 'mg',
-    ref: '500 mg (Bedarfsempfehlung)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
-  },
-  {
-    id: 'carnosine',
-    category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
-    name: 'Carnosin / Beta-Alanin',
-    extra: 'L-Carnosin / Beta-Alanin',
-    amount: '0 mg',
-    rawAmount: 0,
-    unit: 'mg',
-    ref: '1.500 mg (Bedarfsempfehlung)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
+    ref: '30 mg / 3.000 FCC (EFSA Enzym-Wirksamkeit)',
+    percent: 100,
+    sourceBrand: 'Vit4ever',
+    supplementIds: ['vit4ever-yummy-whey'],
+    sources: [
+      { supplementId: 'vit4ever-yummy-whey', amount: '30 mg', note: '30 g Pulver (1 Shake)' }
+    ]
   },
   {
     id: 'coq10',
     category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
+    categoryName: 'Omega-3 & Vitalstoffe',
     name: 'Coenzym Q10 (Ubiquinol)',
     extra: 'Ubiquinol (aktive reduzierte Form)',
     amount: '0 mg',
@@ -672,24 +930,9 @@ export const NUTRIENTS_SUMMARY = [
     sources: []
   },
   {
-    id: 'nac',
-    category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
-    name: 'N-Acetylcystein (NAC)',
-    extra: 'N-Acetyl-L-Cystein',
-    amount: '0 mg',
-    rawAmount: 0,
-    unit: 'mg',
-    ref: '600 mg (Glutathion-Synthese)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
-  },
-  {
     id: 'astaxanthin',
     category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
+    categoryName: 'Omega-3 & Vitalstoffe',
     name: 'Astaxanthin',
     extra: 'AstaPure® (Haematococcus pluvialis)',
     amount: '0 mg',
@@ -704,7 +947,7 @@ export const NUTRIENTS_SUMMARY = [
   {
     id: 'ala',
     category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
+    categoryName: 'Omega-3 & Vitalstoffe',
     name: 'Alpha-Liponsäure (R-ALA)',
     extra: 'R-Alpha-Liponsäure (natürliche R-Form)',
     amount: '0 mg',
@@ -717,24 +960,9 @@ export const NUTRIENTS_SUMMARY = [
     sources: []
   },
   {
-    id: 'prolin',
-    category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
-    name: 'L-Prolin (Kollagen-Baustein)',
-    extra: 'L-Prolin (Kollagen-Aminosäure)',
-    amount: '0 mg',
-    rawAmount: 0,
-    unit: 'mg',
-    ref: '500 mg (Kollagen-Synthese)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
-  },
-  {
     id: 'ps',
     category: 'special',
-    categoryName: 'Aminosäuren, Omega-3 & Performance',
+    categoryName: 'Omega-3 & Vitalstoffe',
     name: 'Phosphatidylserin',
     extra: 'Phosphatidylserin (Sonnenblumenlecithin)',
     amount: '0 mg',

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pouchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="lemonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background Soft Circle -->
+  <circle cx="200" cy="200" r="170" fill="#fefce8" />
+
+  <!-- Pouch Body -->
+  <g filter="url(#shadow)">
+    <!-- Main Pouch Shape -->
+    <path d="M 120 100 Q 200 90 280 100 L 295 310 Q 200 330 105 310 Z" fill="url(#pouchGrad)" stroke="#cbd5e1" stroke-width="2.5" />
+    
+    <!-- Top Seal Zip -->
+    <path d="M 125 100 Q 200 92 275 100 L 277 115 Q 200 107 123 115 Z" fill="#e2e8f0" />
+    <line x1="130" y1="108" x2="270" y2="108" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3" />
+
+    <!-- Center Label Area -->
+    <rect x="135" y="130" width="130" height="155" rx="8" fill="#ffffff" stroke="#f1f5f9" stroke-width="1.5"/>
+
+    <!-- Brand Badge -->
+    <rect x="155" y="142" width="90" height="18" rx="9" fill="#0f172a" />
+    <text x="200" y="155" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="800" text-anchor="middle" letter-spacing="1">VIT4EVER</text>
+
+    <!-- Main Title -->
+    <text x="200" y="180" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" text-anchor="middle" letter-spacing="-0.5">YUMMY WHEY</text>
+    <text x="200" y="195" fill="#f59e0b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="800" text-anchor="middle" letter-spacing="0.5">PROTEIN CONCENTRATE</text>
+
+    <!-- Flavor Strip -->
+    <rect x="145" y="208" width="110" height="22" rx="4" fill="url(#accentGrad)" />
+    <text x="200" y="223" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="800" text-anchor="middle">LEMON CHEESECAKE</text>
+
+    <!-- Specs Pills -->
+    <g transform="translate(145, 238)">
+      <rect x="0" y="0" width="34" height="16" rx="3" fill="#fef3c7" stroke="#fde68a" stroke-width="0.8"/>
+      <text x="17" y="11" fill="#b45309" font-family="sans-serif" font-size="7.5" font-weight="700" text-anchor="middle">23g Prot</text>
+
+      <rect x="38" y="0" width="34" height="16" rx="3" fill="#fef3c7" stroke="#fde68a" stroke-width="0.8"/>
+      <text x="55" y="11" fill="#b45309" font-family="sans-serif" font-size="7.5" font-weight="700" text-anchor="middle">5.3g BCAA</text>
+
+      <rect x="76" y="0" width="34" height="16" rx="3" fill="#fef3c7" stroke="#fde68a" stroke-width="0.8"/>
+      <text x="93" y="11" fill="#b45309" font-family="sans-serif" font-size="7.5" font-weight="700" text-anchor="middle">+ Laktase</text>
+    </g>
+
+    <!-- Weight Tag -->
+    <text x="200" y="272" fill="#64748b" font-family="sans-serif" font-size="8.5" font-weight="600" text-anchor="middle">908 g e</text>
+  </g>
+
+  <!-- Lemon Accent Graphic Bottom Right -->
+  <g transform="translate(265, 265)" filter="url(#shadow)">
+    <circle cx="20" cy="20" r="22" fill="url(#lemonGrad)" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="20" cy="20" r="17" fill="#fef08a" opacity="0.6"/>
+    <!-- Lemon Segments -->
+    <path d="M 20 20 L 20 5 A 15 15 0 0 1 31 10 Z" fill="#ffffff" opacity="0.9"/>
+    <path d="M 20 20 L 31 10 A 15 15 0 0 1 35 20 Z" fill="#ffffff" opacity="0.9"/>
+    <path d="M 20 20 L 35 20 A 15 15 0 0 1 31 30 Z" fill="#ffffff" opacity="0.9"/>
+    <path d="M 20 20 L 31 30 A 15 15 0 0 1 20 35 Z" fill="#ffffff" opacity="0.9"/>
+    <path d="M 20 20 L 20 35 A 15 15 0 0 1 9 30 Z" fill="#ffffff" opacity="0.9"/>
+    <path d="M 20 20 L 9 30 A 15 15 0 0 1 5 20 Z" fill="#ffffff" opacity="0.9"/>
+    <path d="M 20 20 L 5 20 A 15 15 0 0 1 9 10 Z" fill="#ffffff" opacity="0.9"/>
+    <path d="M 20 20 L 9 10 A 15 15 0 0 1 20 5 Z" fill="#ffffff" opacity="0.9"/>
+  </g>
+</svg>
