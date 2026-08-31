@@ -24,15 +24,15 @@ export const NUTRIENT_DETAILS = {
   'vit-d3': {
     id: 'vit-d3',
     name: 'Vitamin D3',
-    scientificName: 'Cholecalciferol (191.7 µg / 7.667 IE)',
+    scientificName: 'Cholecalciferol (7.667 IE / 191,7 µg)',
     categoryName: 'Vitamine',
     badge: '☀️ Steroidhormon-Präkursor',
     summary: 'Schlüsselhormon für Knochendichte, Calcium-Homöostase, Muskelleistung und angeborene sowie adaptive Immunfunktion.',
     biochemistry: 'Cholecalciferol wird in der Leber zu 25(OH)D und in den Nieren/Zellen zum aktiven Steroidhormon Calcitriol (1,25(OH)2D) hydroxyliert. Calcitriol bindet an den Vitamin-D-Rezeptor (VDR) in fast allen Geweben und reguliert über 1.000 Gene, u.a. antimikrobielle Peptide (Cathelicidin) und Calcium-Transportproteine.',
     plantBasedRelevance: 'Bei Verzicht auf fetten Seefisch (Lachs, Hering, Makrele) existiert in pflanzlichen Lebensmitteln praktisch keine nennenswerte Vitamin-D-Quelle. In mitteleuropäischen Breitengraden reicht die UV-B-Strahlung von Oktober bis April physikalisch nicht für eine Eigensynthese aus – Supplementierung ist obligatorisch.',
     intakeAdvice: 'Morgens oder mittags mit Fettquelle einnehmen. Zwingend synergistisch mit Vitamin K2 (Aktivierung von Osteocalcin & Matrix-Gla-Protein) und Magnesium (Kofaktor für die Hydroxylasen) kombinieren.',
-    safetyAndUL: 'EFSA Upper Limit für die Allgemeinbevölkerung liegt bei 100 µg (4.000 IE)/Tag. In Kombination mit hoher K2-Gabe (270 µg) und Magnesium wird das Risiko einer Weichteilkalzifizierung physiologisch minimiert.',
-    scientificReference: 'EFSA Journal 2012;10(7):2813 | Endocrine Society Clinical Guidelines'
+    safetyAndUL: 'EFSA Upper Limit für die Allgemeinbevölkerung: 4.000 IE (100 µg)/Tag. In Kombination mit hoher K2-Gabe (270 µg) und Magnesium wird das Risiko einer Weichteilkalzifizierung physiologisch minimiert.',
+    scientificReference: 'EFSA Journal 2012;10(7):2813 | D-A-CH Referenzwerte | Endocrine Society Clinical Guidelines'
   },
   'vit-e': {
     id: 'vit-e',
