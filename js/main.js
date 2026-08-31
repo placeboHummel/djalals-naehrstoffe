@@ -1,9 +1,11 @@
-import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=1.9.0';
+import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=2.0.0';
+import { NUTRIENT_DETAILS } from './nutrient-details.js?v=2.0.0';
 
 document.addEventListener('DOMContentLoaded', () => {
   const suppContainer = document.getElementById('supplements-list');
   const nutContainer = document.getElementById('nutrients-list');
   const activeFilterContainer = document.getElementById('active-filter-container');
+  const modalContainer = document.getElementById('modal-container');
   const searchInput = document.getElementById('search-input');
   const filterPills = document.querySelectorAll('.filter-pill');
   const backToTopBtn = document.getElementById('back-to-top-btn');
@@ -113,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="missing-info-text">
             <strong>Aktuell noch nicht im Stack abgedeckt (${filteredCount} Stoffe):</strong>
-            <p>Carninährstoffe, mitochondriale Antioxidantien & Vitalstoffe, die bei fleisch- und fischfreier Ernährung nicht oder nur in geringen Spuren über die Nahrung aufgenommen werden.</p>
+            <p>Carninährstoffe, mitochondriale Kofaktoren & Vitalstoffe, die bei fleisch- und fischfreier Ernährung nicht oder nur in Spuren über die Nahrung aufgenommen werden.</p>
           </div>
         </div>
       `;
@@ -158,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 3. Render Nutrients Rows
+  // 3. Render Nutrients Cards
   function renderNutrients() {
     if (!nutContainer) return;
 
@@ -234,10 +236,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const cardClass = isMissing ? 'nut-card is-missing' : 'nut-card';
 
       return `
-        <div class="${cardClass}">
+        <div class="${cardClass}" data-nutrient-id="${item.id}">
           <div class="nut-top-row">
             <div class="nut-title-box">
-              <span class="nut-name">${item.name}</span>
+              <div class="nut-name-row">
+                <span class="nut-name">${item.name}</span>
+                <button class="nut-info-btn" data-nutrient-id="${item.id}" aria-label="Wissenschaftliche Infos zu ${item.name}" title="Wissenschaftliche Infos anzeigen">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                </button>
+              </div>
               <span class="nut-extra">${item.extra}</span>
             </div>
             <span class="${sourceClass}">${item.sourceBrand || item.source}</span>
@@ -258,6 +269,197 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
     }).join('');
+
+    // Attach info modal triggers
+    const infoButtons = nutContainer.querySelectorAll('.nut-info-btn');
+    infoButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const nutrientId = btn.dataset.nutrientId;
+        openNutrientModal(nutrientId);
+      });
+    });
+
+    const cards = nutContainer.querySelectorAll('.nut-card');
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        // If clicking inside card, open modal
+        const nutrientId = card.dataset.nutrientId;
+        if (nutrientId) {
+          openNutrientModal(nutrientId);
+        }
+      });
+    });
+  }
+
+  // 4. Open Nutrient Scientific Detail Modal
+  function openNutrientModal(nutrientId) {
+    if (!modalContainer) return;
+
+    const nutrient = NUTRIENTS_SUMMARY.find(n => n.id === nutrientId);
+    const details = NUTRIENT_DETAILS[nutrientId] || {
+      name: nutrient?.name || 'Nährstoff-Details',
+      scientificName: nutrient?.extra || '',
+      badge: '🔬 Nährstoff-Analyse',
+      summary: nutrient?.extra || 'Wissenschaftlich geprüfter Nährstoff.',
+      biochemistry: 'Dieser Nährstoff erfüllt lebenswichtige biologische Funktionen im zellulären Stoffwechsel und Enzymkatalysen.',
+      plantBasedRelevance: 'Wichtiger Bestandteil einer ausgewogenen und vollwertigen pflanzenbasierten Ernährung.',
+      intakeAdvice: 'Zu einer Mahlzeit mit ausreichend Flüssigkeit einnehmen.',
+      safetyAndUL: 'Innerhalb der offiziellen Referenzwerte der EFSA / D-A-CH absolut sicher.',
+      scientificReference: 'EFSA Journal / D-A-CH Referenzwerte'
+    };
+
+    if (!nutrient) return;
+
+    const isMissing = nutrient.percent === 0;
+    const isEfsa = nutrient.ref.includes('EFSA');
+    const percentText = isMissing ? '0% (Nicht im Stack)' : `${nutrient.percent}% ${isEfsa ? 'EFSA' : 'D-A-CH'}`;
+
+    // Get sources in current stack
+    const stackSources = MY_SUPPLEMENTS.filter(s => nutrient.supplementIds && nutrient.supplementIds.includes(s.id));
+
+    modalContainer.innerHTML = `
+      <div class="modal-backdrop" id="modal-backdrop">
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-nutrient-title">
+          
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <div class="modal-title-group">
+              <span class="modal-category-badge">${details.badge}</span>
+              <h2 id="modal-nutrient-title" class="modal-title">${details.name}</h2>
+              <span class="modal-subtitle">${details.scientificName}</span>
+            </div>
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Modal schließen" title="Schließen (Esc)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+
+          <!-- Modal Body Content -->
+          <div class="modal-body">
+            
+            <!-- Key Metric Strip -->
+            <div class="modal-metric-strip">
+              <div class="metric-tile">
+                <span class="metric-lbl">Aktuelle Tageszufuhr</span>
+                <span class="metric-val ${isMissing ? 'text-orange' : 'text-emerald'}">${nutrient.amount}</span>
+              </div>
+              <div class="metric-tile">
+                <span class="metric-lbl">Offizielle Referenz</span>
+                <span class="metric-val">${nutrient.ref}</span>
+              </div>
+              <div class="metric-tile">
+                <span class="metric-lbl">Tagesdeckung</span>
+                <span class="metric-val ${isMissing ? 'text-orange' : 'text-emerald'}">${percentText}</span>
+              </div>
+            </div>
+
+            <!-- Sources in Stack Section -->
+            <div class="modal-section">
+              <h3 class="modal-sec-heading">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                Quellen in deiner täglichen Routine
+              </h3>
+              ${stackSources.length > 0 ? `
+                <div class="modal-sources-grid">
+                  ${stackSources.map(s => `
+                    <div class="modal-source-item">
+                      <div class="modal-source-img">
+                        <img src="${s.image}" alt="${s.name}">
+                      </div>
+                      <div class="modal-source-info">
+                        <strong>${s.name}</strong>
+                        <span>${s.brand} • ${s.dosage}</span>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              ` : `
+                <div class="modal-empty-source-box">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span>Aktuell in keinem deiner Supplements enthalten (0 mg Zufuhr).</span>
+                </div>
+              `}
+            </div>
+
+            <!-- Physiological Function Section -->
+            <div class="modal-section">
+              <h3 class="modal-sec-heading">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                Biochemische & Physiologische Funktion
+              </h3>
+              <p class="modal-text">${details.biochemistry}</p>
+            </div>
+
+            <!-- Plant-Based / Meat-Free Relevance -->
+            <div class="modal-section modal-sec-highlight">
+              <h3 class="modal-sec-heading">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+                Relevanz bei 0% Fleisch & 0% Fisch
+              </h3>
+              <p class="modal-text">${details.plantBasedRelevance}</p>
+            </div>
+
+            <!-- Intake Advice & Synergies -->
+            <div class="modal-section">
+              <h3 class="modal-sec-heading">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Optimale Einnahme & Synergien
+              </h3>
+              <p class="modal-text">${details.intakeAdvice}</p>
+            </div>
+
+            <!-- Safety & Upper Limit -->
+            <div class="modal-section">
+              <h3 class="modal-sec-heading">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                Toxizitätsbewertung & EFSA Upper Limit
+              </h3>
+              <p class="modal-text">${details.safetyAndUL}</p>
+            </div>
+
+            <!-- Scientific Reference Footnote -->
+            <div class="modal-footer-ref">
+              <strong>Evidenz & Behördenquellen:</strong> ${details.scientificReference}
+            </div>
+
+          </div>
+
+          <!-- Modal Footer Actions -->
+          <div class="modal-footer">
+            <button class="modal-btn-action" id="modal-btn-close">Verstanden & Schließen</button>
+          </div>
+
+        </div>
+      </div>
+    `;
+
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+    const closeBtn = document.getElementById('modal-close-btn');
+    const actionBtn = document.getElementById('modal-btn-close');
+    const backdrop = document.getElementById('modal-backdrop');
+
+    function closeModal() {
+      if (modalContainer) modalContainer.innerHTML = '';
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKeydown);
+    }
+
+    function handleKeydown(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (actionBtn) actionBtn.addEventListener('click', closeModal);
+    if (backdrop) {
+      backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) closeModal();
+      });
+    }
+
+    document.addEventListener('keydown', handleKeydown);
   }
 
   // Event Listeners

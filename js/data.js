@@ -88,6 +88,7 @@ export const MY_SUPPLEMENTS = [
 export const NUTRIENTS_SUMMARY = [
   // --- VITAMINE ---
   {
+    id: 'vit-d3',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin D3',
@@ -102,6 +103,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials', 'vitamoment-d3-k2', 'zinzino-balanceoil']
   },
   {
+    id: 'vit-k2',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin K2',
@@ -116,6 +118,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials', 'vitamoment-d3-k2']
   },
   {
+    id: 'vit-c',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin C',
@@ -130,6 +133,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['vitamoment-vitamin-c', 'watson-collasyn']
   },
   {
+    id: 'vit-b12',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin B12',
@@ -144,6 +148,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'vit-a',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin A',
@@ -158,6 +163,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'vit-e',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin E',
@@ -172,6 +178,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'vit-b1',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin B1',
@@ -186,6 +193,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'vit-b2',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin B2',
@@ -200,6 +208,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'vit-b3',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin B3 (Niacin)',
@@ -214,6 +223,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'vit-b5',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin B5 (Pantothensäure)',
@@ -228,6 +238,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'vit-b6',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin B6',
@@ -242,6 +253,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'vit-b7',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin B7 (Biotin)',
@@ -256,6 +268,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'vit-b9',
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin B9 (Folat)',
@@ -272,6 +285,7 @@ export const NUTRIENTS_SUMMARY = [
 
   // --- MINERALSTOFFE & SPURENELEMENTE ---
   {
+    id: 'magnesium',
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Magnesium',
@@ -286,6 +300,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['sports-health-magnesium']
   },
   {
+    id: 'zink',
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Zink',
@@ -300,6 +315,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'eisen',
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Eisen',
@@ -314,6 +330,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'selen',
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Selen',
@@ -328,6 +345,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'jod',
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Jod',
@@ -342,6 +360,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'calcium',
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Calcium',
@@ -356,6 +375,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'kupfer',
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Kupfer',
@@ -370,6 +390,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'mangan',
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Mangan',
@@ -384,6 +405,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'chrom',
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Chrom',
@@ -398,6 +420,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'molybdaen',
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Molybdän',
@@ -412,6 +435,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials']
   },
   {
+    id: 'bor',
     category: 'minerals',
     categoryName: 'Mineralstoffe & Spurenelemente',
     name: 'Bor',
@@ -428,6 +452,7 @@ export const NUTRIENTS_SUMMARY = [
 
   // --- AMINOSÄUREN, OMEGA-3 & PERFORMANCE ---
   {
+    id: 'omega-3',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Omega-3 (EPA & DHA)',
@@ -442,6 +467,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['zinzino-balanceoil']
   },
   {
+    id: 'glycin',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Glycin (Kollagen-Aminosäure)',
@@ -456,6 +482,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-collasyn']
   },
   {
+    id: 'hyaluron',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Hyaluronsäure',
@@ -470,6 +497,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-collasyn']
   },
   {
+    id: 'creatine',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Kreatin (Creapure®)',
@@ -484,6 +512,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['gloryfeel-creatine']
   },
   {
+    id: 'cholin',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Cholin',
@@ -498,6 +527,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['true-nature-cholin']
   },
   {
+    id: 'polyphenols',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Oliven-Polyphenole',
@@ -512,6 +542,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['zinzino-balanceoil']
   },
   {
+    id: 'carnitine',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'L-Carnitin',
@@ -526,6 +557,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: []
   },
   {
+    id: 'taurine',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Taurin',
@@ -540,6 +572,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: []
   },
   {
+    id: 'carnosine',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Carnosin / Beta-Alanin',
@@ -554,6 +587,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: []
   },
   {
+    id: 'coq10',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Coenzym Q10 (Ubiquinol)',
@@ -568,6 +602,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: []
   },
   {
+    id: 'nac',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'N-Acetylcystein (NAC)',
@@ -582,6 +617,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: []
   },
   {
+    id: 'astaxanthin',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Astaxanthin',
@@ -596,6 +632,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: []
   },
   {
+    id: 'ala',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Alpha-Liponsäure (R-ALA)',
@@ -610,6 +647,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: []
   },
   {
+    id: 'prolin',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'L-Prolin (Kollagen-Baustein)',
@@ -624,6 +662,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: []
   },
   {
+    id: 'ps',
     category: 'special',
     categoryName: 'Aminosäuren, Omega-3 & Performance',
     name: 'Phosphatidylserin',
