@@ -157,10 +157,10 @@ body {
 .stats-card {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background: var(--bg-card);
   border: 1px solid var(--border-light);
-  padding: 12px 20px;
+  padding: 12px 24px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
 }
@@ -168,7 +168,8 @@ body {
 .stat-item {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
 .stat-num {
