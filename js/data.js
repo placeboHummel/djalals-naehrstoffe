@@ -11,8 +11,7 @@ export const MY_SUPPLEMENTS = [
     timing: 'Morgens zum Frühstück',
     icon: '☀️',
     badge: '21 Nährstoffe',
-    image: 'assets/images/watson-male-essentials.png',
-    url: 'https://watsonnutrition.de/products/male-essentials'
+    image: 'assets/images/watson-male-essentials.png'
   },
   {
     id: 'watson-collasyn',
@@ -22,8 +21,7 @@ export const MY_SUPPLEMENTS = [
     timing: 'Morgens / Im Shake',
     icon: '✨',
     badge: '4.000 mg Glycin + Hyaluron',
-    image: 'assets/images/watson-collasyn.png',
-    url: 'https://watsonnutrition.de/products/collasyn'
+    image: 'assets/images/watson-collasyn.png'
   },
   {
     id: 'vitamoment-d3-k2',
@@ -33,8 +31,7 @@ export const MY_SUPPLEMENTS = [
     timing: 'Morgens mit Fettquelle',
     icon: '☀️',
     badge: '5.000 IE D3 + 200 µg K2',
-    image: 'assets/images/vitamoment-d3-k2.png',
-    url: 'https://vitamoment.de/products/vitamin-d3-k2'
+    image: 'assets/images/vitamoment-d3-k2.png'
   },
   {
     id: 'vitamoment-vitamin-c',
@@ -44,8 +41,7 @@ export const MY_SUPPLEMENTS = [
     timing: 'Morgens / Mittags',
     icon: '🍊',
     badge: '500 mg Vitamin C',
-    image: 'assets/images/vitamoment-vitamin-c.png',
-    url: 'https://vitamoment.de/products/vitamin-c'
+    image: 'assets/images/vitamoment-vitamin-c.png'
   },
   {
     id: 'zinzino-balanceoil',
@@ -55,8 +51,7 @@ export const MY_SUPPLEMENTS = [
     timing: 'Morgens / Mittags zum Essen',
     icon: '🐟',
     badge: '2.065 mg Omega-3',
-    image: 'assets/images/zinzino-balanceoil.png',
-    url: 'https://www.zinzino.com/shop/site/at/de-de/products/shop/omega-supplements/300000'
+    image: 'assets/images/zinzino-balanceoil.png'
   },
   {
     id: 'true-nature-cholin',
@@ -66,8 +61,7 @@ export const MY_SUPPLEMENTS = [
     timing: 'Morgens / Mittags',
     icon: '🧠',
     badge: '450 mg Cholin',
-    image: 'assets/images/true-nature-cholin.png',
-    url: ''
+    image: 'assets/images/true-nature-cholin.png'
   },
   {
     id: 'sports-health-magnesium',
@@ -77,8 +71,7 @@ export const MY_SUPPLEMENTS = [
     timing: 'Abends vor dem Schlafen',
     icon: '🌙',
     badge: '400 mg Magnesium',
-    image: 'assets/images/sports-health-magnesium.png',
-    url: ''
+    image: 'assets/images/sports-health-magnesium.png'
   },
   {
     id: 'gloryfeel-creatine',
@@ -88,8 +81,7 @@ export const MY_SUPPLEMENTS = [
     timing: 'Morgens / Nach dem Training',
     icon: '⚡',
     badge: '3.000 mg Creapure®',
-    image: 'assets/images/gloryfeel-creatine.png',
-    url: 'https://www.amazon.de/dp/B0CX9FJNMM'
+    image: 'assets/images/gloryfeel-creatine.png'
   }
 ];
 
