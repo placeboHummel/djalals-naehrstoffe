@@ -50,6 +50,13 @@
 html {
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 * {
@@ -67,10 +74,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 32px 24px 64px 24px;
   min-height: 100vh;
+  position: relative;
+}
+
+body.modal-open {
+  overflow: hidden !important;
 }
 
 .page-container {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -699,30 +712,40 @@ body {
 
 .nut-info-btn {
   background: #f1f5f9;
-  border: 1px solid #e2e8f0;
-  color: #64748b;
+  border: 1px solid #cbd5e1;
+  color: #334155;
   border-radius: var(--radius-pill);
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
+  padding: 3px 8px 3px 6px;
+  height: 22px;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 4px;
   cursor: pointer;
-  padding: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
   transition: all 0.15s ease;
   line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  text-decoration: none;
 }
 
 .nut-info-btn:hover {
   background: var(--emerald-bg);
   border-color: var(--emerald-border);
   color: var(--emerald-main);
-  transform: scale(1.15);
+  transform: translateY(-1px);
 }
 
 .nut-info-btn:active {
-  transform: scale(0.92);
+  transform: scale(0.94);
+  background: var(--emerald-bg);
+}
+
+.nut-info-btn svg {
+  color: inherit;
+  flex-shrink: 0;
 }
 
 .nut-extra {
@@ -1227,18 +1250,43 @@ body {
 @media (max-width: 768px) {
   body {
     padding: 16px 14px max(24px, env(safe-area-inset-bottom)) 14px;
+    overflow-x: hidden;
+  }
+
+  .app-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .sidebar-col, 
+  .main-content-col {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .sidebar-col {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+    padding: 0;
+    gap: 14px;
   }
 
   .title {
-    font-size: 1.65rem;
+    font-size: 1.6rem;
     line-height: 1.15;
   }
 
   .subtitle {
-    font-size: 0.86rem;
+    font-size: 0.85rem;
   }
 
-  /* Stats Card on Mobile: Crisp 3-Column Bar */
+  /* Stats Card on Mobile: Crisp 2-Column Bar */
   .stats-card {
     padding: 10px 14px;
     border-radius: var(--radius-md);
@@ -1266,6 +1314,8 @@ body {
   /* Supplements Section: Touch-Swipeable Horizontal Strip */
   .supplements-section {
     gap: 10px;
+    width: 100%;
+    min-width: 0;
   }
 
   .swipe-hint {
@@ -1286,10 +1336,11 @@ body {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
     scrollbar-width: none;
     margin: 0 -14px;
     padding: 4px 14px 12px 14px;
-    gap: 12px;
+    gap: 10px;
   }
 
   .supplements-stack::-webkit-scrollbar {
@@ -1297,11 +1348,12 @@ body {
   }
 
   .supp-card {
-    flex: 0 0 280px;
-    min-width: 280px;
-    max-width: 280px;
+    flex: 0 0 260px;
+    min-width: 260px;
+    max-width: 260px;
     scroll-snap-align: start;
-    padding: 14px;
+    padding: 12px 14px;
+    touch-action: pan-x pan-y;
   }
 
   .supp-card:hover {
@@ -1313,13 +1365,13 @@ body {
   }
 
   .supp-img-box {
-    width: 60px;
-    height: 60px;
-    min-width: 60px;
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
   }
 
   .supp-title {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
   }
 
   /* Main Column & Search */
@@ -1345,15 +1397,20 @@ body {
 
   /* Full-bleed Touch Scrollable Filter Pills */
   .filter-pills-wrap {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
     margin: 0 -14px;
     padding: 2px 14px 6px 14px;
-    -webkit-overflow-scrolling: touch;
     gap: 6px;
   }
 
   .filter-pill {
-    padding: 7px 14px;
+    padding: 8px 14px;
     font-size: 0.8rem;
+    min-height: 36px;
   }
 
   .filter-pill:active {
@@ -1377,16 +1434,23 @@ body {
   /* Single Column Nutrient Cards */
   .nutrients-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
+    width: 100%;
   }
 
   .nut-card {
-    padding: 15px;
+    padding: 14px 16px;
     gap: 10px;
   }
 
   .nut-amount-val {
     font-size: 1.35rem;
+  }
+
+  .nut-info-btn {
+    padding: 3px 8px 3px 6px;
+    font-size: 0.72rem;
+    height: 24px;
   }
 
   .footer-note {
@@ -1397,42 +1461,69 @@ body {
   .back-to-top-btn {
     bottom: max(16px, env(safe-area-inset-bottom));
     right: 14px;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
   }
 
-  /* Mobile Modal */
+  /* Mobile Bottom Sheet Modal */
+  .modal-backdrop {
+    padding: 10px;
+    align-items: flex-end;
+  }
+
   .modal-dialog {
-    max-height: 94vh;
-    border-radius: var(--radius-lg);
+    max-height: 90vh;
+    max-height: 90dvh;
+    border-radius: 20px 20px 14px 14px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .modal-header {
-    padding: 16px 18px 14px 18px;
+    padding: 16px 18px 12px 18px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #f8fafc;
   }
 
   .modal-title {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
   }
 
   .modal-body {
-    padding: 16px 18px;
-    gap: 16px;
+    padding: 14px 18px;
+    gap: 14px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .modal-metric-strip {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .metric-val {
+    font-size: 0.95rem;
+  }
+
+  .metric-lbl {
+    font-size: 0.65rem;
   }
 
   .modal-footer {
-    padding: 12px 18px;
+    padding: 12px 18px max(16px, env(safe-area-inset-bottom)) 18px;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background: #f8fafc;
   }
 
   .modal-btn-action {
     width: 100%;
-    text-align: center;
+    padding: 12px;
+    font-size: 0.92rem;
   }
 }
 

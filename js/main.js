@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
              title="${isSelected ? 'Klicken, um Filter aufzuheben' : 'Klicken, um Nährstoffe dieses Supplements zu filtern'}">
           <div class="supp-card-body">
             <div class="supp-img-box">
-              <img src="${supp.image}" alt="${supp.name}" class="supp-img" loading="lazy">
+              <img src="${supp.image}" alt="${supp.name}" class="supp-img" loading="lazy" decoding="async">
             </div>
             <div class="supp-details">
               <div class="supp-card-top">
@@ -247,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <line x1="12" y1="16" x2="12" y2="12"></line>
                     <line x1="12" y1="8" x2="12.01" y2="8"></line>
                   </svg>
+                  <span class="info-btn-text">Info</span>
                 </button>
               </div>
               <span class="nut-extra">${item.extra}</span>
@@ -270,21 +271,13 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }).join('');
 
-    // Attach info modal triggers
+    // Attach info modal triggers ONLY to info buttons (prevents scroll hijacking on mobile)
     const infoButtons = nutContainer.querySelectorAll('.nut-info-btn');
     infoButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
         const nutrientId = btn.dataset.nutrientId;
-        openNutrientModal(nutrientId);
-      });
-    });
-
-    const cards = nutContainer.querySelectorAll('.nut-card');
-    cards.forEach(card => {
-      card.addEventListener('click', (e) => {
-        // If clicking inside card, open modal
-        const nutrientId = card.dataset.nutrientId;
         if (nutrientId) {
           openNutrientModal(nutrientId);
         }
@@ -330,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="modal-subtitle">${details.scientificName}</span>
             </div>
             <button class="modal-close-btn" id="modal-close-btn" aria-label="Modal schließen" title="Schließen (Esc)">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
           </div>
 
@@ -433,7 +426,8 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    document.documentElement.classList.add('modal-open');
+    document.body.classList.add('modal-open');
 
     const closeBtn = document.getElementById('modal-close-btn');
     const actionBtn = document.getElementById('modal-btn-close');
@@ -441,7 +435,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeModal() {
       if (modalContainer) modalContainer.innerHTML = '';
-      document.body.style.overflow = '';
+      document.documentElement.classList.remove('modal-open');
+      document.body.classList.remove('modal-open');
       document.removeEventListener('keydown', handleKeydown);
     }
 
