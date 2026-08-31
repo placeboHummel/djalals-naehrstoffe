@@ -92,12 +92,13 @@ export const NUTRIENTS_SUMMARY = [
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin D3',
-    extra: 'Cholecalciferol',
+    extra: 'Cholecalciferol (5.000 IE VitaMoment + 2.000 IE Watson + 667 IE Zinzino)',
     amount: '7.667 IE',
     rawAmount: 7667,
     unit: 'IE',
     ref: '800 IE (D-A-CH)',
     percent: 958,
+    sourceBrand: 'VitaMoment + Watson + Zinzino',
     supplementIds: ['watson-male-essentials', 'vitamoment-d3-k2', 'zinzino-balanceoil'],
     sources: [
       { supplementId: 'vitamoment-d3-k2', amount: '5.000 IE', note: '1 Kapsel täglich' },
@@ -116,6 +117,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '70 µg (D-A-CH)',
     percent: 386,
+    sourceBrand: 'VitaMoment + Watson',
     supplementIds: ['watson-male-essentials', 'vitamoment-d3-k2'],
     sources: [
       { supplementId: 'vitamoment-d3-k2', amount: '200 µg', note: 'MK-7 all-trans (1 Kapsel)' },
@@ -133,6 +135,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '110 mg (D-A-CH)',
     percent: 527,
+    sourceBrand: 'VitaMoment + Watson',
     supplementIds: ['vitamoment-vitamin-c', 'watson-collasyn'],
     sources: [
       { supplementId: 'vitamoment-vitamin-c', amount: '500 mg', note: 'Gepuffertes Vitamin C (1 Kapsel)' },
@@ -150,6 +153,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '4.0 µg (D-A-CH)',
     percent: 1250,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '50 µg', note: '1 Kapsel täglich' }
@@ -166,6 +170,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '850 µg (D-A-CH)',
     percent: 71,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '600 µg', note: '1 Kapsel täglich' }
@@ -182,6 +187,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '14 mg (D-A-CH)',
     percent: 100,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '14 mg', note: '1 Kapsel täglich' }
@@ -198,6 +204,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '1.2 mg (D-A-CH)',
     percent: 133,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '1.6 mg', note: '1 Kapsel täglich' }
@@ -214,6 +221,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '1.4 mg (D-A-CH)',
     percent: 114,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '1.6 mg', note: '1 Kapsel täglich' }
@@ -230,6 +238,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '16 mg (D-A-CH)',
     percent: 94,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '15 mg', note: '1 Kapsel täglich' }
@@ -246,6 +255,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '6.0 mg (D-A-CH)',
     percent: 83,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '5.0 mg', note: '1 Kapsel täglich' }
@@ -262,6 +272,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '1.6 mg (D-A-CH)',
     percent: 100,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '1.6 mg', note: '1 Kapsel täglich' }
@@ -278,6 +289,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '40 µg (D-A-CH)',
     percent: 100,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '40 µg', note: '1 Kapsel täglich' }
@@ -294,6 +306,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '300 µg (D-A-CH)',
     percent: 67,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '200 µg', note: '1 Kapsel täglich' }
@@ -312,6 +325,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '350 mg (D-A-CH)',
     percent: 114,
+    sourceBrand: 'Sports & Health',
     supplementIds: ['sports-health-magnesium'],
     sources: [
       { supplementId: 'sports-health-magnesium', amount: '400 mg', note: '3 Kapseln täglich' }
@@ -328,6 +342,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '14 mg (D-A-CH)',
     percent: 71,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '10 mg', note: '1 Kapsel täglich' }
@@ -344,6 +359,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '10 mg (D-A-CH)',
     percent: 60,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '6.0 mg', note: '1 Kapsel täglich' }
@@ -360,6 +376,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '70 µg (D-A-CH)',
     percent: 100,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '70 µg', note: '1 Kapsel täglich' }
@@ -376,6 +393,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '200 µg (D-A-CH)',
     percent: 75,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '150 µg', note: '1 Kapsel täglich' }
@@ -392,6 +410,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '1.000 mg (D-A-CH)',
     percent: 12,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '120 mg', note: '1 Kapsel täglich' }
@@ -408,6 +427,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '1.0 mg (D-A-CH)',
     percent: 50,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '0.5 mg', note: '1 Kapsel täglich' }
@@ -424,6 +444,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '2.0 mg (D-A-CH)',
     percent: 50,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '1.0 mg', note: '1 Kapsel täglich' }
@@ -440,6 +461,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '30 µg (D-A-CH)',
     percent: 67,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '20 µg', note: '1 Kapsel täglich' }
@@ -456,6 +478,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'µg',
     ref: '50 µg (D-A-CH)',
     percent: 50,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-male-essentials'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '25 µg', note: '1 Kapsel täglich' }
@@ -472,6 +495,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '3.0 mg (Hormon- & Knochenstoffwechsel)',
     percent: 0,
+    sourceBrand: 'Offen / 0 mg',
     supplementIds: [],
     sources: []
   },
@@ -488,6 +512,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '250 mg (EFSA Mindestbedarf)',
     percent: 826,
+    sourceBrand: 'Zinzino',
     supplementIds: ['zinzino-balanceoil'],
     sources: [
       { supplementId: 'zinzino-balanceoil', amount: '2.065 mg', note: 'Wildfischöl (10 ml flüssig)' }
@@ -504,6 +529,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '3.000 mg (Optimale Tagesdosis)',
     percent: 133,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-collasyn'],
     sources: [
       { supplementId: 'watson-collasyn', amount: '4.000 mg', note: 'Kollagen-Aminosäure (1 Stick)' }
@@ -520,6 +546,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '100 mg (Studien-Referenzwert)',
     percent: 200,
+    sourceBrand: 'Watson Nutrition',
     supplementIds: ['watson-collasyn'],
     sources: [
       { supplementId: 'watson-collasyn', amount: '200 mg', note: '1 Stick täglich' }
@@ -536,6 +563,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '3.000 mg (EFSA Wirksamkeit)',
     percent: 100,
+    sourceBrand: 'Gloryfeel',
     supplementIds: ['gloryfeel-creatine'],
     sources: [
       { supplementId: 'gloryfeel-creatine', amount: '3.000 mg', note: '1 Messlöffel täglich (3,4 g)' }
@@ -552,6 +580,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '400 mg (EFSA AI)',
     percent: 113,
+    sourceBrand: 'True Nature',
     supplementIds: ['true-nature-cholin'],
     sources: [
       { supplementId: 'true-nature-cholin', amount: '450 mg', note: 'Aus 1.125 mg Cholinbitartrat (3 Kapseln)' }
@@ -568,6 +597,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '5.0 mg (EFSA Health Claim)',
     percent: 58,
+    sourceBrand: 'Zinzino',
     supplementIds: ['zinzino-balanceoil'],
     sources: [
       { supplementId: 'zinzino-balanceoil', amount: '2.9 mg', note: 'Vorzeitig geerntetes Olivenöl (10 ml)' }
@@ -584,6 +614,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '500 mg (Bedarfsempfehlung)',
     percent: 0,
+    sourceBrand: 'Offen / 0 mg',
     supplementIds: [],
     sources: []
   },
@@ -598,6 +629,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '500 mg (Bedarfsempfehlung)',
     percent: 0,
+    sourceBrand: 'Offen / 0 mg',
     supplementIds: [],
     sources: []
   },
@@ -612,6 +644,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '1.500 mg (Bedarfsempfehlung)',
     percent: 0,
+    sourceBrand: 'Offen / 0 mg',
     supplementIds: [],
     sources: []
   },
@@ -626,6 +659,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '100 mg (Mitochondrien-Bedarf)',
     percent: 0,
+    sourceBrand: 'Offen / 0 mg',
     supplementIds: [],
     sources: []
   },
@@ -640,6 +674,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '600 mg (Glutathion-Synthese)',
     percent: 0,
+    sourceBrand: 'Offen / 0 mg',
     supplementIds: [],
     sources: []
   },
@@ -654,6 +689,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '4.0 mg (Studien-Tagesdosis)',
     percent: 0,
+    sourceBrand: 'Offen / 0 mg',
     supplementIds: [],
     sources: []
   },
@@ -668,6 +704,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '200 mg (Antioxidativer Bedarf)',
     percent: 0,
+    sourceBrand: 'Offen / 0 mg',
     supplementIds: [],
     sources: []
   },
@@ -682,6 +719,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '500 mg (Kollagen-Synthese)',
     percent: 0,
+    sourceBrand: 'Offen / 0 mg',
     supplementIds: [],
     sources: []
   },
@@ -696,6 +734,7 @@ export const NUTRIENTS_SUMMARY = [
     unit: 'mg',
     ref: '100 mg (Kognition & Membranen)',
     percent: 0,
+    sourceBrand: 'Offen / 0 mg',
     supplementIds: [],
     sources: []
   }

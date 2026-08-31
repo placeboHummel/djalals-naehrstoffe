@@ -1,5 +1,5 @@
-import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=2.2.0';
-import { NUTRIENT_DETAILS } from './nutrient-details.js?v=2.2.0';
+import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=2.3.0';
+import { NUTRIENT_DETAILS } from './nutrient-details.js?v=2.3.0';
 
 document.addEventListener('DOMContentLoaded', () => {
   const suppContainer = document.getElementById('supplements-list');
@@ -188,11 +188,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const q = currentSearch.toLowerCase();
         const matchName = item.name.toLowerCase().includes(q);
         const matchExtra = (item.extra || '').toLowerCase().includes(q);
+        const matchBrand = (item.sourceBrand || '').toLowerCase().includes(q);
         const matchSources = (item.sources || []).some(s => {
           const supp = MY_SUPPLEMENTS.find(x => x.id === s.supplementId);
           return (supp?.name || '').toLowerCase().includes(q) || (supp?.brand || '').toLowerCase().includes(q);
         });
-        if (!matchName && !matchExtra && !matchSources) return false;
+        if (!matchName && !matchExtra && !matchBrand && !matchSources) return false;
       }
 
       return true;
@@ -235,25 +236,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const isMissing = item.percent === 0;
       const percentBadgeText = isMissing ? '0% • Fehlt im Stack' : `${item.percent}% ${isEfsa ? 'EFSA' : 'D-A-CH'}`;
       const pillClass = isMissing ? 'nut-percent-pill is-missing' : 'nut-percent-pill';
+      const sourceClass = isMissing ? 'nut-source-tag is-missing' : 'nut-source-tag';
       const cardClass = isMissing ? 'nut-card is-missing' : 'nut-card';
 
       return `
         <div class="${cardClass}" data-nutrient-id="${item.id}">
           <div class="nut-top-row">
-            <div class="nut-title-box">
-              <div class="nut-name-row">
-                <span class="nut-name">${item.name}</span>
-                <button class="nut-info-btn" data-nutrient-id="${item.id}" aria-label="Wissenschaftliche Infos zu ${item.name}" title="Wissenschaftliche Infos anzeigen">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                  </svg>
-                  <span class="info-btn-text">Info</span>
-                </button>
-              </div>
-              <span class="nut-extra">${item.extra}</span>
+            <div class="nut-name-row">
+              <span class="nut-name">${item.name}</span>
+              <button class="nut-info-btn" data-nutrient-id="${item.id}" aria-label="Wissenschaftliche Infos zu ${item.name}" title="Wissenschaftliche Infos anzeigen">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <span class="info-btn-text">Info</span>
+              </button>
             </div>
+            <span class="${sourceClass}">${item.sourceBrand || ''}</span>
           </div>
 
           <div class="nut-amount-row">
@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="modal-title-group">
               <span class="modal-category-badge">${details.badge}</span>
               <h2 id="modal-nutrient-title" class="modal-title">${details.name}</h2>
-              <span class="modal-subtitle">${details.scientificName}</span>
+              <span class="modal-subtitle">${details.scientificName || nutrient.extra || ''}</span>
             </div>
             <button class="modal-close-btn" id="modal-close-btn" aria-label="Modal schließen" title="Schließen (Esc)">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>

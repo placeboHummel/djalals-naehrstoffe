@@ -674,7 +674,7 @@ body.modal-open {
   flex-direction: column;
   box-shadow: var(--shadow-sm);
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-  min-height: 154px;
+  min-height: 136px;
 }
 
 .nut-card:hover {
@@ -686,15 +686,8 @@ body.modal-open {
 .nut-top-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
-  min-height: 46px;
-}
-
-.nut-title-box {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
 }
 
 .nut-name-row {
@@ -747,11 +740,24 @@ body.modal-open {
 .nut-info-btn svg {
   color: inherit;
   flex-shrink: 0;
-.nut-extra {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.35;
-  font-weight: 500;
+}
+
+.nut-source-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-muted);
+  border: 1px solid var(--border-light);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nut-source-tag.is-missing {
+  background: #fff7ed;
+  border-color: #fed7aa;
+  color: #9a3412;
 }
 
 .nut-amount-row {
