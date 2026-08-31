@@ -1,4 +1,4 @@
-import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=1.8.0';
+import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=1.9.0';
 
 document.addEventListener('DOMContentLoaded', () => {
   const suppContainer = document.getElementById('supplements-list');
@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     suppContainer.innerHTML = MY_SUPPLEMENTS.map(supp => {
       const isSelected = supp.id === selectedSupplementId;
-      const suppNutrientsCount = NUTRIENTS_SUMMARY.filter(n => n.supplementIds && n.supplementIds.includes(supp.id)).length;
 
       return `
         <div class="supp-card ${isSelected ? 'is-selected' : ''}" 
@@ -92,6 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
       selectedSupplementId = null;
     } else {
       selectedSupplementId = id;
+      // If "missing" category was active, reset to "all" since missing items have no supplement
+      if (currentCategory === 'missing') {
+        currentCategory = 'all';
+        filterPills.forEach(p => p.classList.toggle('active', p.dataset.cat === 'all'));
+      }
     }
     renderSupplements();
     renderNutrients();
@@ -100,6 +104,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Render Active Filter Banner
   function renderActiveFilterBanner(filteredCount) {
     if (!activeFilterContainer) return;
+
+    if (currentCategory === 'missing') {
+      activeFilterContainer.innerHTML = `
+        <div class="missing-info-banner">
+          <div class="missing-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <div class="missing-info-text">
+            <strong>Aktuell noch nicht im Stack abgedeckt (${filteredCount} Stoffe):</strong>
+            <p>Diese Stoffe (L-Carnitin, Taurin, Carnosin) werden aktuell nicht über deine tägliche Einnahme abgedeckt.</p>
+          </div>
+        </div>
+      `;
+      return;
+    }
 
     if (!selectedSupplementId) {
       activeFilterContainer.innerHTML = '';
@@ -144,16 +163,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!nutContainer) return;
 
     const filtered = NUTRIENTS_SUMMARY.filter(item => {
-      // Supplement filter
-      if (selectedSupplementId) {
-        if (!item.supplementIds || !item.supplementIds.includes(selectedSupplementId)) {
+      // Category filter
+      if (currentCategory !== 'all') {
+        if (currentCategory === 'missing') {
+          if (item.rawAmount > 0 && item.percent > 0) {
+            return false;
+          }
+        } else if (item.category !== currentCategory) {
           return false;
         }
       }
 
-      // Category filter
-      if (currentCategory !== 'all' && item.category !== currentCategory) {
-        return false;
+      // Supplement filter (only applied if not viewing missing items)
+      if (selectedSupplementId && currentCategory !== 'missing') {
+        if (!item.supplementIds || !item.supplementIds.includes(selectedSupplementId)) {
+          return false;
+        }
       }
 
       // Search filter
@@ -248,6 +273,10 @@ document.addEventListener('DOMContentLoaded', () => {
       filterPills.forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
       currentCategory = pill.dataset.cat;
+      if (currentCategory === 'missing' && selectedSupplementId) {
+        selectedSupplementId = null;
+        renderSupplements();
+      }
       renderNutrients();
     });
   });
