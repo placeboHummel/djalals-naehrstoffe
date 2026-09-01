@@ -49,19 +49,26 @@ function generateExportHTML() {
     { id: 'special', title: `4. Omega-3 & Vitalstoffe (${specialCount} Nährstoffe)`, icon: '🌿' }
   ];
 
-  const supplementsRows = MY_SUPPLEMENTS.map(supp => `
-    <tr>
-      <td>
-        <div class="supp-cell-name">
-          <strong>${supp.name}</strong>
-          <span class="supp-brand-tag">${supp.brand}</span>
-        </div>
-      </td>
-      <td><span class="dose-tag">${supp.dosage}</span></td>
-      <td><span class="timing-tag">${supp.timing}</span></td>
-      <td><span class="badge-tag">${supp.badge}</span></td>
-    </tr>
-  `).join('');
+  const supplementsRows = MY_SUPPLEMENTS.map(supp => {
+    let blockClass = 'timing-block-a';
+    if (supp.block === 'B') blockClass = 'timing-block-b';
+    else if (supp.block === 'both') blockClass = 'timing-block-both';
+    else if (supp.block === 'shake') blockClass = 'timing-block-shake';
+
+    return `
+      <tr>
+        <td>
+          <div class="supp-cell-name">
+            <strong>${supp.name}</strong>
+            <span class="supp-brand-tag">${supp.brand}</span>
+          </div>
+        </td>
+        <td><span class="dose-tag">${supp.dosage}</span></td>
+        <td><span class="timing-tag ${blockClass}">${supp.timing}</span></td>
+        <td><span class="badge-tag">${supp.badge}</span></td>
+      </tr>
+    `;
+  }).join('');
 
   let nutrientSectionsHtml = '';
 
@@ -419,11 +426,33 @@ function generateExportHTML() {
     .timing-tag {
       display: inline-block;
       font-size: 0.76rem;
-      background: #f1f5f9;
-      color: #475569;
-      padding: 2px 8px;
+      padding: 3px 8px;
       border-radius: 4px;
-      font-weight: 500;
+      font-weight: 600;
+    }
+
+    .timing-block-a {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+
+    .timing-block-b {
+      background: #ede9fe;
+      color: #5b21b6;
+      border: 1px solid #ddd6fe;
+    }
+
+    .timing-block-both {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+
+    .timing-block-shake {
+      background: #ecfeff;
+      color: #0e7490;
+      border: 1px solid #a5f3fc;
     }
 
     .badge-tag {
@@ -680,19 +709,19 @@ function generateExportHTML() {
       <div class="synergies-grid">
         <div class="synergy-item">
           <strong>🦴 Knochen- & Gefäßachse</strong>
-          5.000 IE D3 + 200 µg K2 (MK-7) steuern Calcium gezielt in die Knochenmatrix, während 400 mg Magnesium Bisglycinat & 600 mg Calciumcitrat die Remineralisierung und Muskelrelaxation sicherstellen.
+          5.000 IE D3 + 200 µg K2 (MK-7) steuern Calcium gezielt in die Knochenmatrix (Block A), während 400 mg Magnesium Bisglycinat (Block B) & 600 mg Calciumcitrat (aufgeteilt 1x Block A, 1x Block B) die fraktionierte Resorption und Muskelrelaxation maximieren.
         </div>
         <div class="synergy-item">
           <strong>✨ Vegane Kollagensynthese-Matrix</strong>
-          5.000 mg L-Glycin (Nutri+) + 1.400 mg L-Prolin (Yummy Whey) bilden das Substrat für die Kollagen-Tripelhelix, aktiviert durch 500 mg gepuffertes Vitamin C (VitaMoment).
+          5.000 mg L-Glycin (Nutri+, Block B abends) + 1.400 mg L-Prolin (Yummy Whey im Shake) bilden das Substrat für die Kollagen-Tripelhelix, aktiviert durch 500 mg gepuffertes Vitamin C (VitaMoment, Block A morgens).
         </div>
         <div class="synergy-item">
           <strong>⚡ Mitochondriale Zellenergie</strong>
-          2.000 mg Taurin (ProFuel) + 500 mg ALCAR (GEN) + 200 mg CoQ10 optimieren den mitochondrialen Fettsäuretransport, ATP-Synthese und osmotischen Zellschutz.
+          500 mg ALCAR (GEN, Block A) + 200 mg CoQ10 (Block A) + 3.000 mg Creapure® (im Shake) + 2.000 mg Taurin (ProFuel, Block B) optimieren Fettsäuretransport, zelluläre ATP-Resynthese und ZNS-Entspannung.
         </div>
         <div class="synergy-item">
           <strong>💧 Feuchtigkeits- & Membranschutz</strong>
-          500 mg Hyaluronsäure (500–700 kDa) + 2.065 mg Omega-3 (Zinzino) + 450 mg Cholin (True Nature) + 12 mg Astaxanthin schützen Zellmembranen, Gelenke und die Hautdermis.
+          500 mg Hyaluronsäure (500–700 kDa, Block A) + 2.065 mg Omega-3 (Zinzino, Block A) + 450 mg Cholin (True Nature, Block A) + 12 mg Astaxanthin (Block A) schützen Zellmembranen, Gelenke und die Hautdermis.
         </div>
       </div>
     </div>

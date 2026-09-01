@@ -360,10 +360,10 @@ class SupplementApp {
 
   getTimingPlan() {
     const slots = {
-      morning: { label: 'Morgens / Zum Frühstück', icon: '🌅', items: [], tips: [] },
+      morning: { label: 'Block A – Frühstück mit Fettquelle', icon: '🌅', items: [], tips: [] },
+      workout: { label: 'Protein-Shake / Nach dem Training', icon: '⚡', items: [], tips: [] },
       noon: { label: 'Mittags / Zum Mittagessen', icon: '☀️', items: [], tips: [] },
-      workout: { label: 'Vor / Nach dem Sport', icon: '⚡', items: [], tips: [] },
-      evening: { label: 'Abends / Vor dem Schlafen', icon: '🌙', items: [], tips: [] }
+      evening: { label: 'Block B – Abends, 60 min vor dem Schlafen', icon: '🌙', items: [], tips: [] }
     };
 
     const activeSupps = this.supplements.filter(s => s.active);

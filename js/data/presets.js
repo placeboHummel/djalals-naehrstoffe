@@ -82,9 +82,9 @@ export const SUPPLEMENT_PRESETS = [
     url: 'https://watsonnutrition.de/products/kreatin',
     form: 'Pulver',
     servingSize: '3.4 g (1 Messlöffel)',
-    timeOfDay: 'morning',
+    timeOfDay: 'workout',
     withFood: false,
-    notes: '100% reines Creapure® Kreatinmonohydrat, Made in Germany.',
+    notes: '100% reines Creapure® Kreatinmonohydrat, Made in Germany. Ideal direkt im täglichen Protein-Shake.',
     active: false,
     servingsPerDay: 1,
     nutrients: {

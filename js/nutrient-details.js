@@ -46,7 +46,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Vitamin D3 steuert die Aufnahme von Calcium aus dem Darm und sichert die langfristige Stabilität der Knochendichte. Darüber hinaus beeinflusst es die Muskelkraft, unterstützt das Immunsystem bei der Abwehr von Infekten und trägt zur Minderung von saisonaler Abgeschlagenheit in den sonnenarmen Monaten bei.',
     biochemistry: 'Cholecalciferol wird in der Leber zu 25(OH)D und in den Nieren/Zellen zum aktiven Steroidhormon Calcitriol (1,25(OH)2D) hydroxyliert. Calcitriol bindet an den Vitamin-D-Rezeptor (VDR) in fast allen Geweben und reguliert über 1.000 Gene, u.a. antimikrobielle Peptide (Cathelicidin) und Calcium-Transportproteine.',
     plantBasedRelevance: 'Bei Verzicht auf fetten Seefisch (Lachs, Hering, Makrele) existiert in pflanzlichen Lebensmitteln praktisch keine nennenswerte Vitamin-D-Quelle. In mitteleuropäischen Breitengraden reicht die UV-B-Strahlung von Oktober bis April physikalisch nicht für eine Eigensynthese aus – Supplementierung ist obligatorisch.',
-    intakeAdvice: 'Morgens oder mittags mit Fettquelle einnehmen. Zwingend synergistisch mit Vitamin K2 (Aktivierung von Osteocalcin & Matrix-Gla-Protein) und Magnesium (Kofaktor für die Hydroxylasen) kombinieren.',
+    intakeAdvice: 'Block A: Morgens zum Frühstück mit Fettquelle (z.B. Zinzino BalanceOil+) einnehmen. Synergie mit Vitamin K2 und morgendlicher 1 Tablette Calciumcitrat; abends durch Magnesium komplettiert.',
     safetyAndUL: 'EFSA Upper Limit für die Allgemeinbevölkerung: 4.000 IE (100 µg)/Tag. In Kombination mit hoher K2-Gabe (270 µg) und Magnesium wird das Risiko einer Weichteilkalzifizierung physiologisch minimiert.',
     scientificReference: 'EFSA Journal 2012;10(7):2813 | D-A-CH Referenzwerte | Endocrine Society Clinical Guidelines'
   },
@@ -66,7 +66,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Vitamin E fungiert als primäres fettlösliches Antioxidans, das Zellmembranen und ungesättigte Fettsäuren vor oxidativen Schäden schützt. Bei Zufuhr von Omega-3-Fettsäuren bewahrt es diese vor vorzeitiger Oxidation im Blutkreislauf und unterstützt den Erhalt gesunder Gefäßinnenwände.',
     biochemistry: 'Alpha-Tocopherol fängt freie Radikale (Peroxylradikale) in Lipiddoppelschichten ab, bevor diese ungesättigte Fettsäuren in Membranen oxidieren können. Das dabei entstehende Tocopheroxyl-Radikal wird im zellulären Redoxnetzwerk primär durch Vitamin C wieder in seine aktive Form regeneriert.',
     plantBasedRelevance: 'Bei hoher Zufuhr mehrfach ungesättigter Fettsäuren (z.B. 2.065 mg Omega-3 EPA/DHA) steigt der physiologische Vitamin-E-Bedarf der Zellmembranen signifikant an. Das im Stack enthaltene Vitamin E schützt die Omega-3-Fettsäuren direkt vor Oxidation.',
-    intakeAdvice: 'Zu einer Mahlzeit einnehmen. Wirkt im antioxidativen Netzwerk optimal zusammen mit Vitamin C, Selen und Coenzym Q10.',
+    intakeAdvice: 'Block A: Morgens zum Frühstück mit Fettquelle einnehmen. Wirkt im antioxidativen Netzwerk optimal zusammen mit Vitamin C, Selen und Coenzym Q10.',
     safetyAndUL: 'EFSA Upper Limit: 300 mg/Tag. Mit 14 mg (100% DGE / D-A-CH für Männer) liegt die Einnahme im absolut sicheren physiologischen Optimalbereich.',
     scientificReference: 'EFSA Journal 2010;8(10):1816 | D-A-CH Referenzwerte'
   },
@@ -86,7 +86,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Vitamin K2 aktiviert Proteine, die Calcium gezielt in die Knochenmatrix einbinden. Gleichzeitig hemmt es die Ablagerung von Calcium in den Gefäßwänden und schützt so vor arterieller Gefäßverkalkung.',
     biochemistry: 'K2 dient als Kofaktor der Gamma-Glutamylcarboxylase zur Carboxylierung von Osteocalcin (Knochenmineralisierung) und Matrix-Gla-Protein (MGP, stärkster endogener Inhibitor vaskulärer und Weichteilverkalkung). MK-7 besitzt im Vergleich zu K1 eine Halbwertszeit von über 72 Stunden im Blut.',
     plantBasedRelevance: 'Vitamin K2 kommt in relevanter Menge fast nur in tierischen Produkten (Geflügel, Eigelb, gereifter Käse) und japanischem Natto vor. Bei fleischfreier Ernährung und hoher Vitamin-D-Zufuhr ist mikrobiell fermentiertes MK-7 essenziell für die Gefäßgesundheit.',
-    intakeAdvice: 'Fettlöslich: Immer zusammen mit Vitamin D3 und gesunden Fetten einnehmen. All-trans-Form garantiert höchste Bioverfügbarkeit.',
+    intakeAdvice: 'Block A: Fettlöslich – morgens zusammen mit Vitamin D3 und gesunden Fetten (BalanceOil+) zum Frühstück einnehmen. All-trans-Form garantiert höchste Bioverfügbarkeit.',
     safetyAndUL: 'EFSA hat kein toxisches Upper Limit festgelegt; K2 gilt auch in Dosen von mehreren 100 µg als physiologisch extrem sicher und induziert keine unkontrollierte Blutgerinnung.',
     scientificReference: 'EFSA Journal 2009;7(9):1228 | Thrombosis and Haemostasis 2012'
   },
@@ -272,7 +272,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Vitamin C fördert die körpereigene Kollagensynthese für Knorpel, Sehnen, Gefäße und Haut. Es unterstützt das Immunsystem unter körperlicher Belastung und vervielfacht die enterale Aufnahme von pflanzlichem Eisen aus der Nahrung.',
     biochemistry: 'Ascorbat hält das Eisen in Prolyl- und Lysylhydroxylasen im reduzierten Fe2+-Zustand, was für die Vernetzung der Kollagen-Dreifachhelix zwingend nötig ist. Zudem reduziert es dreiwertiges pflanzliches Nicht-Häm-Eisen (Fe3+) im Magen-Darm-Trakt zu bioverfügbarem Fe2+.',
     plantBasedRelevance: 'Da pflanzliches Eisen schlechter resorbiert wird als tierisches Häm-Eisen, ist Vitamin C der potenteste physiologische Hebel zur Maximierung der Eisenaufnahme aus Nahrung und Multinährstoffen.',
-    intakeAdvice: 'Gepuffertes Calciumascorbat ist magenfreundlich. Ideal zusammen mit Mahlzeiten oder Eisen eintragen.',
+    intakeAdvice: 'Block A: 1 Kapsel (500 mg gepuffertes Calciumascorbat) morgens zum Frühstück mit Fettquelle einnehmen.',
     safetyAndUL: 'EFSA hat mangels Toxizität keinen numerischen Upper Limit (UL) festgelegt. Der etablierte US IOM (Institute of Medicine) Grenzwert liegt bei 2.000 mg/Tag. Mit 580 mg Gesamtzufuhr (527% DGE) absolut sicher und optimal im wirksamen Bereich.',
     scientificReference: 'EFSA Journal 2013;11(11):3418 | US IOM Dietary Reference Intakes | D-A-CH Referenzwerte'
   },
@@ -297,7 +297,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Calcium bildet das mineralische Gerüst für Knochen und Zähne. Im Blutkreislauf und Gewebe steuert es die neuromuskuläre Reizübertragung, jede Muskelkontraktion sowie die physiologische Blutgerinnung.',
     biochemistry: '99% des Calciums sind als Hydroxylapatit im Skelett gespeichert. Das ionisierte Calcium (Ca2+) im Zytosol steuert Muskelkontraktionen, Neurotransmitterausschüttung an Synapsen und Enzymaktivierungen.',
     plantBasedRelevance: 'Mit 2 Tabletten Warnke Calciumcitrat (600 mg) und Watson Male Essentials (120 mg) erreichst du 720 mg (72% des DGE / D-A-CH Tagesbedarfs von 1.000 mg). Organisches Calciumcitrat besitzt eine magensäureunabhängige, herausragende Resorption.',
-    intakeAdvice: 'Über den Tag verteilen (z.B. 1 Tablette mittags, 1 Tablette abends zu den Mahlzeiten) und im Verbund mit Vitamin D3 & K2 für optimalen Knocheneinbau.',
+    intakeAdvice: 'Aufgeteilt auf 2 Einnahmezeitpunkte: 1 Tablette (300 mg) morgens zu Block A (Frühstück mit Fettquelle) und 1 Tablette (300 mg) abends zu Block B (60 min vor dem Schlafen). Diese 2-fache Aufteilung maximiert die fraktionierte Resorptionsquote im Dünndarm und stellt zusammen mit Vitamin D3 & K2 den optimalen Knocheneinbau sicher.',
     safetyAndUL: 'EFSA Upper Limit: 2.500 mg/Tag. Mit 720 mg liegst du im perfekten physiologischen Wohlfühlbereich.',
     scientificReference: 'EFSA Journal 2015;13(5):4101 | D-A-CH Referenzwerte 2020'
   },
@@ -318,7 +318,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Magnesium reguliert die Reizübertragung zwischen Nerven und Muskeln und fördert die muskuläre Entspannung nach körperlicher Belastung. Es beugt Muskelkrämpfen vor, dämpft stressbedingte Übererregbarkeit des Nervensystems und unterstützt die Schlafqualität.',
     biochemistry: 'Magnesium ist zwingend an ATP gebunden (Mg-ATP-Komplex) und ermöglicht jede zelluläre Energieübertragung. Es wirkt als natürlicher NMDA-Rezeptor-Blocker im Gehirn beruhigend auf das Nervensystem und ist Kofaktor für alle Vitamin-D-aktivierenden Enzyme.',
     plantBasedRelevance: 'Die organische Chelat-Form Magnesiumbisglycinat besitzt eine exzellente Bioverfügbarkeit, passiert die Darmwand über Aminosäure-Transporter und schont die Verdauung (keine laxative Wirkung wie Magnesiumoxid).',
-    intakeAdvice: 'Optimal abends vor dem Schlafen einnehmen (unterstützt parasympathische Aktivität und Schlafqualität).',
+    intakeAdvice: 'Block B: 3 Kapseln (400 mg elementares Magnesium) abends 60 min vor dem Schlafen einnehmen. Fördert die ZNS-Dämpfung (NMDA-Blockade), Muskelrelaxation und parasympathische Tiefschlafarchitektur im Verbund mit Glycin und Taurin.',
     safetyAndUL: 'BfR empfiehlt 250 mg aus isolierten Nahrungsergänzungsmitteln; bei hoch bioverfügbarem Bisglycinat sind 400 mg (114% DGE) für aktive Erwachsene hervorragend verträglich.',
     scientificReference: 'EFSA Journal 2015;13(7):4186 | Magnesium Research Journal'
   },
@@ -751,7 +751,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Glycin ist der mengenmäßig dominierende Baustein in Kollagen und Bindegewebe. Vor dem Schlafen eingenommen, wirkt es hemmend auf das zentrale Nervensystem, senkt die Körperkerntemperatur und fördert erholsame Tiefschlafphasen.',
     biochemistry: 'Glycin ist die kleinste Aminosäure und unverzichtbar für die enge Dreifachhelix-Windung von Kollagen (Gly-X-Y-Sequenz). Es bildet zusammen mit Glutamin und Cystein das Master-Antioxidans Glutathion und wirkt an Glycin-Rezeptoren im ZNS hemmend (beruhigend).',
     plantBasedRelevance: 'Kollagenreiches Bindegewebe, Gelatine und Knochenbrühe fehlen bei fleisch- und fischfreier Kost völlig. Der Körper hat ein endogenes Glycin-Defizit von ca. 3-4 g/Tag. Nutri+ deckt dies mit 5.000 mg reinem L-Glycin vollständig pflanzlich ab.',
-    intakeAdvice: 'Morgens im Shake oder abends vor dem Schlafen (senkt die Körperkerntemperatur und fördert den Tiefschlaf).',
+    intakeAdvice: 'Block B: 5.000 mg (1 Messlöffel) abends 60 min vor dem Schlafen in Wasser einnehmen (senkt die Körperkerntemperatur, vertieft die N3-Tiefschlafphasen und unterstützt die nächtliche Kollagenreparatur).',
     safetyAndUL: 'Sehr hohe physiologische Sicherheit; Dosen bis zu 15 g/Tag zeigen in Studien keinerlei Toxizität.',
     scientificReference: 'Amino Acids Journal 2018;50(12):1653 | Sleep and Biological Rhythms'
   },
@@ -771,7 +771,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Prolin wird posttranslational zu Hydroxyprolin umgewandelt, welches die Kollagen-Dreifachhelix thermisch und mechanisch stabilisiert. Es ist essenziell für die Belastbarkeit von Sehnen, Bändern und Gelenkknorpel.',
     biochemistry: 'Prolin wird durch die Vitamin-C-abhängige Prolylhydroxylase zu 4-Hydroxyprolin umgewandelt. Hydroxyprolin-Reste bilden intramolekulare Wasserstoffbrückenbindungen aus, die dem Kollagen in Bändern, Sehnen und Knorpel seine extreme Reißfestigkeit verleihen.',
     plantBasedRelevance: 'Mit 30g Yummy Whey nimmst du täglich 1.400 mg reines L-Prolin auf, was im Verbund mit den 5.000 mg Glycin aus Nutri+ und Vitamin C die körpereigene Kollagenbiosynthese optimal versorgt.',
-    intakeAdvice: 'Gemeinsam mit Glycin (Nutri+) und Vitamin C morgens oder nach dem Training einnehmen.',
+    intakeAdvice: 'Direkt im Protein-Shake nach dem Training oder am Vormittag einnehmen. Wirkt synergistisch mit morgendlichem Vitamin C (Block A) und abendlichem Glycin (Block B).',
     safetyAndUL: 'Natürliche Proteinkomponente mit uneingeschränkter physiologischer Sicherheit.',
     scientificReference: 'Journal of Biological Chemistry | Matrix Biology | EFSA'
   },
@@ -791,7 +791,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Acetyl-L-Carnitin (ALCAR) schleust langkettige Fettsäuren in die Mitochondrien zur oxidativen Energiegewinnung ein. In acetylierter Form überwindet es die Blut-Hirn-Schranke und unterstützt neuronale Prozesse sowie geistige Wachheit.',
     biochemistry: 'Acetyl-L-Carnitin liefert Acetylgruppen für die Synthese des zentralen Neurotransmitters Acetylcholin und schleust langkettige Fettsäuren über die Carnitin-Palmitoyl-Transferase (CPT-1) in die Mitochondrienmatrix zur Beta-Oxidation (ATP-Generierung).',
     plantBasedRelevance: '95% des Carnitins stammen in der Standardernährung aus rotem Fleisch. Für Nicht-Fleischesser liefert 1 Kapsel GEN ALCAR täglich 500 mg hoch bioverfügbares Carnitin (bei Bedarf flexibel auf 2 Kapseln = 1.000 mg oder bis zur vollen Tagesdosis von 6 Kapseln = 3.000 mg steigerbar).',
-    intakeAdvice: 'Morgens vor dem Frühstück oder ca. 30–45 Minuten vor dem Training mit Wasser einnehmen.',
+    intakeAdvice: 'Block A: 1 Kapsel (500 mg) morgens zum Frühstück mit Fettquelle einnehmen (unterstützt kognitive Wachheit, Acetylcholin-Bildung und mitochondrialen Fettsäuretransport).',
     safetyAndUL: 'Für L-Carnitin existiert kein gesetzlicher EFSA Upper Limit. Das in Humanstudien und toxikologischen Reviews etablierte Observed Safe Level (OSL nach Hathcock & Shao / CRN) liegt bei 2.000–3.000 mg/Tag. 500 mg ALCAR ist physiologisch sicher und flexibel dosierbar.',
     scientificReference: 'Regulatory Toxicology and Pharmacology (Hathcock & Shao) | American Journal of Clinical Nutrition'
   },
@@ -811,7 +811,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Taurin reguliert den osmotischen Druck und den Calciumhaushalt in Herz- und Muskelzellen, stabilisiert Zellmembranen und unterstützt die Konjugation von Gallensäuren. Aktuelle Studien heben seine Rolle im mitochondrialen Funktionserhalt hervor.',
     biochemistry: 'Taurin moduliert zelluläre Calciumströme im Herzmuskel, bindet an GABA-A-Rezeptoren im Gehirn, konjugiert Gallensäuren (Taurocholsäure zur Fettverdauung) und schützt Mitochondrien vor oxidativem Stress.',
     plantBasedRelevance: 'Taurin kommt in pflanzlichen Lebensmitteln nicht vor (Gehalt = 0 mg). Vegetarier und Veganer weisen signifikant niedrigere Plasma- und Urin-Taurinspiegel auf. Mit 2.000 mg aus ProFuel Taurin deckst du diesen Carninährstoff zu 100% vegan ab.',
-    intakeAdvice: '2 Kapseln täglich (2.000 mg) morgens oder vor dem Training mit etwas Wasser einnehmen.',
+    intakeAdvice: 'Block B: 2 Kapseln (2.000 mg) abends 60 min vor dem Schlafen einnehmen. Wirkt als inhibitorischer GABA-A-Agonist, schützt Herzmuskelzellen vor Calciumüberladung und verstärkt die beruhigende Wirkung von Magnesium und Glycin.',
     safetyAndUL: 'EFSA bestätigte in Sicherheitsgutachten einen No-Observed-Adverse-Effect-Level (NOAEL) von 1.000 mg/kg KG/Tag; eine Zufuhr von bis zu 3.000 mg (3 g)/Tag gilt als wissenschaftlich absolut sicher. Mit 2.000 mg erreichst du die ideale therapeutische Zieldosis.',
     scientificReference: 'EFSA Journal 2009;935:1-31 | Science 2023;380(6649):eabn9257'
   },
@@ -875,7 +875,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Die langkettigen Omega-3-Fettsäuren EPA und DHA werden in Zellmembranen eingebaut, verbessern deren Fließeigenschaften und dienen als Vorstufen entzündungsauflösender Botenstoffe (Resolvine). DHA bildet einen Hauptbestandteil des Gehirns und der Netzhaut, während EPA die kardiovaskuläre Gesundheit und Gefäßelastizität unterstützt.',
     biochemistry: 'EPA und DHA werden in Phospholipide aller Zellmembranen eingebaut, erhöhen deren Fluidität und verdrängen Arachidonsäure. Aus EPA entstehen entzündungshemmende Eicosanoide (Serie-3-Prostaglandine) und spezialisierte pro-resolvierende Mediatoren (SPMs: Resolvine, Protectine).',
     plantBasedRelevance: 'Pflanzliches ALA (aus Leinöl/Walnüssen) wird im Körper nur zu <5% in EPA und <0.5% in DHA umgewandelt. Zinzino BalanceOil+ liefert vorgeformtes EPA/DHA kombiniert mit Oliven-Polyphenolen, die die Fettsäuren vor Oxidation im Blut schützen.',
-    intakeAdvice: '10 ml flüssig zu einer Hauptmahlzeit einnehmen. Synergie mit fettlöslichen Vitaminen (D3, E, K2).',
+    intakeAdvice: 'Block A: 10 ml flüssig morgens zum Frühstück mit Fettquelle einnehmen. Dient zugleich als ideale Lipidmatrix zur Resorption aller fettlöslichen Kofaktoren (D3, K2, Astaxanthin, CoQ10).',
     safetyAndUL: 'EFSA stuft eine Zufuhr von bis zu 5.000 mg (5 g) EPA+DHA pro Tag als absolut sicher für Erwachsene ein. 2.065 mg ist eine hochpotente Dosis.',
     scientificReference: 'EFSA Journal 2012;10(7):2815 | Circulation Journal 2019'
   },
@@ -895,7 +895,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Kreatin erhöht die zellulären Phosphokreatinspeicher zur schnellen Resynthese von ATP bei kurzen, maximalen Kraftleistungen. Es steigert Kraft und Leistungsfähigkeit im Krafttraining und unterstützt bei fleischfreier Ernährung auch das Arbeitsgedächtnis und die geistige Ermüdungsresistenz.',
     biochemistry: 'Kreatin wird durch Kreatinkinase zu Phosphokreatin phosphoryliert. Bei zellulärem Energiemangel überträgt es seine Phosphatgruppe in Millisekunden auf ADP zur Regeneration von ATP (universelle Energiewährung).',
     plantBasedRelevance: 'Da Kreatin natürlicherweise ausschließlich in Fleisch und Fisch vorkommt, haben Nicht-Fleischesser um 20-30% niedrigere Muskel- und Gehirnkreatinspeicher. Nicht-Fleischesser profitieren daher kognitiv und körperlich am stärksten von Creapure®!',
-    intakeAdvice: 'Täglich 3.000 mg (1 Messlöffel) mit Wasser oder im Shake einnehmen. Einnahmezeitpunkt ist flexibel.',
+    intakeAdvice: 'Direkt im Protein-Shake (3.000 mg / 1 Messlöffel) nach dem Training oder am Vormittag einnehmen. Die Kombination mit Whey-Protein und Kohlenhydraten maximiert die intrazelluläre Kreatin-Akkumulation in Muskel- und Nervenzellen.',
     safetyAndUL: 'Creapure® (Alzchem Deutschland) ist das weltweit reinste Kreatin und das meistuntersuchte Supplement der Welt mit belegter Langzeitsicherheit.',
     scientificReference: 'EFSA Journal 2011;9(7):2303 | International Society of Sports Nutrition (ISSN)'
   },
@@ -915,7 +915,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Cholin ist die Ausgangssubstanz für den Neurotransmitter Acetylcholin (Aufmerksamkeit, Lernprozesse, Muskelansteuerung) und für Phosphatidylcholin, das den Abtransport von Triglyceriden aus der Leber sichert.',
     biochemistry: 'Cholin wird für die Synthese von Acetylcholin (Fokus, Lernen, neuromuskuläre Übertragung) und Phosphatidylcholin (Hauptphospholipid aller Membranen) benötigt. Über Betain dient es zudem als Methylgruppendonor zur Senkung von Homocystein.',
     plantBasedRelevance: 'Die reichhaltigsten Cholinquellen sind Eigelb und Rinderleber. Pflanzliche Lebensmittel liefern deutlich geringere Konzentrationen. 450 mg deckt die EFSA-Zufuhrempfehlung (400 mg) für Erwachsene optimal ab.',
-    intakeAdvice: 'Morgens oder mittags zu einer Mahlzeit einnehmen.',
+    intakeAdvice: 'Block A: 3 Kapseln (450 mg reines Cholin) morgens zum Frühstück mit Fettquelle einnehmen.',
     safetyAndUL: 'EFSA Adequate Intake (AI): 400 mg/Tag. Der US IOM Tolerable Upper Intake Level liegt bei 3.500 mg/Tag. Mit 450 mg (113% EFSA AI) erreichst du die perfekte Zieldosis bei maximalem Sicherheitsabstand.',
     scientificReference: 'EFSA Journal 2016;14(8):4484 | US IOM Choline Dietary Reference Intakes | Nutrients Journal'
   },
@@ -935,7 +935,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Hyaluronsäure besitzt ein enormes Wasserbindungsvermögen und dient in den Gelenken als viskoelastisches Schmiermittel und Stoßdämpfer. In der Haut verbessert sie die Feuchtigkeitsspeicherung der extrazellulären Matrix.',
     biochemistry: 'Hyaluronsäure ist Hauptbestandteil der Synovialflüssigkeit (Gelenkschmiere) und der extrazellulären Matrix der Dermis. Über CD44-Rezeptoren stimuliert oral zugeführtes Hyaluronat Chondrozyten und Fibroblasten zur endogenen Neusynthese.',
     plantBasedRelevance: 'Gewonnen durch biotechnologische Fermentation (100% vegan). Schützt Gelenkknorpel bei sportlicher Belastung und hydratisiert die Haut von innen.',
-    intakeAdvice: 'Mit reichlich Flüssigkeit (mind. 250-300 ml Wasser) morgens einnehmen.',
+    intakeAdvice: 'Block A: 1 Kapsel (500 mg) morgens zum Frühstück mit reichlich Wasser einnehmen.',
     safetyAndUL: 'Gilt als extrem sicher und hypoallergen; EFSA-bewertete Studien und toxikologische Reviews nutzen 100-500 mg/Tag ohne jegliche Nebenwirkungen.',
     scientificReference: 'Nutrition Journal 2014;13:70 | Journal of Clinical Biochemistry and Nutrition | EFSA'
   },
@@ -975,7 +975,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Coenzym Q10 ist der zentrale Elektronenüberträger in der mitochondrialen Atmungskette zur Bildung von ATP. Es versorgt energieintensive Gewebe wie Herzmuskel und Gehirn und schützt Mitochondrienmembranen vor oxidativen Schäden.',
     biochemistry: 'CoQ10 transferiert Elektronen zur ATP-Synthase und treibt so die zelluläre Energieproduktion in Herz, Muskeln und Gehirn an. Es recycelt oxidiertes Vitamin E und schützt mitochondriale Membranen direkt vor freien Radikalen.',
     plantBasedRelevance: 'Die Hauptnahrungsquellen sind tierische Innereien (Herz, Leber) und fetter Fisch. Durch die 200 mg veganes Fermentations-Q10 schließt du diese Versorgungslücke mit einer klinisch hochwirksamen Dosis.',
-    intakeAdvice: 'Fettlöslich: Immer morgens zum Frühstück mit Fettquelle oder zum Omega-3 BalanceOil+ einnehmen.',
+    intakeAdvice: 'Block A: Fettlöslich – 1 Kapsel (200 mg) morgens zum Frühstück zusammen mit einer Fettquelle (z.B. Zinzino BalanceOil+) für optimale Resorption einnehmen.',
     safetyAndUL: 'Für CoQ10 existiert kein gesetzlicher EFSA Upper Limit. Das wissenschaftlich etablierte Observed Safe Level (OSL nach Hathcock & Shao) liegt bei 300 mg/Tag. Mit 200 mg liegt deine Zufuhr im optimalen, klinisch bestens erforschten Bereich.',
     scientificReference: 'Regulatory Toxicology and Pharmacology 2006;45(3):282-288 (Hathcock & Shao CoQ10 Safety) | BioFactors Journal'
   },
@@ -995,7 +995,7 @@ export const NUTRIENT_DETAILS = {
     plainGermanExplanation: 'Astaxanthin ist ein hochpotentes Xanthophyll-Carotinoid, das Zellmembranen durchspannt und oxidativen Stress im Zellinneren sowie an der Membranoberfläche neutralisiert. Es entlastet die Ziliarmuskeln der Augen bei intensiver Bildschirmarbeit und unterstützt den Schutz vor UV-bedingtem Photo-Aging.',
     biochemistry: 'Aufgrund seiner polaren Endgruppen legt sich Astaxanthin quer durch die Lipiddoppelschicht der Zellmembranen und schützt sowohl den inneren als auch den äußeren Zellraum vor Lipidperoxidation. Es passiert mühelos die Blut-Hirn- und Blut-Netzhaut-Schranke.',
     plantBasedRelevance: 'Kommt in der Natur über die Nahrungskette primär in Wildlachs vor. Die hochdosierten 12 mg veganes Astaxanthin aus der Mikroalge Haematococcus pluvialis übertreffen die Zufuhr eines üblichen Fischkonsums um ein Vielfaches.',
-    intakeAdvice: 'Fettlöslich: Zu einer Mahlzeit mit Fett oder direkt zusammen mit Zinzino BalanceOil+ einnehmen.',
+    intakeAdvice: 'Block A: Fettlöslich – 1 Softgel (12 mg) morgens zum Frühstück zusammen mit Zinzino BalanceOil+ einnehmen.',
     safetyAndUL: 'EFSA bewertet bis zu 8–12 mg natürliches Algen-Astaxanthin pro Tag für Erwachsene als sicher und exzellent verträglich.',
     scientificReference: 'EFSA Journal 2020;18(2):5993 | Marine Drugs Journal | Nutrients 2020'
   },

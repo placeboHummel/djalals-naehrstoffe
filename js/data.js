@@ -9,7 +9,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'Watson',
     brand: 'Watson Nutrition',
     dosage: '1 Kapsel täglich',
-    timing: 'Morgens zum Frühstück',
+    timing: 'Block A – Frühstück mit Fettquelle',
+    block: 'A',
     icon: '☀️',
     badge: '21 Nährstoffe',
     image: 'assets/images/watson-male-essentials.png'
@@ -20,7 +21,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'VitaMoment',
     brand: 'VitaMoment',
     dosage: '1 Kapsel täglich',
-    timing: 'Morgens mit Fettquelle',
+    timing: 'Block A – Frühstück mit Fettquelle',
+    block: 'A',
     icon: '☀️',
     badge: '5.000 IE D3 + 200 µg K2',
     image: 'assets/images/vitamoment-d3-k2.png'
@@ -31,7 +33,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'VitaMoment',
     brand: 'VitaMoment',
     dosage: '1 Kapsel täglich',
-    timing: 'Morgens / Mittags',
+    timing: 'Block A – Frühstück mit Fettquelle',
+    block: 'A',
     icon: '🍊',
     badge: '500 mg Vitamin C',
     image: 'assets/images/vitamoment-vitamin-c.png'
@@ -42,7 +45,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'Zinzino',
     brand: 'Zinzino',
     dosage: '10 ml täglich (flüssig)',
-    timing: 'Morgens / Mittags zum Essen',
+    timing: 'Block A – Frühstück mit Fettquelle',
+    block: 'A',
     icon: '🐟',
     badge: '2.065 mg Omega-3',
     image: 'assets/images/zinzino-balanceoil.png'
@@ -53,7 +57,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'True Nature',
     brand: 'True Nature',
     dosage: '3 Kapseln täglich (1.125 mg)',
-    timing: 'Morgens / Mittags',
+    timing: 'Block A – Frühstück mit Fettquelle',
+    block: 'A',
     icon: '🧠',
     badge: '450 mg Cholin',
     image: 'assets/images/true-nature-cholin.png'
@@ -64,7 +69,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'Sports & Health',
     brand: 'Sports & Health',
     dosage: '3 Kapseln täglich',
-    timing: 'Abends vor dem Schlafen',
+    timing: 'Block B – Abends, 60 min vor dem Schlafen',
+    block: 'B',
     icon: '🌙',
     badge: '400 mg Magnesium',
     image: 'assets/images/sports-health-magnesium.png'
@@ -75,7 +81,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'Gloryfeel',
     brand: 'Gloryfeel',
     dosage: '1 Messlöffel täglich (3,4 g)',
-    timing: 'Morgens / Nach dem Training',
+    timing: 'Im Protein-Shake (Post-Workout / Vormittags)',
+    block: 'shake',
     icon: '⚡',
     badge: '3.000 mg Creapure®',
     image: 'assets/images/gloryfeel-creatine.png'
@@ -86,7 +93,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'Vit4ever Whey',
     brand: 'Vit4ever',
     dosage: '30 g Pulver täglich (1 Shake)',
-    timing: 'Nach dem Training / Vormittags',
+    timing: 'Im Protein-Shake (Post-Workout / Vormittags)',
+    block: 'shake',
     icon: '🍋',
     badge: '23 g Protein + 18 Aminosäuren',
     image: 'assets/images/vit4ever-yummy-whey.png'
@@ -97,7 +105,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'Vitabay',
     brand: 'Vitabay',
     dosage: '1 Softgel-Kapsel täglich',
-    timing: 'Morgens / Mittags zum Essen',
+    timing: 'Block A – Frühstück mit Fettquelle',
+    block: 'A',
     icon: '🔴',
     badge: '12 mg AstaPure®',
     image: 'assets/images/vitabay-astaxanthin.png'
@@ -108,7 +117,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'CoQ10 200mg',
     brand: 'ProFuel / GEN',
     dosage: '1 Kapsel täglich',
-    timing: 'Morgens zum Frühstück',
+    timing: 'Block A – Frühstück mit Fettquelle',
+    block: 'A',
     icon: '🔋',
     badge: '200 mg Coenzym Q10',
     image: 'assets/images/q10-200mg.png'
@@ -119,9 +129,10 @@ export const MY_SUPPLEMENTS = [
     shortName: 'Warnke',
     brand: 'Warnke Vitalstoffe',
     dosage: '2 Tabletten täglich (je 300 mg)',
-    timing: 'Mittags & Abends zu den Mahlzeiten',
+    timing: 'Block A (1 Tab.) & Block B (1 Tab.)',
+    block: 'both',
     icon: '🦴',
-    badge: '600 mg Calcium',
+    badge: '600 mg Calcium (2x 300 mg)',
     image: 'assets/images/warnke-calciumcitrat.png'
   },
   {
@@ -130,7 +141,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'GEN ALCAR',
     brand: 'German Elite Nutrition',
     dosage: '1 Kapsel täglich (500 mg)',
-    timing: 'Morgens vor dem Frühstück / Training',
+    timing: 'Block A – Frühstück mit Fettquelle',
+    block: 'A',
     icon: '⚡',
     badge: '500 mg ALCAR',
     image: 'assets/images/gen-acetyl-l-carnitin.png'
@@ -141,7 +153,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'Nutri+ Glycin',
     brand: 'Nutri-Plus',
     dosage: '5 g täglich (1 Messlöffel)',
-    timing: 'Morgens / Im Shake / Abends',
+    timing: 'Block B – Abends, 60 min vor dem Schlafen',
+    block: 'B',
     icon: '✨',
     badge: '5.000 mg reines L-Glycin',
     image: 'assets/images/nutri-plus-glycin.png'
@@ -152,7 +165,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'natural elements Hyaluron',
     brand: 'natural elements',
     dosage: '1 Kapsel täglich (500 mg)',
-    timing: 'Morgens mit reichlich Wasser',
+    timing: 'Block A – Frühstück mit Fettquelle',
+    block: 'A',
     icon: '💧',
     badge: '500 mg (500–700 kDa)',
     image: 'assets/images/natural-elements-hyaluron.png'
@@ -163,7 +177,8 @@ export const MY_SUPPLEMENTS = [
     shortName: 'ProFuel Taurin',
     brand: 'ProFuel',
     dosage: '2 Kapseln täglich (2.000 mg)',
-    timing: 'Morgens / Vor dem Training',
+    timing: 'Block B – Abends, 60 min vor dem Schlafen',
+    block: 'B',
     icon: '⚡',
     badge: '2.000 mg Taurin (>99,9%)',
     image: 'assets/images/profuel-taurin.png'
@@ -502,7 +517,7 @@ export const NUTRIENTS_SUMMARY = [
     supplementIds: ['watson-male-essentials', 'warnke-calciumcitrat'],
     sources: [
       { supplementId: 'watson-male-essentials', amount: '120 mg', note: 'Calcium-Bisglycinat (1 Kapsel)' },
-      { supplementId: 'warnke-calciumcitrat', amount: '600 mg', note: 'Organisches Calciumcitrat (2 Tabletten)' }
+      { supplementId: 'warnke-calciumcitrat', amount: '600 mg', note: 'Organisches Calciumcitrat (2 Tabletten: 1x Block A Frühstück, 1x Block B Abends)' }
     ]
   },
   {

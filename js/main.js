@@ -37,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     suppContainer.innerHTML = MY_SUPPLEMENTS.map(supp => {
       const isSelected = supp.id === selectedSupplementId;
+      let blockClass = 'supp-timing-block-a';
+      if (supp.block === 'B') blockClass = 'supp-timing-block-b';
+      else if (supp.block === 'both') blockClass = 'supp-timing-block-both';
+      else if (supp.block === 'shake') blockClass = 'supp-timing-block-shake';
 
       return `
         <div class="supp-card ${isSelected ? 'is-selected' : ''}" 
@@ -52,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="supp-details">
               <div class="supp-card-top">
                 <span class="supp-brand">${supp.brand}</span>
-                <span class="supp-timing-badge">${supp.timing}</span>
+                <span class="supp-timing-badge ${blockClass}">${supp.timing}</span>
               </div>
               <h3 class="supp-title">${supp.name}</h3>
             </div>
