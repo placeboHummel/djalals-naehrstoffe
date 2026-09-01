@@ -1,5 +1,6 @@
 import { MY_SUPPLEMENTS, NUTRIENTS_SUMMARY } from './data.js?v=3.1.0';
 import { NUTRIENT_DETAILS } from './nutrient-details.js?v=3.1.0';
+import { exportDailyIntakeHTML } from './export.js?v=3.1.5';
 
 document.addEventListener('DOMContentLoaded', () => {
   const suppContainer = document.getElementById('supplements-list');
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const activeFilterContainer = document.getElementById('active-filter-container');
   const modalContainer = document.getElementById('modal-container');
   const searchInput = document.getElementById('search-input');
+  const exportBtn = document.getElementById('export-btn');
   const filterPills = document.querySelectorAll('.filter-pill');
   const backToTopBtn = document.getElementById('back-to-top-btn');
 
@@ -521,6 +523,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Event Listeners
+  if (exportBtn) {
+    exportBtn.addEventListener('click', () => {
+      exportDailyIntakeHTML();
+    });
+  }
+
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       currentSearch = e.target.value.trim();

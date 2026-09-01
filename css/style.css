@@ -573,6 +573,63 @@ body.modal-open {
   box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
 }
 
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.export-report-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--emerald-main);
+  color: #ffffff;
+  border: 1px solid var(--emerald-main);
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.export-report-btn:hover {
+  background: #059669;
+  border-color: #059669;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+  transform: translateY(-1.5px);
+}
+
+.export-report-btn:active {
+  transform: translateY(0);
+}
+
+.export-report-btn svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .header-right-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .search-box {
+    flex: 1;
+    min-width: 160px;
+  }
+  .export-report-btn span {
+    display: none;
+  }
+  .export-report-btn {
+    padding: 10px 12px;
+  }
+}
+
 /* Filter Pills */
 .filter-pills-wrap {
   display: flex;
