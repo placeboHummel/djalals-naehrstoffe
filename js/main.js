@@ -56,9 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="supp-details">
               <div class="supp-card-top">
                 <span class="supp-brand">${supp.brand}</span>
-                <span class="supp-timing-badge ${blockClass}">${supp.timing}</span>
               </div>
               <h3 class="supp-title">${supp.name}</h3>
+              <div class="supp-timing-row">
+                <span class="supp-timing-badge ${blockClass}">${supp.timing}</span>
+              </div>
             </div>
           </div>
           <div class="supp-dose-box">
@@ -745,11 +747,6 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="org-weekly-mult">${multSubtitle}</span>
             </div>
 
-            <div class="org-visual-pill">
-              <span>👁️</span>
-              <span><strong>Optik:</strong> ${supp.pillVisual || 'Kapsel'}</span>
-            </div>
-
             <div class="org-check-row">
               <label class="org-check-label" for="chk_${uniqueCardKey}">
                 <input type="checkbox" 
@@ -782,11 +779,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${supp.icon || '⚡'} ${supp.dosage}
               </div>
               <span class="org-weekly-mult">${supp.timing}</span>
-            </div>
-
-            <div class="org-visual-pill">
-              <span>ℹ️</span>
-              <span>${supp.pillVisual || 'Direkt vor dem Verzehr zubereiten'}</span>
             </div>
           </div>
         </div>
@@ -939,7 +931,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <th>Einnahmezeit / Fach</th>
                   <th>Tagesdosis</th>
                   <th>Menge (${organizerMultiplierDays} Tage)</th>
-                  <th>Form / Optik</th>
                 </tr>
               </thead>
               <tbody>
@@ -949,7 +940,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
                   <td>1 Kapsel</td>
                   <td><strong>${1 * organizerMultiplierDays} Kapseln</strong></td>
-                  <td>Pflanzliche Kapsel (Hellbraun)</td>
                 </tr>
                 <tr>
                   <td><strong>Vitamin D3 + K2</strong></td>
@@ -957,7 +947,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
                   <td>1 Kapsel</td>
                   <td><strong>${1 * organizerMultiplierDays} Kapseln</strong></td>
-                  <td>Kleine Ölkapsel (Klar/Gelb)</td>
                 </tr>
                 <tr>
                   <td><strong>Vitamin C (gepuffert)</strong></td>
@@ -965,7 +954,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
                   <td>1 Kapsel</td>
                   <td><strong>${1 * organizerMultiplierDays} Kapseln</strong></td>
-                  <td>Weiße Calciumascorbat-Kapsel</td>
                 </tr>
                 <tr>
                   <td><strong>Astaxanthin 12 mg</strong></td>
@@ -973,7 +961,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
                   <td>1 Softgel</td>
                   <td><strong>${1 * organizerMultiplierDays} Softgels</strong></td>
-                  <td>Dunkelrote Softgel-Kapsel</td>
                 </tr>
                 <tr>
                   <td><strong>Coenzym Q10 200 mg</strong></td>
@@ -981,7 +968,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
                   <td>1 Kapsel</td>
                   <td><strong>${1 * organizerMultiplierDays} Kapseln</strong></td>
-                  <td>Gelb-orangene Kapsel</td>
                 </tr>
                 <tr>
                   <td><strong>Cholin Bitartrat</strong></td>
@@ -989,7 +975,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
                   <td>3 Kapseln</td>
                   <td><strong>${3 * organizerMultiplierDays} Kapseln</strong></td>
-                  <td>Weiße Kapseln</td>
                 </tr>
                 <tr>
                   <td><strong>Acetyl-L-Carnitin (ALCAR)</strong></td>
@@ -997,7 +982,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
                   <td>1 Kapsel</td>
                   <td><strong>${1 * organizerMultiplierDays} Kapseln</strong></td>
-                  <td>Weiße Kapsel</td>
                 </tr>
                 <tr>
                   <td><strong>Vegane Hyaluronsäure</strong></td>
@@ -1005,7 +989,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
                   <td>1 Kapsel</td>
                   <td><strong>${1 * organizerMultiplierDays} Kapseln</strong></td>
-                  <td>Transparente Kapsel</td>
                 </tr>
                 <tr>
                   <td><strong>Calciumcitrat (1. Tablette)</strong></td>
@@ -1013,7 +996,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
                   <td>1 Tablette</td>
                   <td><strong>${1 * organizerMultiplierDays} Tabletten</strong></td>
-                  <td>Weiße Tablette</td>
                 </tr>
                 <tr style="background: rgba(139, 92, 246, 0.05);">
                   <td><strong>Magnesium Bisglycinat</strong></td>
@@ -1021,7 +1003,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#7c3aed; font-weight:700;">🌙 Fach 2 (Abends)</span></td>
                   <td>3 Kapseln</td>
                   <td><strong>${3 * organizerMultiplierDays} Kapseln</strong></td>
-                  <td>Große weiße Kapseln</td>
                 </tr>
                 <tr style="background: rgba(139, 92, 246, 0.05);">
                   <td><strong>Taurin Kapseln</strong></td>
@@ -1029,7 +1010,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#7c3aed; font-weight:700;">🌙 Fach 2 (Abends)</span></td>
                   <td>2 Kapseln</td>
                   <td><strong>${2 * organizerMultiplierDays} Kapseln</strong></td>
-                  <td>Weiße Taurin-Kapseln</td>
                 </tr>
                 <tr style="background: rgba(139, 92, 246, 0.05);">
                   <td><strong>Calciumcitrat (2. Tablette)</strong></td>
@@ -1037,7 +1017,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#7c3aed; font-weight:700;">🌙 Fach 2 (Abends)</span></td>
                   <td>1 Tablette</td>
                   <td><strong>${1 * organizerMultiplierDays} Tabletten</strong></td>
-                  <td>Weiße Tablette</td>
                 </tr>
                 <tr style="background: rgba(6, 182, 212, 0.05);">
                   <td><strong>BalanceOil+ Omega-3</strong></td>
@@ -1045,7 +1024,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#0891b2; font-weight:700;">⚡ Morgens (Flasche)</span></td>
                   <td>10 ml</td>
                   <td><strong>${10 * organizerMultiplierDays} ml</strong></td>
-                  <td>Flüssigöl mit Polyphenolen</td>
                 </tr>
                 <tr style="background: rgba(6, 182, 212, 0.05);">
                   <td><strong>Glycin Pulver</strong></td>
@@ -1053,7 +1031,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#0891b2; font-weight:700;">⚡ Abends (Wasserglas)</span></td>
                   <td>5 g (1 Messlöffel)</td>
                   <td><strong>${5 * organizerMultiplierDays} g</strong></td>
-                  <td>Süßliches Pulver</td>
                 </tr>
                 <tr style="background: rgba(6, 182, 212, 0.05);">
                   <td><strong>Kreatin Creapure®</strong></td>
@@ -1061,7 +1038,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#0891b2; font-weight:700;">⚡ Im Protein-Shake</span></td>
                   <td>3,4 g (1 Messlöffel)</td>
                   <td><strong>${Math.round(3.4 * organizerMultiplierDays * 10) / 10} g</strong></td>
-                  <td>Feinstes Pulver</td>
                 </tr>
                 <tr style="background: rgba(6, 182, 212, 0.05);">
                   <td><strong>Yummy Whey Protein</strong></td>
@@ -1069,7 +1045,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td><span style="color:#0891b2; font-weight:700;">⚡ Im Protein-Shake</span></td>
                   <td>30 g (1 Shake)</td>
                   <td><strong>${30 * organizerMultiplierDays} g</strong></td>
-                  <td>Proteinpulver Lemon Cheesecake</td>
                 </tr>
               </tbody>
             </table>
