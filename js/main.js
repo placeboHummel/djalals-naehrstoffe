@@ -672,20 +672,23 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // PILLEN-ORGANIZER & WOCHEN-BEFÜLLHILFE LOGIK & RENDERING
   // =========================================================================
-  let organizerMultiplierDays = 7;
+  // =========================================================================
+  // PILLEN-ORGANIZER (HIGH-END 7-TAGE WOCHEN-BEFÜLLPLAN)
+  // =========================================================================
+  const DAYS = 7;
   let filledItemsSet = new Set(JSON.parse(localStorage.getItem('djalal_org_filled') || '[]'));
 
   function renderPillOrganizer() {
     if (!viewOrganizer) return;
 
-    // Filter supplements for morning, evening, and shakes
+    // Filter supplements
     const morningSupps = MY_SUPPLEMENTS.filter(s => s.inOrganizer && (s.compartment === 'morning' || s.compartment === 'both'));
     const eveningSupps = MY_SUPPLEMENTS.filter(s => s.inOrganizer && (s.compartment === 'evening' || s.compartment === 'both'));
     const shakeSupps = MY_SUPPLEMENTS.filter(s => s.id === 'gloryfeel-creatine' || s.id === 'vit4ever-yummy-whey');
     const balanceOilSupp = MY_SUPPLEMENTS.find(s => s.id === 'zinzino-balanceoil');
     const glycinSupp = MY_SUPPLEMENTS.find(s => s.id === 'nutri-plus-glycin');
 
-    // Calculate total pills in morning and evening
+    // Calculate pill totals
     const morningPillCountDay = morningSupps.reduce((acc, s) => {
       return acc + (s.compartment === 'both' ? (s.pillCountMorning || 1) : (s.pillCount || 1));
     }, 0);
@@ -694,21 +697,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return acc + (s.compartment === 'both' ? (s.pillCountEvening || 1) : (s.pillCount || 1));
     }, 0);
 
-    const totalOrganizerPillsDay = morningPillCountDay + eveningPillCountDay;
-    const totalOrganizerPillsMult = totalOrganizerPillsDay * organizerMultiplierDays;
-
+    const morningPillCountWeek = morningPillCountDay * DAYS;
+    const eveningPillCountWeek = eveningPillCountDay * DAYS;
+    const totalWeeklyPills = morningPillCountWeek + eveningPillCountWeek;
     const totalCheckableItems = morningSupps.length + eveningSupps.length;
-    const filledCount = filledItemsSet.size;
 
-    const daysLabel = organizerMultiplierDays === 7 
-      ? 'Wochenbox (7 Tage Mo–So)' 
-      : organizerMultiplierDays === 1 
-      ? '1 Tag (Tagesfach)' 
-      : organizerMultiplierDays === 14 
-      ? '14 Tage (2 Wochen)' 
-      : '30 Tage (1 Monat)';
-
-    function renderOrganizerCard(supp, compartmentType) {
+    function renderRowItem(supp, compartmentType) {
       const uniqueCardKey = `${supp.id}_${compartmentType}`;
       const isFilled = filledItemsSet.has(uniqueCardKey);
 
@@ -717,70 +711,42 @@ document.addEventListener('DOMContentLoaded', () => {
         countPerDay = compartmentType === 'morning' ? (supp.pillCountMorning || 1) : (supp.pillCountEvening || 1);
       }
 
-      const multCount = countPerDay * organizerMultiplierDays;
+      const weekCount = countPerDay * DAYS;
       let unitStr = supp.pillUnit || 'Kapsel';
-      if (multCount > 1) {
+      if (weekCount > 1) {
         if (unitStr === 'Kapsel') unitStr = 'Kapseln';
         if (unitStr === 'Tablette') unitStr = 'Tabletten';
         if (unitStr === 'Softgel') unitStr = 'Softgels';
       }
 
-      const multSubtitle = organizerMultiplierDays === 7 
-        ? `${multCount}x für 7 Tage (Mo–So)` 
-        : organizerMultiplierDays === 1 
-        ? `${multCount}x pro Tag` 
-        : `${multCount}x für ${organizerMultiplierDays} Tage`;
-
       return `
-        <div class="org-card ${isFilled ? 'is-filled' : ''}" data-org-id="${uniqueCardKey}">
-          <div class="org-card-img-wrap">
-            <img src="${supp.image}" alt="${supp.name}" class="org-card-img" loading="lazy">
+        <div class="org-row-item ${isFilled ? 'is-filled' : ''}" data-org-id="${uniqueCardKey}">
+          <label class="org-row-check" for="chk_${uniqueCardKey}" title="${isFilled ? 'Als offen markieren' : 'Als befüllt abhaken'}">
+            <input type="checkbox" 
+                   class="org-checkbox" 
+                   id="chk_${uniqueCardKey}" 
+                   data-key="${uniqueCardKey}" 
+                   ${isFilled ? 'checked' : ''}>
+            <span class="org-check-circle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+          </label>
+
+          <div class="org-row-thumb">
+            <img src="${supp.image}" alt="${supp.name}" class="org-thumb-img" loading="lazy">
           </div>
-          <div class="org-card-body">
-            <div class="org-card-header">
-              <span class="org-brand-tag">${supp.brand}</span>
-              <h4 class="org-prod-title">${supp.name}</h4>
-            </div>
 
-            <div class="org-dose-highlight">
-              <div class="org-dose-text">
-                💊 ${countPerDay}x ${supp.pillUnit || 'Kapsel'} / Fach
-              </div>
-              <span class="org-weekly-mult">${multSubtitle}</span>
-            </div>
-
-            <div class="org-check-row">
-              <label class="org-check-label" for="chk_${uniqueCardKey}">
-                <input type="checkbox" 
-                       class="org-checkbox" 
-                       id="chk_${uniqueCardKey}" 
-                       data-key="${uniqueCardKey}" 
-                       ${isFilled ? 'checked' : ''}>
-                <span>${isFilled ? '✓ Fach befüllt' : 'In Fächer einsortieren'}</span>
-              </label>
-            </div>
+          <div class="org-row-details">
+            <span class="org-row-brand">${supp.brand}</span>
+            <h4 class="org-row-title">${supp.name}</h4>
+            <span class="org-row-daily">${countPerDay}x ${supp.pillUnit || 'Kapsel'} täglich ${compartmentType === 'morning' ? 'zum Frühstück' : 'vor dem Schlafen'}</span>
           </div>
-        </div>
-      `;
-    }
 
-    function renderExternalCard(supp) {
-      return `
-        <div class="org-card" style="border-left: 4px solid #06b6d4;">
-          <div class="org-card-img-wrap">
-            <img src="${supp.image}" alt="${supp.name}" class="org-card-img" loading="lazy">
-          </div>
-          <div class="org-card-body">
-            <div class="org-card-header">
-              <span class="org-brand-tag">${supp.brand}</span>
-              <h4 class="org-prod-title">${supp.name}</h4>
-            </div>
-
-            <div class="org-dose-highlight" style="background: rgba(6,182,212,0.1);">
-              <div class="org-dose-text" style="color: #0891b2;">
-                ${supp.icon || '⚡'} ${supp.dosage}
-              </div>
-              <span class="org-weekly-mult">${supp.timing}</span>
+          <div class="org-row-right">
+            <div class="org-weekly-pill-badge">
+              <span class="org-weekly-count">${weekCount}</span>
+              <span class="org-weekly-unit">${unitStr}</span>
+              <span class="org-weekly-label">/ Woche</span>
             </div>
           </div>
         </div>
@@ -790,322 +756,194 @@ document.addEventListener('DOMContentLoaded', () => {
     viewOrganizer.innerHTML = `
       <div class="organizer-view-wrap">
         
-        <!-- HERO BANNER & MULTIPLIER CONTROLS -->
-        <div class="organizer-hero-banner">
-          <div class="organizer-hero-top">
-            <div>
-              <h2 class="organizer-hero-title">
-                <span>💊</span>
-                <span>Pillen-Organizer & Wochen-Befüllhilfe</span>
-              </h2>
-              <p class="organizer-hero-sub">
-                Dein visueller Assistent zum mühelosen Befüllen deiner Tablettenbox. Mit großen Produktbildern, exakten Kapselmengen pro Fach und 7-Tage-Wochenrechner.
-              </p>
-            </div>
-            
-            <div class="organizer-actions-wrap">
-              <div class="org-progress-indicator">
-                ${filledCount} / ${totalCheckableItems} befüllt
-              </div>
-              <button id="org-reset-btn" class="org-action-btn" title="Alle Häkchen zurücksetzen">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
-                <span>Reset</span>
-              </button>
-              <button id="org-print-btn" class="org-action-btn" title="Befüllplan drucken">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-                <span>Drucken</span>
-              </button>
-            </div>
+        <!-- HEADER OVERVIEW BAR -->
+        <div class="organizer-header-card">
+          <div>
+            <h2 class="organizer-header-title">
+              <span>💊</span>
+              <span>Wöchentlicher Befüllplan (7 Tage Mo–So)</span>
+            </h2>
+            <p class="organizer-header-sub">
+              Übersichtlicher Leitfaden zum Befüllen deiner 7-Tage-Wochenbox. Exakte Kapselmengen für 1 Woche auf einen Blick.
+            </p>
           </div>
 
-          <div class="organizer-controls-row">
-            <div class="multiplier-box">
-              <span class="multiplier-label">Befüll-Zeitraum:</span>
-              <div class="multiplier-pills">
-                <button class="mult-btn ${organizerMultiplierDays === 1 ? 'active' : ''}" data-days="1">1 Tag (Tagesdosis)</button>
-                <button class="mult-btn ${organizerMultiplierDays === 7 ? 'active' : ''}" data-days="7">7 Tage (Wochenbox Mo–So)</button>
-                <button class="mult-btn ${organizerMultiplierDays === 14 ? 'active' : ''}" data-days="14">14 Tage (2 Wochen)</button>
-                <button class="mult-btn ${organizerMultiplierDays === 30 ? 'active' : ''}" data-days="30">30 Tage (Monat)</button>
-              </div>
+          <div class="organizer-header-stats">
+            <div class="org-stat-badge">
+              <span>Wochenbedarf:</span>
+              <strong>${totalWeeklyPills} Kapseln</strong>
             </div>
 
-            <div style="font-size: 0.84rem; color: var(--text-muted);">
-              Aktive Ansicht: <strong>${daysLabel}</strong> • Gesamt: <strong>${totalOrganizerPillsMult} Kapseln/Tabletten</strong>
+            <div class="org-stat-badge org-progress-indicator">
+              <span>Befüllt:</span>
+              <strong>${filledItemsSet.size} / ${totalCheckableItems}</strong>
             </div>
+
+            <button id="org-reset-btn" class="org-action-btn" title="Alle Häkchen zurücksetzen">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+              <span>Reset</span>
+            </button>
+
+            <button id="org-print-btn" class="org-action-btn" title="Befüllplan drucken">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              <span>Drucken</span>
+            </button>
           </div>
         </div>
 
-        <!-- ==================== COMPARTMENT 1: MORGENS ==================== -->
-        <section class="organizer-compartment">
-          <div class="compartment-header-banner compartment-morning">
-            <div class="compartment-title-box">
-              <span class="compartment-icon">🌅</span>
+        <!-- ==================== 1. FACH 1: MORGENS ==================== -->
+        <section class="org-section-card">
+          <div class="org-section-header org-header-morning">
+            <div class="org-section-title-wrap">
+              <span class="org-section-icon">🌅</span>
               <div>
-                <h3 class="compartment-name">Fach 1: MORGENS (Block A – Frühstück mit Fettquelle)</h3>
-                <p class="compartment-sub">Alle fettlöslichen Vitamine, Kofaktoren und Mikronährstoffe zum Frühstück</p>
+                <h3 class="org-section-title">Fach 1: MORGENS (Block A – Frühstück mit Fettquelle)</h3>
+                <p class="org-section-desc">Alle fettlöslichen Vitamine, Kofaktoren & Mikronährstoffe für 7 Tage</p>
               </div>
             </div>
-            <div class="compartment-stats-pill">
-              <span>9 Box-Produkte</span>
-              <span>•</span>
-              <span style="color: #d97706;">${morningPillCountDay} Kapseln/Tag</span>
-              <span>•</span>
-              <strong style="color: #b45309;">${morningPillCountDay * organizerMultiplierDays} Kapseln (${organizerMultiplierDays} Tage)</strong>
+            <div class="org-section-badge" style="color: #b45309;">
+              9 Box-Produkte • <strong>${morningPillCountWeek} Kapseln / Woche</strong> (11 / Tag)
             </div>
           </div>
 
-          <!-- Integrierte Flüssigöl-Box direkt bei Morgens mit Produktbild -->
-          <div class="compartment-external-note">
-            <div class="external-note-thumb">
-              <img src="${balanceOilSupp?.image || 'assets/images/zinzino-balanceoil.png'}" alt="Zinzino BalanceOil+" class="external-thumb-img">
-            </div>
-            <div class="external-note-info">
-              <div class="external-note-tag">💧 Flüssige Einnahme zum Frühstück</div>
-              <h4 class="external-note-title">Zinzino BalanceOil+ (Omega-3 & Polyphenole)</h4>
-              <p class="external-note-sub"><strong>10 ml flüssig</strong> morgens frisch aus der Flasche zum Frühstück mit Fettquelle einnehmen (verbleibt im Kühlschrank / nicht in der Pillenbox).</p>
-            </div>
-            <div class="external-note-dose-badge">
-              <span class="external-dose-num">${10 * organizerMultiplierDays} ml</span>
-              <span class="external-dose-lbl">für ${organizerMultiplierDays} Tage</span>
-            </div>
-          </div>
+          <div class="org-rows-list">
+            ${morningSupps.map(s => renderRowItem(s, 'morning')).join('')}
 
-          <div class="organizer-cards-grid">
-            ${morningSupps.map(s => renderOrganizerCard(s, 'morning')).join('')}
+            <!-- Zinzino BalanceOil Row -->
+            ${balanceOilSupp ? `
+              <div class="org-row-item org-row-external">
+                <div style="width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; color: #0891b2; font-size: 1.1rem;">
+                  💧
+                </div>
+                <div class="org-row-thumb">
+                  <img src="${balanceOilSupp.image}" alt="${balanceOilSupp.name}" class="org-thumb-img" loading="lazy">
+                </div>
+                <div class="org-row-details">
+                  <span class="org-row-brand">${balanceOilSupp.brand} (Aus der Flasche)</span>
+                  <h4 class="org-row-title">${balanceOilSupp.name}</h4>
+                  <span class="org-row-daily">10 ml flüssig täglich zum Frühstück mit Fettquelle einnehmen (nicht in der Box)</span>
+                </div>
+                <div class="org-row-right">
+                  <div class="org-weekly-pill-badge is-external">
+                    <span class="org-weekly-count">70</span>
+                    <span class="org-weekly-unit">ml</span>
+                    <span class="org-weekly-label">/ Woche</span>
+                  </div>
+                </div>
+              </div>
+            ` : ''}
           </div>
         </section>
 
-        <!-- ==================== BLOCK ZWISCHEN MORGENS & ABENDS: PROTEIN-SHAKE ==================== -->
-        <section class="organizer-compartment" style="margin-top: 18px;">
-          <div class="compartment-header-banner compartment-shake">
-            <div class="compartment-title-box">
-              <span class="compartment-icon">🥤</span>
+        <!-- ==================== 2. PROTEIN-SHAKE ==================== -->
+        <section class="org-section-card">
+          <div class="org-section-header org-header-shake">
+            <div class="org-section-title-wrap">
+              <span class="org-section-icon">🥤</span>
               <div>
-                <h3 class="compartment-name">Protein-Shake (Vormittags / Post-Workout)</h3>
-                <p class="compartment-sub">Kreatin Creapure® & Yummy Whey Protein direkt im Shaker frisch zubereiten (zwischen Frühstück und Abend)</p>
+                <h3 class="org-section-title">PROTEIN-SHAKE (Vormittags / Post-Workout)</h3>
+                <p class="org-section-desc">Direkt im Shaker frisch zubereiten (zwischen Frühstück und Abend)</p>
               </div>
             </div>
-            <div class="compartment-stats-pill">
-              <span>2 Shake-Produkte</span>
-              <span>•</span>
-              <span style="color: #0891b2;">Täglich 1 Shaker</span>
+            <div class="org-section-badge" style="color: #0891b2;">
+              2 Shake-Zutaten • <strong>Täglich 1 Shaker</strong>
             </div>
           </div>
 
-          <div class="organizer-cards-grid">
-            ${shakeSupps.map(s => renderExternalCard(s)).join('')}
+          <div class="org-rows-list">
+            ${shakeSupps.map(supp => `
+              <div class="org-row-item org-row-external">
+                <div style="width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; color: #0891b2; font-size: 1.1rem;">
+                  ⚡
+                </div>
+                <div class="org-row-thumb">
+                  <img src="${supp.image}" alt="${supp.name}" class="org-thumb-img" loading="lazy">
+                </div>
+                <div class="org-row-details">
+                  <span class="org-row-brand">${supp.brand} (Shaker)</span>
+                  <h4 class="org-row-title">${supp.name}</h4>
+                  <span class="org-row-daily">${supp.dosage} direkt in Wasser oder Pflanzendrink</span>
+                </div>
+                <div class="org-row-right">
+                  <div class="org-weekly-pill-badge is-external">
+                    <span class="org-weekly-count">${supp.id === 'gloryfeel-creatine' ? '24' : '210'}</span>
+                    <span class="org-weekly-unit">g</span>
+                    <span class="org-weekly-label">/ Woche</span>
+                  </div>
+                </div>
+              </div>
+            `).join('')}
           </div>
         </section>
 
-        <!-- ==================== COMPARTMENT 2: ABENDS ==================== -->
-        <section class="organizer-compartment" style="margin-top: 18px;">
-          <div class="compartment-header-banner compartment-evening">
-            <div class="compartment-title-box">
-              <span class="compartment-icon">🌙</span>
+        <!-- ==================== 3. FACH 2: ABENDS ==================== -->
+        <section class="org-section-card">
+          <div class="org-section-header org-header-evening">
+            <div class="org-section-title-wrap">
+              <span class="org-section-icon">🌙</span>
               <div>
-                <h3 class="compartment-name">Fach 2: ABENDS (Block B – 60 min vor dem Schlafen)</h3>
-                <p class="compartment-sub">ZNS-Entspannung, Muskelrelaxation, GABA-A-Dämpfung und Tiefschlaf-Architektur</p>
+                <h3 class="org-section-title">Fach 2: ABENDS (Block B – 60 min vor dem Schlafen)</h3>
+                <p class="org-section-desc">ZNS-Entspannung, Muskelrelaxation & Tiefschlaf-Architektur für 7 Tage</p>
               </div>
             </div>
-            <div class="compartment-stats-pill">
-              <span>3 Box-Produkte</span>
-              <span>•</span>
-              <span style="color: #7c3aed;">${eveningPillCountDay} Kapseln/Tag</span>
-              <span>•</span>
-              <strong style="color: #6d28d9;">${eveningPillCountDay * organizerMultiplierDays} Kapseln (${organizerMultiplierDays} Tage)</strong>
+            <div class="org-section-badge" style="color: #6d28d9;">
+              3 Box-Produkte • <strong>${eveningPillCountWeek} Kapseln / Woche</strong> (6 / Tag)
             </div>
           </div>
 
-          <!-- Integrierte Pulver-Box direkt bei Abends mit Produktbild -->
-          <div class="compartment-external-note">
-            <div class="external-note-thumb">
-              <img src="${glycinSupp?.image || 'assets/images/nutri-plus-glycin.png'}" alt="Nutri-Plus Glycin" class="external-thumb-img">
-            </div>
-            <div class="external-note-info">
-              <div class="external-note-tag">✨ Pulver im Wasserglas</div>
-              <h4 class="external-note-title">Nutri-Plus Glycin Pulver</h4>
-              <p class="external-note-sub"><strong>5 g (1 Messlöffel)</strong> abends 60 min vor dem Schlafen frisch in Wasser einrühren (verbleibt in der Küche / nicht in der Pillenbox).</p>
-            </div>
-            <div class="external-note-dose-badge">
-              <span class="external-dose-num">${5 * organizerMultiplierDays} g</span>
-              <span class="external-dose-lbl">für ${organizerMultiplierDays} Tage</span>
-            </div>
-          </div>
+          <div class="org-rows-list">
+            ${eveningSupps.map(s => renderRowItem(s, 'evening')).join('')}
 
-          <div class="organizer-cards-grid">
-            ${eveningSupps.map(s => renderOrganizerCard(s, 'evening')).join('')}
-          </div>
-        </section>
-
-        <!-- ==================== SUMMARY TABLE ==================== -->
-        <section class="organizer-summary-table-card">
-          <h3 class="summary-table-title">
-            <span>📋</span>
-            <span>Wochen-Bedarfs- & Befüll-Matrix (${organizerMultiplierDays} Tage)</span>
-          </h3>
-
-          <div class="org-table-responsive">
-            <table class="org-table">
-              <thead>
-                <tr>
-                  <th>Produkt</th>
-                  <th>Marke</th>
-                  <th>Einnahmezeit / Fach</th>
-                  <th>Tagesdosis</th>
-                  <th>Menge (${organizerMultiplierDays} Tage)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Watson Male Essentials</strong></td>
-                  <td>Watson Nutrition</td>
-                  <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
-                  <td>1 Kapsel</td>
-                  <td><strong>${1 * organizerMultiplierDays} Kapseln</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>Vitamin D3 + K2</strong></td>
-                  <td>VitaMoment</td>
-                  <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
-                  <td>1 Kapsel</td>
-                  <td><strong>${1 * organizerMultiplierDays} Kapseln</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>Vitamin C (gepuffert)</strong></td>
-                  <td>VitaMoment</td>
-                  <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
-                  <td>1 Kapsel</td>
-                  <td><strong>${1 * organizerMultiplierDays} Kapseln</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>Astaxanthin 12 mg</strong></td>
-                  <td>Vitabay</td>
-                  <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
-                  <td>1 Softgel</td>
-                  <td><strong>${1 * organizerMultiplierDays} Softgels</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>Coenzym Q10 200 mg</strong></td>
-                  <td>ProFuel / GEN</td>
-                  <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
-                  <td>1 Kapsel</td>
-                  <td><strong>${1 * organizerMultiplierDays} Kapseln</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>Cholin Bitartrat</strong></td>
-                  <td>True Nature</td>
-                  <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
-                  <td>3 Kapseln</td>
-                  <td><strong>${3 * organizerMultiplierDays} Kapseln</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>Acetyl-L-Carnitin (ALCAR)</strong></td>
-                  <td>GEN Nutrition</td>
-                  <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
-                  <td>1 Kapsel</td>
-                  <td><strong>${1 * organizerMultiplierDays} Kapseln</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>Vegane Hyaluronsäure</strong></td>
-                  <td>natural elements</td>
-                  <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
-                  <td>1 Kapsel</td>
-                  <td><strong>${1 * organizerMultiplierDays} Kapseln</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>Calciumcitrat (1. Tablette)</strong></td>
-                  <td>Warnke Vitalstoffe</td>
-                  <td><span style="color:#d97706; font-weight:700;">🌅 Fach 1 (Morgens)</span></td>
-                  <td>1 Tablette</td>
-                  <td><strong>${1 * organizerMultiplierDays} Tabletten</strong></td>
-                </tr>
-                <tr style="background: rgba(245, 158, 11, 0.06);">
-                  <td><strong>BalanceOil+ Omega-3</strong></td>
-                  <td>Zinzino</td>
-                  <td><span style="color:#d97706; font-weight:700;">💧 Morgens (Flasche)</span></td>
-                  <td>10 ml</td>
-                  <td><strong>${10 * organizerMultiplierDays} ml</strong></td>
-                </tr>
-                <tr style="background: rgba(6, 182, 212, 0.06);">
-                  <td><strong>Kreatin Creapure®</strong></td>
-                  <td>Gloryfeel</td>
-                  <td><span style="color:#0891b2; font-weight:700;">🥤 Im Protein-Shake</span></td>
-                  <td>3,4 g (1 Messlöffel)</td>
-                  <td><strong>${Math.round(3.4 * organizerMultiplierDays * 10) / 10} g</strong></td>
-                </tr>
-                <tr style="background: rgba(6, 182, 212, 0.06);">
-                  <td><strong>Yummy Whey Protein</strong></td>
-                  <td>Vit4ever</td>
-                  <td><span style="color:#0891b2; font-weight:700;">🥤 Im Protein-Shake</span></td>
-                  <td>30 g (1 Shake)</td>
-                  <td><strong>${30 * organizerMultiplierDays} g</strong></td>
-                </tr>
-                <tr style="background: rgba(139, 92, 246, 0.05);">
-                  <td><strong>Magnesium Bisglycinat</strong></td>
-                  <td>Sports & Health</td>
-                  <td><span style="color:#7c3aed; font-weight:700;">🌙 Fach 2 (Abends)</span></td>
-                  <td>3 Kapseln</td>
-                  <td><strong>${3 * organizerMultiplierDays} Kapseln</strong></td>
-                </tr>
-                <tr style="background: rgba(139, 92, 246, 0.05);">
-                  <td><strong>Taurin Kapseln</strong></td>
-                  <td>ProFuel</td>
-                  <td><span style="color:#7c3aed; font-weight:700;">🌙 Fach 2 (Abends)</span></td>
-                  <td>2 Kapseln</td>
-                  <td><strong>${2 * organizerMultiplierDays} Kapseln</strong></td>
-                </tr>
-                <tr style="background: rgba(139, 92, 246, 0.05);">
-                  <td><strong>Calciumcitrat (2. Tablette)</strong></td>
-                  <td>Warnke Vitalstoffe</td>
-                  <td><span style="color:#7c3aed; font-weight:700;">🌙 Fach 2 (Abends)</span></td>
-                  <td>1 Tablette</td>
-                  <td><strong>${1 * organizerMultiplierDays} Tabletten</strong></td>
-                </tr>
-                <tr style="background: rgba(139, 92, 246, 0.08);">
-                  <td><strong>Glycin Pulver</strong></td>
-                  <td>Nutri-Plus</td>
-                  <td><span style="color:#7c3aed; font-weight:700;">✨ Abends (Wasserglas)</span></td>
-                  <td>5 g (1 Messlöffel)</td>
-                  <td><strong>${5 * organizerMultiplierDays} g</strong></td>
-                </tr>
-              </tbody>
-            </table>
+            <!-- Nutri-Plus Glycin Row -->
+            ${glycinSupp ? `
+              <div class="org-row-item org-row-external">
+                <div style="width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; color: #7c3aed; font-size: 1.1rem;">
+                  ✨
+                </div>
+                <div class="org-row-thumb">
+                  <img src="${glycinSupp.image}" alt="${glycinSupp.name}" class="org-thumb-img" loading="lazy">
+                </div>
+                <div class="org-row-details">
+                  <span class="org-row-brand" style="color: #7c3aed;">${glycinSupp.brand} (Im Wasserglas)</span>
+                  <h4 class="org-row-title">${glycinSupp.name}</h4>
+                  <span class="org-row-daily">5 g (1 Messlöffel) abends 60 min vor dem Schlafen in Wasser einrühren (nicht in der Box)</span>
+                </div>
+                <div class="org-row-right">
+                  <div class="org-weekly-pill-badge" style="background: rgba(139, 92, 246, 0.08); border-color: rgba(139, 92, 246, 0.25);">
+                    <span class="org-weekly-count" style="color: #7c3aed;">35</span>
+                    <span class="org-weekly-unit">g</span>
+                    <span class="org-weekly-label">/ Woche</span>
+                  </div>
+                </div>
+              </div>
+            ` : ''}
           </div>
         </section>
 
       </div>
     `;
 
-    // Attach Multiplier Button Listeners
-    const multBtns = viewOrganizer.querySelectorAll('.mult-btn');
-    multBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        organizerMultiplierDays = parseInt(btn.dataset.days, 10) || 7;
-        renderPillOrganizer();
-      });
-    });
-
     // Attach Checkbox Change Listeners
     const checkboxes = viewOrganizer.querySelectorAll('.org-checkbox');
     checkboxes.forEach(chk => {
       chk.addEventListener('change', (e) => {
         const key = e.target.dataset.key;
-        const card = viewOrganizer.querySelector(`.org-card[data-org-id="${key}"]`);
+        const row = viewOrganizer.querySelector(`.org-row-item[data-org-id="${key}"]`);
 
         if (e.target.checked) {
           filledItemsSet.add(key);
-          if (card) card.classList.add('is-filled');
+          if (row) row.classList.add('is-filled');
         } else {
           filledItemsSet.delete(key);
-          if (card) card.classList.remove('is-filled');
+          if (row) row.classList.remove('is-filled');
         }
 
         localStorage.setItem('djalal_org_filled', JSON.stringify(Array.from(filledItemsSet)));
 
         // Update progress counter
-        const progressEl = viewOrganizer.querySelector('.org-progress-indicator');
+        const progressEl = viewOrganizer.querySelector('.org-progress-indicator strong');
         if (progressEl) {
-          progressEl.textContent = `${filledItemsSet.size} / ${totalCheckableItems} befüllt`;
+          progressEl.textContent = `${filledItemsSet.size} / ${totalCheckableItems}`;
         }
       });
     });
