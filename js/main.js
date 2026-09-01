@@ -557,8 +557,25 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (cat === 'minerals') pill.textContent = `Mineralstoffe (${minCount})`;
       else if (cat === 'amino') pill.textContent = `Aminosäuren (${aminoCount})`;
       else if (cat === 'special') pill.textContent = `Omega-3 & Vitalstoffe (${specialCount})`;
-      else if (cat === 'missing') pill.textContent = `Nicht abgedeckt (${missingCount})`;
+      else if (cat === 'missing') {
+        pill.textContent = `Nicht abgedeckt (${missingCount})`;
+        if (missingCount === 0) {
+          pill.style.display = 'none';
+          if (currentCategory === 'missing') {
+            currentCategory = 'all';
+            filterPills.forEach(p => p.classList.toggle('active', p.dataset.cat === 'all'));
+          }
+        } else {
+          pill.style.display = '';
+        }
+      }
     });
+
+    const statSuppNum = document.querySelectorAll('.stat-num')[0];
+    if (statSuppNum) statSuppNum.textContent = MY_SUPPLEMENTS.length;
+
+    const countPill = document.querySelector('.count-pill');
+    if (countPill) countPill.textContent = `${MY_SUPPLEMENTS.length} Produkte`;
 
     const statNutNum = document.querySelectorAll('.stat-num')[1];
     if (statNutNum) statNutNum.textContent = totalCount;

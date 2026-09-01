@@ -738,7 +738,7 @@ export const NUTRIENT_DETAILS = {
   'glycin': {
     id: 'glycin',
     name: 'Glycin',
-    scientificName: 'Glycin (Diamond® 4.000 mg in CollaSyn®)',
+    scientificName: 'L-Glycin (5.000 mg Nutri+ / 450 mg Whey)',
     categoryName: 'Aminosäuren & Protein',
     badge: '✨ Kollagen-Hauptbaustein & Schlaf',
     summary: 'Jede dritte Aminosäure in Kollagen ist Glycin; zudem Neurotransmitter, Glutathion-Baustein und Schlafoptimierer.',
@@ -750,7 +750,7 @@ export const NUTRIENT_DETAILS = {
     ],
     plainGermanExplanation: 'Glycin ist der mengenmäßig dominierende Baustein in Kollagen und Bindegewebe. Vor dem Schlafen eingenommen, wirkt es hemmend auf das zentrale Nervensystem, senkt die Körperkerntemperatur und fördert erholsame Tiefschlafphasen.',
     biochemistry: 'Glycin ist die kleinste Aminosäure und unverzichtbar für die enge Dreifachhelix-Windung von Kollagen (Gly-X-Y-Sequenz). Es bildet zusammen mit Glutamin und Cystein das Master-Antioxidans Glutathion und wirkt an Glycin-Rezeptoren im ZNS hemmend (beruhigend).',
-    plantBasedRelevance: 'Kollagenreiches Bindegewebe, Gelatine und Knochenbrühe fehlen bei fleisch- und fischfreier Kost völlig. Der Körper hat ein endogenes Glycin-Defizit von ca. 3-4 g/Tag. CollaSyn® deckt dies mit 4.000 mg vollständig pflanzlich ab.',
+    plantBasedRelevance: 'Kollagenreiches Bindegewebe, Gelatine und Knochenbrühe fehlen bei fleisch- und fischfreier Kost völlig. Der Körper hat ein endogenes Glycin-Defizit von ca. 3-4 g/Tag. Nutri+ deckt dies mit 5.000 mg reinem L-Glycin vollständig pflanzlich ab.',
     intakeAdvice: 'Morgens im Shake oder abends vor dem Schlafen (senkt die Körperkerntemperatur und fördert den Tiefschlaf).',
     safetyAndUL: 'Sehr hohe physiologische Sicherheit; Dosen bis zu 15 g/Tag zeigen in Studien keinerlei Toxizität.',
     scientificReference: 'Amino Acids Journal 2018;50(12):1653 | Sleep and Biological Rhythms'
@@ -766,12 +766,12 @@ export const NUTRIENT_DETAILS = {
     benefitPoints: [
       '<strong>Biomechanische Kollagenstabilität:</strong> Ermöglicht die starre Helixkonformation und verhindert vorzeitige Denaturierung des Bindegewebes.',
       '<strong>Sehnen- & Knorpelregeneration:</strong> Dient als Primärbaustein für die Reparatur mikroskopischer Mikrotraumata nach sportlicher Belastung.',
-      '<strong>Synergistisches Kollagennetzwerk:</strong> Ergänzt die 4.000 mg Glycin aus CollaSyn® und Vitamin C zu einer vollständigen biochemischen Kollagenmatrix.'
+      '<strong>Synergistisches Kollagennetzwerk:</strong> Ergänzt die 5.000 mg Glycin aus Nutri+ und Vitamin C zu einer vollständigen biochemischen Kollagenmatrix.'
     ],
     plainGermanExplanation: 'Prolin wird posttranslational zu Hydroxyprolin umgewandelt, welches die Kollagen-Dreifachhelix thermisch und mechanisch stabilisiert. Es ist essenziell für die Belastbarkeit von Sehnen, Bändern und Gelenkknorpel.',
     biochemistry: 'Prolin wird durch die Vitamin-C-abhängige Prolylhydroxylase zu 4-Hydroxyprolin umgewandelt. Hydroxyprolin-Reste bilden intramolekulare Wasserstoffbrückenbindungen aus, die dem Kollagen in Bändern, Sehnen und Knorpel seine extreme Reißfestigkeit verleihen.',
-    plantBasedRelevance: 'Mit 30g Yummy Whey nimmst du täglich 1.400 mg reines L-Prolin auf, was im Verbund mit den 4.000 mg Glycin aus CollaSyn® und Vitamin C die körpereigene Kollagenbiosynthese optimal versorgt.',
-    intakeAdvice: 'Gemeinsam mit Glycin (CollaSyn®) und Vitamin C morgens oder nach dem Training einnehmen.',
+    plantBasedRelevance: 'Mit 30g Yummy Whey nimmst du täglich 1.400 mg reines L-Prolin auf, was im Verbund mit den 5.000 mg Glycin aus Nutri+ und Vitamin C die körpereigene Kollagenbiosynthese optimal versorgt.',
+    intakeAdvice: 'Gemeinsam mit Glycin (Nutri+) und Vitamin C morgens oder nach dem Training einnehmen.',
     safetyAndUL: 'Natürliche Proteinkomponente mit uneingeschränkter physiologischer Sicherheit.',
     scientificReference: 'Journal of Biological Chemistry | Matrix Biology | EFSA'
   },
@@ -798,7 +798,7 @@ export const NUTRIENT_DETAILS = {
   'taurine': {
     id: 'taurine',
     name: 'Taurin',
-    scientificName: '2-Aminoethansulfonsäure (0 mg - Offen)',
+    scientificName: '2-Aminoethansulfonsäure (2.000 mg in ProFuel Taurin)',
     categoryName: 'Aminosäuren & Protein',
     badge: '❤️ Kardiometabolismus & Zellschutz',
     summary: 'Bedingt essentielle Aminosulfonsäure – reguliert zellulären osmotischen Druck, Gallensäurenkonjugation und Kardiomyozyten.',
@@ -810,9 +810,9 @@ export const NUTRIENT_DETAILS = {
     ],
     plainGermanExplanation: 'Taurin reguliert den osmotischen Druck und den Calciumhaushalt in Herz- und Muskelzellen, stabilisiert Zellmembranen und unterstützt die Konjugation von Gallensäuren. Aktuelle Studien heben seine Rolle im mitochondrialen Funktionserhalt hervor.',
     biochemistry: 'Taurin moduliert zelluläre Calciumströme im Herzmuskel, bindet an GABA-A-Rezeptoren im Gehirn, konjugiert Gallensäuren (Taurocholsäure zur Fettverdauung) und schützt Mitochondrien vor oxidativem Stress.',
-    plantBasedRelevance: 'Taurin kommt in pflanzlichen Lebensmitteln nicht vor (Gehalt = 0 mg). Vegetarier und Veganer weisen signifikant niedrigere Plasma- und Urin-Taurinspiegel auf. Aktuelle Studien (Science 2023) identifizieren Taurin als Schlüsselfaktor für gesunde Langlebigkeit.',
-    intakeAdvice: '500 bis 1.500 mg täglich, ideal morgens oder tagsüber.',
-    safetyAndUL: 'EFSA bestätigte in Sicherheitsgutachten einen No-Observed-Adverse-Effect-Level (NOAEL) von 1.000 mg/kg KG/Tag; eine Zufuhr von bis zu 3.000 mg (3 g)/Tag gilt als wissenschaftlich absolut sicher.',
+    plantBasedRelevance: 'Taurin kommt in pflanzlichen Lebensmitteln nicht vor (Gehalt = 0 mg). Vegetarier und Veganer weisen signifikant niedrigere Plasma- und Urin-Taurinspiegel auf. Mit 2.000 mg aus ProFuel Taurin deckst du diesen Carninährstoff zu 100% vegan ab.',
+    intakeAdvice: '2 Kapseln täglich (2.000 mg) morgens oder vor dem Training mit etwas Wasser einnehmen.',
+    safetyAndUL: 'EFSA bestätigte in Sicherheitsgutachten einen No-Observed-Adverse-Effect-Level (NOAEL) von 1.000 mg/kg KG/Tag; eine Zufuhr von bis zu 3.000 mg (3 g)/Tag gilt als wissenschaftlich absolut sicher. Mit 2.000 mg erreichst du die ideale therapeutische Zieldosis.',
     scientificReference: 'EFSA Journal 2009;935:1-31 | Science 2023;380(6649):eabn9257'
   },
   'carnosine': {
@@ -922,22 +922,22 @@ export const NUTRIENT_DETAILS = {
   'hyaluron': {
     id: 'hyaluron',
     name: 'Hyaluronsäure',
-    scientificName: 'HAPLEX®Plus Natriumhyaluronat (200 mg in CollaSyn®)',
+    scientificName: 'Natriumhyaluronat 500–700 kDa (500 mg in natural elements)',
     categoryName: 'Omega-3 & Vitalstoffe',
     badge: '💧 Feuchtigkeitsmatrix & Gelenke',
     summary: 'Hochmolekulares Glykosaminoglykan – bindet das bis zu 1.000-fache seines Eigengewichts an Wasser in Haut und Gelenkknorpel.',
     simpleBenefitDesc: 'Hyaluronsäure ist ein unverzweigtes Glykosaminoglykan aus repetitiven Disaccharideinheiten (D-Glukuronsäure und N-Acetylglucosamin). Aufgrund ihrer hohen Dichte an Carboxylatgruppen besitzt sie eine herausragende Wasserbindungskapazität (bis zu 6 Liter Wasser pro Gramm). In der Synovialflüssigkeit wirkt sie als viskoelastisches Schmiermittel und Stoßdämpfer, während sie in der Dermis über CD44-Rezeptoren Fibroblasten zur Neusynthese extrazellulärer Matrix stimuliert.',
     benefitPoints: [
-      '<strong>Klinische Evidenz (Hautelastizität & Hydratation):</strong> Placebokontrollierte RCTs belegen, dass die tägliche Einnahme von 120–200 mg Hyaluronat nach 8–12 Wochen die Hautfeuchtigkeit signifikant steigert und Faltentiefen mindert (kein EFSA-Claim).',
+      '<strong>Klinische Evidenz (Hautelastizität & Hydratation):</strong> Placebokontrollierte RCTs belegen, dass die tägliche Einnahme von 120–500 mg Hyaluronat nach 8–12 Wochen die Hautfeuchtigkeit signifikant steigert und Faltentiefen mindert (kein EFSA-Claim).',
       '<strong>Gelenkviskosität & Knorpelbelastbarkeit:</strong> Unterstützt die rheologischen Eigenschaften der Gelenkschmiere und schützt Knorpelflächen vor mechanischem Verschleiß.',
-      '<strong>Biotechnologische Reinheit:</strong> Vegane Fermentationsform mit optimierter Molekulargewichtsverteilung für enterale Resorption.'
+      '<strong>Optimale Molekülgröße (500–700 kDa):</strong> Vegane Fermentationsform mit wissenschaftlich optimierter Molekulargewichtsverteilung für maximale enterale Resorption.'
     ],
-    plainGermanExplanation: 'Hyaluronsäure besitzt ein hohes Wasserbindungsvermögen und dient in den Gelenken als viskoelastisches Schmiermittel und Stoßdämpfer. In der Haut verbessert sie die Feuchtigkeitsspeicherung der extrazellulären Matrix.',
+    plainGermanExplanation: 'Hyaluronsäure besitzt ein enormes Wasserbindungsvermögen und dient in den Gelenken als viskoelastisches Schmiermittel und Stoßdämpfer. In der Haut verbessert sie die Feuchtigkeitsspeicherung der extrazellulären Matrix.',
     biochemistry: 'Hyaluronsäure ist Hauptbestandteil der Synovialflüssigkeit (Gelenkschmiere) und der extrazellulären Matrix der Dermis. Über CD44-Rezeptoren stimuliert oral zugeführtes Hyaluronat Chondrozyten und Fibroblasten zur endogenen Neusynthese.',
-    plantBasedRelevance: 'Gewonnen durch biotechnologische Fermentation (vegan). Schützt Gelenkknorpel bei sportlicher Belastung und hydratisiert die Haut von innen.',
-    intakeAdvice: 'Mit reichlich Flüssigkeit (mind. 250-300 ml Wasser) einnehmen.',
-    safetyAndUL: 'Gilt als extrem sicher und hypoallergen; EFSA-bewertete Studien nutzen 100-200 mg/Tag.',
-    scientificReference: 'Nutrition Journal 2014;13:70 | Journal of Clinical Biochemistry and Nutrition'
+    plantBasedRelevance: 'Gewonnen durch biotechnologische Fermentation (100% vegan). Schützt Gelenkknorpel bei sportlicher Belastung und hydratisiert die Haut von innen.',
+    intakeAdvice: 'Mit reichlich Flüssigkeit (mind. 250-300 ml Wasser) morgens einnehmen.',
+    safetyAndUL: 'Gilt als extrem sicher und hypoallergen; EFSA-bewertete Studien und toxikologische Reviews nutzen 100-500 mg/Tag ohne jegliche Nebenwirkungen.',
+    scientificReference: 'Nutrition Journal 2014;13:70 | Journal of Clinical Biochemistry and Nutrition | EFSA'
   },
   'polyphenols': {
     id: 'polyphenols',

@@ -15,17 +15,6 @@ export const MY_SUPPLEMENTS = [
     image: 'assets/images/watson-male-essentials.png'
   },
   {
-    id: 'watson-collasyn',
-    name: 'CollaSyn®',
-    shortName: 'CollaSyn',
-    brand: 'Watson Nutrition',
-    dosage: '1 Stick täglich (4,3 g Pulver)',
-    timing: 'Morgens / Im Shake',
-    icon: '✨',
-    badge: '4.000 mg Glycin + Hyaluron',
-    image: 'assets/images/watson-collasyn.png'
-  },
-  {
     id: 'vitamoment-d3-k2',
     name: 'Vitamin D3 + K2',
     shortName: 'VitaMoment',
@@ -145,6 +134,39 @@ export const MY_SUPPLEMENTS = [
     icon: '⚡',
     badge: '500 mg ALCAR',
     image: 'assets/images/gen-acetyl-l-carnitin.png'
+  },
+  {
+    id: 'nutri-plus-glycin',
+    name: 'Glycin Pulver (100% vegan)',
+    shortName: 'Nutri+ Glycin',
+    brand: 'Nutri-Plus',
+    dosage: '5 g täglich (1 Messlöffel)',
+    timing: 'Morgens / Im Shake / Abends',
+    icon: '✨',
+    badge: '5.000 mg reines L-Glycin',
+    image: 'assets/images/nutri-plus-glycin.png'
+  },
+  {
+    id: 'natural-elements-hyaluron',
+    name: 'Vegane Hyaluronsäure 500 mg',
+    shortName: 'natural elements Hyaluron',
+    brand: 'natural elements',
+    dosage: '1 Kapsel täglich (500 mg)',
+    timing: 'Morgens mit reichlich Wasser',
+    icon: '💧',
+    badge: '500 mg (500–700 kDa)',
+    image: 'assets/images/natural-elements-hyaluron.png'
+  },
+  {
+    id: 'profuel-taurin',
+    name: 'Taurin Kapseln hochdosiert',
+    shortName: 'ProFuel Taurin',
+    brand: 'ProFuel',
+    dosage: '2 Kapseln täglich (2.000 mg)',
+    timing: 'Morgens / Vor dem Training',
+    icon: '⚡',
+    badge: '2.000 mg Taurin (>99,9%)',
+    image: 'assets/images/profuel-taurin.png'
   }
 ];
 
@@ -194,17 +216,16 @@ export const NUTRIENTS_SUMMARY = [
     category: 'vitamins',
     categoryName: 'Vitamine',
     name: 'Vitamin C',
-    extra: 'L-Ascorbinsäure & Calciumascorbat',
-    amount: '580 mg',
-    rawAmount: 580,
+    extra: 'L-Ascorbinsäure (gepuffert als Calciumascorbat)',
+    amount: '500 mg',
+    rawAmount: 500,
     unit: 'mg',
     ref: '110 mg (D-A-CH)',
-    percent: 527,
-    sourceBrand: 'VitaMoment + Watson',
-    supplementIds: ['vitamoment-vitamin-c', 'watson-collasyn'],
+    percent: 455,
+    sourceBrand: 'VitaMoment',
+    supplementIds: ['vitamoment-vitamin-c'],
     sources: [
-      { supplementId: 'vitamoment-vitamin-c', amount: '500 mg', note: 'Gepuffertes Vitamin C (1 Kapsel)' },
-      { supplementId: 'watson-collasyn', amount: '80 mg', note: 'Calcium-L-Ascorbat (1 Stick)' }
+      { supplementId: 'vitamoment-vitamin-c', amount: '500 mg', note: 'Gepuffertes Vitamin C (1 Kapsel)' }
     ]
   },
   {
@@ -552,21 +573,6 @@ export const NUTRIENTS_SUMMARY = [
       { supplementId: 'watson-male-essentials', amount: '25 µg', note: '1 Kapsel täglich' }
     ]
   },
-  {
-    id: 'bor',
-    category: 'minerals',
-    categoryName: 'Mineralstoffe & Spurenelemente',
-    name: 'Bor',
-    extra: 'Natriumborat / Bor-Fruchtchelat',
-    amount: '0 mg',
-    rawAmount: 0,
-    unit: 'mg',
-    ref: '3.0 mg (Hormon- & Knochenstoffwechsel)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
-  },
 
   // ==========================================
   // 3. AMINOSÄUREN & PROTEIN
@@ -763,16 +769,16 @@ export const NUTRIENTS_SUMMARY = [
     category: 'amino',
     categoryName: 'Aminosäuren & Protein',
     name: 'Glycin',
-    extra: 'Diamond® reines L-Glycin & Whey-Aminosäure',
-    amount: '4.450 mg',
-    rawAmount: 4450,
+    extra: 'Reines L-Glycin (Nutri+) & Whey-Aminosäure',
+    amount: '5.450 mg',
+    rawAmount: 5450,
     unit: 'mg',
     ref: '3.000 mg (Optimale Tagesdosis)',
-    percent: 148,
-    sourceBrand: 'Watson + Vit4ever',
-    supplementIds: ['watson-collasyn', 'vit4ever-yummy-whey'],
+    percent: 182,
+    sourceBrand: 'Nutri-Plus + Vit4ever',
+    supplementIds: ['nutri-plus-glycin', 'vit4ever-yummy-whey'],
     sources: [
-      { supplementId: 'watson-collasyn', amount: '4.000 mg', note: 'Kollagen-Aminosäure (1 Stick)' },
+      { supplementId: 'nutri-plus-glycin', amount: '5.000 mg', note: '100% veganes L-Glycin Pulver (5 g / 1 Messlöffel)' },
       { supplementId: 'vit4ever-yummy-whey', amount: '450 mg', note: '30 g Pulver (1 Shake)' }
     ]
   },
@@ -815,45 +821,17 @@ export const NUTRIENTS_SUMMARY = [
     category: 'amino',
     categoryName: 'Aminosäuren & Protein',
     name: 'Taurin',
-    extra: '2-Aminoethansulfonsäure',
-    amount: '0 mg',
-    rawAmount: 0,
+    extra: '2-Aminoethansulfonsäure (>99,9% Reinheit)',
+    amount: '2.000 mg',
+    rawAmount: 2000,
     unit: 'mg',
     ref: '500 mg (Bedarfsempfehlung)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
-  },
-  {
-    id: 'carnosine',
-    category: 'amino',
-    categoryName: 'Aminosäuren & Protein',
-    name: 'Carnosin / Beta-Alanin',
-    extra: 'L-Carnosin / Beta-Alanin',
-    amount: '0 mg',
-    rawAmount: 0,
-    unit: 'mg',
-    ref: '1.500 mg (Bedarfsempfehlung)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
-  },
-  {
-    id: 'nac',
-    category: 'amino',
-    categoryName: 'Aminosäuren & Protein',
-    name: 'N-Acetylcystein (NAC)',
-    extra: 'N-Acetyl-L-Cystein',
-    amount: '0 mg',
-    rawAmount: 0,
-    unit: 'mg',
-    ref: '600 mg (Glutathion-Synthese)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
+    percent: 400,
+    sourceBrand: 'ProFuel',
+    supplementIds: ['profuel-taurin'],
+    sources: [
+      { supplementId: 'profuel-taurin', amount: '2.000 mg', note: '2 Kapseln täglich (365er Vorratsdose)' }
+    ]
   },
 
   // ==========================================
@@ -915,16 +893,16 @@ export const NUTRIENTS_SUMMARY = [
     category: 'special',
     categoryName: 'Omega-3 & Vitalstoffe',
     name: 'Hyaluronsäure',
-    extra: 'HAPLEX®Plus Natriumhyaluronat',
-    amount: '200 mg',
-    rawAmount: 200,
+    extra: '500–700 kDa Natriumhyaluronat (fermentiert & vegan)',
+    amount: '500 mg',
+    rawAmount: 500,
     unit: 'mg',
     ref: '100 mg (Studien-Referenzwert)',
-    percent: 200,
-    sourceBrand: 'Watson Nutrition',
-    supplementIds: ['watson-collasyn'],
+    percent: 500,
+    sourceBrand: 'natural elements',
+    supplementIds: ['natural-elements-hyaluron'],
     sources: [
-      { supplementId: 'watson-collasyn', amount: '200 mg', note: '1 Stick täglich' }
+      { supplementId: 'natural-elements-hyaluron', amount: '500 mg', note: 'Vegane Hyaluronsäure 500–700 kDa (1 Kapsel)' }
     ]
   },
   {
@@ -994,20 +972,5 @@ export const NUTRIENTS_SUMMARY = [
     sources: [
       { supplementId: 'vitabay-astaxanthin', amount: '12 mg', note: '1 Softgel-Kapsel täglich' }
     ]
-  },
-  {
-    id: 'ps',
-    category: 'special',
-    categoryName: 'Omega-3 & Vitalstoffe',
-    name: 'Phosphatidylserin',
-    extra: 'Phosphatidylserin (Sonnenblumenlecithin)',
-    amount: '0 mg',
-    rawAmount: 0,
-    unit: 'mg',
-    ref: '100 mg (Kognition & Membranen)',
-    percent: 0,
-    sourceBrand: 'Offen / 0 mg',
-    supplementIds: [],
-    sources: []
   }
 ];
