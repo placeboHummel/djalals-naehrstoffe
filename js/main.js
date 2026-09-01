@@ -93,11 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
       selectedSupplementId = null;
     } else {
       selectedSupplementId = id;
-      // If "missing" category was active, reset to "all" since missing items have no supplement
-      if (currentCategory === 'missing') {
-        currentCategory = 'all';
-        filterPills.forEach(p => p.classList.toggle('active', p.dataset.cat === 'all'));
-      }
+      // Immer automatisch auf "Alle" springen, damit alle Nährstoffe des ausgewählten Supplements sichtbar sind
+      currentCategory = 'all';
+      filterPills.forEach(p => p.classList.toggle('active', p.dataset.cat === 'all'));
     }
     renderSupplements();
     renderNutrients();
