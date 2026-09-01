@@ -678,10 +678,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderPillOrganizer() {
     if (!viewOrganizer) return;
 
-    // Filter supplements for morning, evening, and liquid/powders
+    // Filter supplements for morning, evening, and shakes
     const morningSupps = MY_SUPPLEMENTS.filter(s => s.inOrganizer && (s.compartment === 'morning' || s.compartment === 'both'));
     const eveningSupps = MY_SUPPLEMENTS.filter(s => s.inOrganizer && (s.compartment === 'evening' || s.compartment === 'both'));
-    const externalSupps = MY_SUPPLEMENTS.filter(s => !s.inOrganizer);
+    const shakeSupps = MY_SUPPLEMENTS.filter(s => s.id === 'gloryfeel-creatine' || s.id === 'vit4ever-yummy-whey');
+    const balanceOilSupp = MY_SUPPLEMENTS.find(s => s.id === 'zinzino-balanceoil');
+    const glycinSupp = MY_SUPPLEMENTS.find(s => s.id === 'nutri-plus-glycin');
 
     // Calculate total pills in morning and evening
     const morningPillCountDay = morningSupps.reduce((acc, s) => {
@@ -844,7 +846,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
             </div>
             <div class="compartment-stats-pill">
-              <span>9 Produkte</span>
+              <span>9 Box-Produkte</span>
               <span>•</span>
               <span style="color: #d97706;">${morningPillCountDay} Kapseln/Tag</span>
               <span>•</span>
@@ -852,10 +854,19 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
 
+          <!-- Integrierte Flüssigöl-Box direkt bei Morgens mit Produktbild -->
           <div class="compartment-external-note">
-            <span style="font-size: 1.2rem;">🐟</span>
-            <div>
-              <strong>Nicht im Pillen-Organizer:</strong> <strong>Zinzino BalanceOil+</strong> (10 ml flüssig) morgens frisch aus der Flasche zum Frühstück mit Fettquelle einnehmen.
+            <div class="external-note-thumb">
+              <img src="${balanceOilSupp?.image || 'assets/images/zinzino-balanceoil.png'}" alt="Zinzino BalanceOil+" class="external-thumb-img">
+            </div>
+            <div class="external-note-info">
+              <div class="external-note-tag">💧 Flüssige Einnahme zum Frühstück</div>
+              <h4 class="external-note-title">Zinzino BalanceOil+ (Omega-3 & Polyphenole)</h4>
+              <p class="external-note-sub"><strong>10 ml flüssig</strong> morgens frisch aus der Flasche zum Frühstück mit Fettquelle einnehmen (verbleibt im Kühlschrank / nicht in der Pillenbox).</p>
+            </div>
+            <div class="external-note-dose-badge">
+              <span class="external-dose-num">${10 * organizerMultiplierDays} ml</span>
+              <span class="external-dose-lbl">für ${organizerMultiplierDays} Tage</span>
             </div>
           </div>
 
@@ -864,8 +875,30 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </section>
 
+        <!-- ==================== BLOCK ZWISCHEN MORGENS & ABENDS: PROTEIN-SHAKE ==================== -->
+        <section class="organizer-compartment" style="margin-top: 18px;">
+          <div class="compartment-header-banner compartment-shake">
+            <div class="compartment-title-box">
+              <span class="compartment-icon">🥤</span>
+              <div>
+                <h3 class="compartment-name">Protein-Shake (Vormittags / Post-Workout)</h3>
+                <p class="compartment-sub">Kreatin Creapure® & Yummy Whey Protein direkt im Shaker frisch zubereiten (zwischen Frühstück und Abend)</p>
+              </div>
+            </div>
+            <div class="compartment-stats-pill">
+              <span>2 Shake-Produkte</span>
+              <span>•</span>
+              <span style="color: #0891b2;">Täglich 1 Shaker</span>
+            </div>
+          </div>
+
+          <div class="organizer-cards-grid">
+            ${shakeSupps.map(s => renderExternalCard(s)).join('')}
+          </div>
+        </section>
+
         <!-- ==================== COMPARTMENT 2: ABENDS ==================== -->
-        <section class="organizer-compartment" style="margin-top: 14px;">
+        <section class="organizer-compartment" style="margin-top: 18px;">
           <div class="compartment-header-banner compartment-evening">
             <div class="compartment-title-box">
               <span class="compartment-icon">🌙</span>
@@ -875,7 +908,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
             </div>
             <div class="compartment-stats-pill">
-              <span>3 Produkte</span>
+              <span>3 Box-Produkte</span>
               <span>•</span>
               <span style="color: #7c3aed;">${eveningPillCountDay} Kapseln/Tag</span>
               <span>•</span>
@@ -883,35 +916,24 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
 
+          <!-- Integrierte Pulver-Box direkt bei Abends mit Produktbild -->
           <div class="compartment-external-note">
-            <span style="font-size: 1.2rem;">✨</span>
-            <div>
-              <strong>Nicht im Pillen-Organizer:</strong> <strong>Nutri-Plus Glycin Pulver</strong> (5 g / 1 Messlöffel) abends 60 min vor dem Schlafen frisch in Wasser einrühren.
+            <div class="external-note-thumb">
+              <img src="${glycinSupp?.image || 'assets/images/nutri-plus-glycin.png'}" alt="Nutri-Plus Glycin" class="external-thumb-img">
+            </div>
+            <div class="external-note-info">
+              <div class="external-note-tag">✨ Pulver im Wasserglas</div>
+              <h4 class="external-note-title">Nutri-Plus Glycin Pulver</h4>
+              <p class="external-note-sub"><strong>5 g (1 Messlöffel)</strong> abends 60 min vor dem Schlafen frisch in Wasser einrühren (verbleibt in der Küche / nicht in der Pillenbox).</p>
+            </div>
+            <div class="external-note-dose-badge">
+              <span class="external-dose-num">${5 * organizerMultiplierDays} g</span>
+              <span class="external-dose-lbl">für ${organizerMultiplierDays} Tage</span>
             </div>
           </div>
 
           <div class="organizer-cards-grid">
             ${eveningSupps.map(s => renderOrganizerCard(s, 'evening')).join('')}
-          </div>
-        </section>
-
-        <!-- ==================== COMPARTMENT 3: EXTERNE PRODUKTE (PULVER & SHAKES) ==================== -->
-        <section class="organizer-compartment" style="margin-top: 14px;">
-          <div class="compartment-header-banner compartment-powder">
-            <div class="compartment-title-box">
-              <span class="compartment-icon">⚡</span>
-              <div>
-                <h3 class="compartment-name">Externe Einnahme (Flüssigkeiten, Pulver & Shakes)</h3>
-                <p class="compartment-sub">Diese 4 Produkte verbleiben in Flasche / Beutel und werden frisch zubereitet</p>
-              </div>
-            </div>
-            <div class="compartment-stats-pill">
-              <span>4 Produkte in Vorratsschrank & Küche</span>
-            </div>
-          </div>
-
-          <div class="organizer-cards-grid">
-            ${externalSupps.map(s => renderExternalCard(s)).join('')}
           </div>
         </section>
 
@@ -997,6 +1019,27 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td>1 Tablette</td>
                   <td><strong>${1 * organizerMultiplierDays} Tabletten</strong></td>
                 </tr>
+                <tr style="background: rgba(245, 158, 11, 0.06);">
+                  <td><strong>BalanceOil+ Omega-3</strong></td>
+                  <td>Zinzino</td>
+                  <td><span style="color:#d97706; font-weight:700;">💧 Morgens (Flasche)</span></td>
+                  <td>10 ml</td>
+                  <td><strong>${10 * organizerMultiplierDays} ml</strong></td>
+                </tr>
+                <tr style="background: rgba(6, 182, 212, 0.06);">
+                  <td><strong>Kreatin Creapure®</strong></td>
+                  <td>Gloryfeel</td>
+                  <td><span style="color:#0891b2; font-weight:700;">🥤 Im Protein-Shake</span></td>
+                  <td>3,4 g (1 Messlöffel)</td>
+                  <td><strong>${Math.round(3.4 * organizerMultiplierDays * 10) / 10} g</strong></td>
+                </tr>
+                <tr style="background: rgba(6, 182, 212, 0.06);">
+                  <td><strong>Yummy Whey Protein</strong></td>
+                  <td>Vit4ever</td>
+                  <td><span style="color:#0891b2; font-weight:700;">🥤 Im Protein-Shake</span></td>
+                  <td>30 g (1 Shake)</td>
+                  <td><strong>${30 * organizerMultiplierDays} g</strong></td>
+                </tr>
                 <tr style="background: rgba(139, 92, 246, 0.05);">
                   <td><strong>Magnesium Bisglycinat</strong></td>
                   <td>Sports & Health</td>
@@ -1018,33 +1061,12 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td>1 Tablette</td>
                   <td><strong>${1 * organizerMultiplierDays} Tabletten</strong></td>
                 </tr>
-                <tr style="background: rgba(6, 182, 212, 0.05);">
-                  <td><strong>BalanceOil+ Omega-3</strong></td>
-                  <td>Zinzino</td>
-                  <td><span style="color:#0891b2; font-weight:700;">⚡ Morgens (Flasche)</span></td>
-                  <td>10 ml</td>
-                  <td><strong>${10 * organizerMultiplierDays} ml</strong></td>
-                </tr>
-                <tr style="background: rgba(6, 182, 212, 0.05);">
+                <tr style="background: rgba(139, 92, 246, 0.08);">
                   <td><strong>Glycin Pulver</strong></td>
                   <td>Nutri-Plus</td>
-                  <td><span style="color:#0891b2; font-weight:700;">⚡ Abends (Wasserglas)</span></td>
+                  <td><span style="color:#7c3aed; font-weight:700;">✨ Abends (Wasserglas)</span></td>
                   <td>5 g (1 Messlöffel)</td>
                   <td><strong>${5 * organizerMultiplierDays} g</strong></td>
-                </tr>
-                <tr style="background: rgba(6, 182, 212, 0.05);">
-                  <td><strong>Kreatin Creapure®</strong></td>
-                  <td>Gloryfeel</td>
-                  <td><span style="color:#0891b2; font-weight:700;">⚡ Im Protein-Shake</span></td>
-                  <td>3,4 g (1 Messlöffel)</td>
-                  <td><strong>${Math.round(3.4 * organizerMultiplierDays * 10) / 10} g</strong></td>
-                </tr>
-                <tr style="background: rgba(6, 182, 212, 0.05);">
-                  <td><strong>Yummy Whey Protein</strong></td>
-                  <td>Vit4ever</td>
-                  <td><span style="color:#0891b2; font-weight:700;">⚡ Im Protein-Shake</span></td>
-                  <td>30 g (1 Shake)</td>
-                  <td><strong>${30 * organizerMultiplierDays} g</strong></td>
                 </tr>
               </tbody>
             </table>
