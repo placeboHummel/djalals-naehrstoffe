@@ -19,15 +19,55 @@
 </head>
 <body>
   <div class="page-container">
+    
+    <!-- ==================== TOP NAVIGATION & HEADER BAR ==================== -->
+    <header class="app-top-nav">
+      <div class="top-nav-left">
+        <div class="top-brand">
+          <span class="top-brand-icon">🌿</span>
+          <div>
+            <h1 class="top-brand-title">Djalals Nährstoffe</h1>
+            <span class="top-brand-sub">Tägliche Routine & Nährstoff-Dashboard</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-nav-center">
+        <div class="view-switcher-pill" role="tablist">
+          <button class="view-nav-btn active" data-view="nutrients" role="tab" aria-selected="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            <span>Nährstoff-Bilanz</span>
+          </button>
+          <button class="view-nav-btn" data-view="organizer" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            <span>Pillen-Organizer (Wochenbox)</span>
+            <span class="nav-hot-badge">Befüllhilfe</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="top-nav-right">
+        <button id="theme-toggle-btn" class="theme-toggle-btn" title="Night-Mode umschalten (Augenschonend)" aria-label="Night-Mode umschalten">
+          <span class="theme-icon-moon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span class="theme-icon-sun" style="display: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </span>
+          <span class="theme-label">Night-Mode</span>
+        </button>
+
+        <button id="export-btn" class="export-report-btn" title="Tagesbericht als HTML in neuem Tab öffnen" aria-label="Tagesbericht exportieren">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Bericht</span>
+        </button>
+      </div>
+    </header>
+
     <div class="app-layout">
 
       <!-- ==================== LEFT COLUMN: SUPPLEMENTS & ROUTINE ==================== -->
       <aside class="sidebar-col">
-        <div class="brand-box">
-          <h1 class="title">Djalals Nährstoffe</h1>
-          <p class="subtitle">Alle Vitamine, Mineralstoffe und Dosierungen deiner täglichen Einnahme.</p>
-        </div>
-
         <div class="stats-card">
           <div class="stat-item">
             <span class="stat-num">15</span>
@@ -38,13 +78,17 @@
             <span class="stat-num">46</span>
             <span class="stat-lbl">Nährstoffe</span>
           </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" style="color: var(--emerald-bright);">100%</span>
+            <span class="stat-lbl">Bedarf gedeckt</span>
+          </div>
         </div>
 
         <div class="supplements-section">
           <div class="section-label-row">
-            <h2 class="col-heading">Tägliche Supplements</h2>
+            <h2 class="col-heading">Tägliche Routine</h2>
             <div class="section-badges">
-              <span class="swipe-hint">↔ Wischen</span>
               <span class="count-pill">15 Produkte</span>
             </div>
           </div>
@@ -54,49 +98,55 @@
         </div>
       </aside>
 
-      <!-- ==================== RIGHT COLUMN: NUTRIENTS BILANZ ==================== -->
+      <!-- ==================== RIGHT COLUMN: MAIN CONTENT VIEWS ==================== -->
       <main class="main-content-col">
-        <div class="main-header-bar">
-          <div>
-            <h2 class="col-heading">Nährstoff-Mengen & Tagesbedarf</h2>
-            <p class="col-sub">Vergleich deiner Gesamtaufnahme mit den offiziellen DGE / D-A-CH & EFSA Referenzwerten.</p>
-          </div>
 
-          <div class="header-right-actions">
-            <div class="search-box">
-              <svg class="search-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-              <input type="text" id="search-input" placeholder="Nährstoff suchen (z.B. Leucin, BCAA, Carnitin, Taurin, B12)..." autocomplete="off">
+        <!-- ==================== VIEW 1: NUTRIENTS DASHBOARD ==================== -->
+        <div id="view-nutrients" class="view-tab-content active">
+          <div class="main-header-bar">
+            <div>
+              <h2 class="col-heading">Nährstoff-Mengen & Tagesbedarf</h2>
+              <p class="col-sub">Vergleich deiner Gesamtaufnahme mit den offiziellen DGE / D-A-CH & EFSA Referenzwerten.</p>
             </div>
-            <button id="export-btn" class="export-report-btn" title="Tagesbericht als HTML in neuem Tab öffnen" aria-label="Tagesbericht exportieren">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              <span>Bericht exportieren</span>
-            </button>
+
+            <div class="header-right-actions">
+              <div class="search-box">
+                <svg class="search-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="search-input" placeholder="Nährstoff suchen (z.B. Leucin, BCAA, Carnitin, Taurin, B12)..." autocomplete="off">
+              </div>
+            </div>
           </div>
+
+          <!-- Filter Pills Bar -->
+          <div class="filter-pills-wrap">
+            <button class="filter-pill active" data-cat="all">Alle (46)</button>
+            <button class="filter-pill" data-cat="vitamins">Vitamine (13)</button>
+            <button class="filter-pill" data-cat="minerals">Mineralstoffe (10)</button>
+            <button class="filter-pill" data-cat="amino">Aminosäuren (15)</button>
+            <button class="filter-pill" data-cat="special">Omega-3 & Vitalstoffe (8)</button>
+            <button class="filter-pill" data-cat="missing" style="display: none;">Nicht abgedeckt (0)</button>
+          </div>
+
+          <!-- Active Filter Indicator Banner -->
+          <div id="active-filter-container"></div>
+
+          <!-- Nutrients Side-by-Side Cards Grid -->
+          <div class="nutrients-grid" id="nutrients-list">
+            <!-- Nutrient cards rendered via main.js -->
+          </div>
+
+          <!-- Footer Note -->
+          <footer class="footer-note">
+            <p>Basis: Watson Male Essentials (1 Kapsel) + Nutri+ Glycin (5 g) + natural elements Hyaluronsäure (1 Kapsel) + ProFuel Taurin (2 Kapseln) + VitaMoment D3+K2 (1 Kapsel) + VitaMoment Vitamin C (1 Kapsel) + Zinzino BalanceOil+ (10 ml) + True Nature Cholin (3 Kapseln) + Sports & Health Magnesium (3 Kapseln) + Gloryfeel Kreatin Creapure® (1 Messlöffel) + Vit4ever Yummy Whey Protein (30 g) + Vitabay Astaxanthin (1 Softgel) + ProFuel/GEN Coenzym Q10 (1 Kapsel) + Warnke Calciumcitrat (2 Tabletten) + GEN Acetyl-L-Carnitin (1 Kapsel).</p>
+            <p class="footer-sub">Referenzwerte gemäß offiziellen DGE / D-A-CH Empfehlungen, WHO Protein-Standards & EFSA / US IOM Tolerable Upper Limits.</p>
+          </footer>
         </div>
 
-        <!-- Filter Pills Bar -->
-        <div class="filter-pills-wrap">
-          <button class="filter-pill active" data-cat="all">Alle (46)</button>
-          <button class="filter-pill" data-cat="vitamins">Vitamine (13)</button>
-          <button class="filter-pill" data-cat="minerals">Mineralstoffe (10)</button>
-          <button class="filter-pill" data-cat="amino">Aminosäuren (15)</button>
-          <button class="filter-pill" data-cat="special">Omega-3 & Vitalstoffe (8)</button>
-          <button class="filter-pill" data-cat="missing" style="display: none;">Nicht abgedeckt (0)</button>
+        <!-- ==================== VIEW 2: PILL ORGANIZER / BEFÜLLHILFE ==================== -->
+        <div id="view-organizer" class="view-tab-content" style="display: none;">
+          <!-- Rendered dynamically via main.js renderPillOrganizer() -->
         </div>
 
-        <!-- Active Filter Indicator Banner -->
-        <div id="active-filter-container"></div>
-
-        <!-- Nutrients Side-by-Side Cards Grid -->
-        <div class="nutrients-grid" id="nutrients-list">
-          <!-- Nutrient cards rendered via main.js -->
-        </div>
-
-        <!-- Footer Note -->
-        <footer class="footer-note">
-          <p>Basis: Watson Male Essentials (1 Kapsel) + Nutri+ Glycin (5 g) + natural elements Hyaluronsäure (1 Kapsel) + ProFuel Taurin (2 Kapseln) + VitaMoment D3+K2 (1 Kapsel) + VitaMoment Vitamin C (1 Kapsel) + Zinzino BalanceOil+ (10 ml) + True Nature Cholin (3 Kapseln) + Sports & Health Magnesium (3 Kapseln) + Gloryfeel Kreatin Creapure® (1 Messlöffel) + Vit4ever Yummy Whey Protein (30 g) + Vitabay Astaxanthin (1 Softgel) + ProFuel/GEN Coenzym Q10 (1 Kapsel) + Warnke Calciumcitrat (2 Tabletten) + GEN Acetyl-L-Carnitin (1 Kapsel).</p>
-          <p class="footer-sub">Referenzwerte gemäß offiziellen DGE / D-A-CH Empfehlungen, WHO Protein-Standards & EFSA / US IOM Tolerable Upper Limits.</p>
-        </footer>
       </main>
 
     </div>
@@ -110,6 +160,6 @@
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
   </button>
 
-  <script type="module" src="js/main.js?v=3.2.0"></script>
+  <script type="module" src="js/main.js?v=3.3.0"></script>
 </body>
 </html>
