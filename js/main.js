@@ -97,6 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
       currentCategory = 'all';
       filterPills.forEach(p => p.classList.toggle('active', p.dataset.cat === 'all'));
     }
+    currentSearch = '';
+    if (searchInput) searchInput.value = '';
     renderSupplements();
     renderNutrients();
   }
@@ -152,6 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (clearBtn) {
       clearBtn.addEventListener('click', () => {
         selectedSupplementId = null;
+        currentSearch = '';
+        if (searchInput) searchInput.value = '';
         renderSupplements();
         renderNutrients();
       });
