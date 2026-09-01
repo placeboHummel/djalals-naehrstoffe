@@ -22,7 +22,7 @@ Minimalistische, elegante und aufgeräumte Übersicht deiner täglichen Nahrungs
 3. ⚡ **ProFuel – Taurin Kapseln**: 2 Kapseln *(2.000 mg Taurin)*
 4. 🦴 **Warnke – Calciumcitrat**: 1 Tablette *(300 mg Calcium)*
 
-### ⚡ Protein-Shake & Kreatin (Post-Workout / Vormittags)
+### ⚡ Protein-Shake & Kreatin (Post-Workout / Nachmittags)
 1. ⚡ **Gloryfeel – Kreatin Creapure®**: 1 Messlöffel *(3.000 mg Creapure® direkt im Shake)*
 2. 🍋 **Vit4ever – Yummy Whey Protein**: 30 g Pulver *(23 g Protein + 18 Aminosäuren)*
 

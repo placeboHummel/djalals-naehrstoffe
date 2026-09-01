@@ -68,9 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <div style="display: flex; align-items: center; gap: 8px;">
               <span class="supp-badge">${supp.badge}</span>
               <span class="supp-select-indicator">
-                ${isSelected 
-                  ? `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Aktiv` 
-                  : `Filtern ➔`}
+                ${isSelected
+          ? `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Aktiv`
+          : `Filtern ➔`}
               </span>
             </div>
           </div>
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const activeSupp = MY_SUPPLEMENTS.find(s => s.id === selectedSupplementId);
       const suppText = activeSupp ? ` im Supplement "${activeSupp.name}"` : '';
       const searchText = currentSearch ? ` für "${currentSearch}"` : '';
-      
+
       nutContainer.innerHTML = `
         <div class="empty-msg">
           <p>Keine Nährstoffe${suppText}${searchText} gefunden.</p>
@@ -286,18 +286,18 @@ document.addEventListener('DOMContentLoaded', () => {
           <!-- Bottom Sources Breakdown Strip -->
           <div class="nut-sources-strip">
             ${item.sources && item.sources.length > 0
-              ? item.sources.map(s => {
-                  const supp = MY_SUPPLEMENTS.find(x => x.id === s.supplementId);
-                  const shortName = supp?.shortName || supp?.name || 'Supplement';
-                  return `
+          ? item.sources.map(s => {
+            const supp = MY_SUPPLEMENTS.find(x => x.id === s.supplementId);
+            const shortName = supp?.shortName || supp?.name || 'Supplement';
+            return `
                     <span class="nut-source-chip" title="${supp?.name || ''} (${supp?.brand || ''})">
                       <span class="source-chip-name">${shortName}</span>
                       <strong class="source-chip-val">${s.amount}</strong>
                     </span>
                   `;
-                }).join('')
-              : `<span class="nut-source-chip is-missing">Keine direkte Supplement-Quelle</span>`
-            }
+          }).join('')
+          : `<span class="nut-source-chip is-missing">Keine direkte Supplement-Quelle</span>`
+        }
           </div>
         </div>
       `;
@@ -389,9 +389,9 @@ document.addEventListener('DOMContentLoaded', () => {
               ${nutrient.sources && nutrient.sources.length > 0 ? `
                 <div class="modal-sources-grid">
                   ${nutrient.sources.map(s => {
-                    const supp = MY_SUPPLEMENTS.find(x => x.id === s.supplementId);
-                    if (!supp) return '';
-                    return `
+      const supp = MY_SUPPLEMENTS.find(x => x.id === s.supplementId);
+      if (!supp) return '';
+      return `
                       <div class="modal-source-item">
                         <div class="modal-source-img">
                           <img src="${supp.image}" alt="${supp.name}">
@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                       </div>
                     `;
-                  }).join('')}
+    }).join('')}
                 </div>
               ` : `
                 <div class="modal-empty-source-box">
@@ -841,7 +841,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="org-section-title-wrap">
               <span class="org-section-icon">🥤</span>
               <div>
-                <h3 class="org-section-title">PROTEIN-SHAKE (Vormittags / Post-Workout)</h3>
+                <h3 class="org-section-title">PROTEIN-SHAKE (Nachmittags / Post-Workout)</h3>
                 <p class="org-section-desc">Direkt im Shaker frisch zubereiten (zwischen Frühstück und Abend)</p>
               </div>
             </div>
