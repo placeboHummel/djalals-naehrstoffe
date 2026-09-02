@@ -2259,7 +2259,7 @@ body.dark-theme .org-dose-text {
 
 /* --------------------------------------------------------------------------
    1. LAPTOPS & IPAD LANDSCAPE (993px – 1200px)
-   Matches: iPad 10.2" (1080px), iPad Air (1180px), iPad Pro 11" (1194px)
+   Matches: iPad 10.2" (1080px), iPad Air (1180px), iPad Pro 11" (1194px), iPad 9.7 (1024px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1200px) and (min-width: 993px) {
   body {
@@ -2271,9 +2271,71 @@ body.dark-theme .org-dose-text {
     max-width: 100%;
   }
 
+  /* 2-Row Top Navigation: Wide, Balanced & Centered across iPad Landscape */
+  .app-top-nav {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand actions"
+      "tabs tabs";
+    gap: 14px;
+    padding: 16px 22px;
+    margin-bottom: 24px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .top-nav-left {
+    grid-area: brand;
+    min-width: 0;
+  }
+
+  .top-brand-title {
+    font-size: 1.25rem;
+  }
+
+  .top-nav-right {
+    grid-area: actions;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .theme-toggle-btn {
+    padding: 9px 14px;
+    font-size: 0.84rem;
+    gap: 6px;
+  }
+
+  .export-report-btn {
+    padding: 9px 16px;
+    font-size: 0.84rem;
+  }
+
+  .top-nav-center {
+    grid-area: tabs;
+    width: 100%;
+  }
+
+  .view-switcher-pill {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 5px;
+  }
+
+  .view-nav-btn {
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 0.88rem;
+    gap: 8px;
+  }
+
   .app-layout {
-    grid-template-columns: 350px minmax(0, 1fr);
-    gap: 24px;
+    grid-template-columns: 360px minmax(0, 1fr);
+    gap: 28px;
     width: 100%;
     min-width: 0;
   }
@@ -2287,34 +2349,19 @@ body.dark-theme .org-dose-text {
   }
 
   .supp-card {
-    padding: 12px 14px;
-    gap: 10px;
+    padding: 14px 16px;
+    gap: 12px;
   }
 
   .supp-img-box {
-    width: 58px;
-    height: 58px;
-    min-width: 58px;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
   }
 
   .nutrients-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
-  }
-
-  .app-top-nav {
-    padding: 14px 22px;
-    margin-bottom: 24px;
-    gap: 16px;
-  }
-
-  .top-brand-title {
-    font-size: 1.18rem;
-  }
-
-  .view-nav-btn {
-    padding: 8px 16px;
-    font-size: 0.85rem;
   }
 }
 
